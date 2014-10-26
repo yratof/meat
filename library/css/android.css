@@ -1,57 +1,2752 @@
+/*! Made with Meat: http://forsvunnet.github.io/meat/  */
+/* Ownership of the stylesheets is global. */
+/******************************************************************
+Site Name: Meat
+Author: AndrewEivin
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+/********************************************
+				B O U R B O N
+
+	Note: If you don't know what you
+	do and don't want, just uncomment
+	bourbon below and just enjoy life
+	with a glass of bourbon.
+
+********************************************/
 /*
-Error: File to import not found or unreadable: breakpoints/phablet.
-       Load paths:
-         /Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss
-         /Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets
-         Sass::Globbing::Importer
-        on line 127 of /Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss/android.scss
-
-122: @media only screen and (min-width: $phablet){
-123: 
-124: 	// Mobile Grid - This is a 15px gutter
-125: 	@import "partials/gridmobile";
-126: 	
-127: 	@import "breakpoints/phablet";
-128: 
-129: } // end of media query
-130: 
-131: 
-132: 
-
-Backtrace:
-/Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss/android.scss:127
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:66:in `rescue in import'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:45:in `import'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/check_nesting.rb:107:in `rescue in invalid_import_parent?'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/check_nesting.rb:101:in `invalid_import_parent?'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/check_nesting.rb:175:in `try_send'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/check_nesting.rb:12:in `visit'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `map'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/check_nesting.rb:49:in `visit_children'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:38:in `visit'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/check_nesting.rb:15:in `visit'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `map'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/check_nesting.rb:49:in `visit_children'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/check_nesting.rb:57:in `visit_root'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/check_nesting.rb:15:in `visit'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:24:in `visit'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:35:in `css_tree'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:20:in `render'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/engine.rb:268:in `render'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:404:in `run'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:62:in `process_result'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:52:in `parse'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:19:in `parse!'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/bin/scss:13:in `<main>'
+	Fucking Samsung tab. Fucking wanker.
+	Can't handle REMS. So do I build a whole
+	stylesheet for it? Or do I leave it?
+	Do I do em instead?
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: breakpoints/phablet.\A        Load paths:\A          /Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss\A          /Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets\A          Sass::Globbing::Importer\A         on line 127 of /Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss/android.scss\A \A 122: @media only screen and (min-width: $phablet){\A 123: \A 124: 	// Mobile Grid - This is a 15px gutter\A 125: 	@import \"partials/gridmobile\";\A 126: 	\A 127: 	@import \"breakpoints/phablet\";\A 128: \A 129: } // end of media query\A 130: \A 131: \A 132: "; }
+/*********************
+IMPORTING PARTIALS
+These files are needed at the beginning so that we establish all
+our mixins, functions, and variables that we'll be using across
+the whole project.
+*********************/
+/* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong,
+.strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn,
+em,
+.em {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/*
+ * proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens)
+*/
+p {
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none; }
+
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+pre {
+  margin: 0; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+small, .small {
+  font-size: 75%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+  Lists
+========================================================================== */
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0; }
+
+dd {
+  margin: 0; }
+
+/*
+ * Addresses paddings set differently in IE6/7.
+ */
+menu {
+  padding: 0 0 0 40px; }
+
+ol,
+ul {
+  padding: 0;
+  list-style-type: none; }
+
+/*
+ * Corrects list images handled incorrectly in IE7.
+ */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* ==========================================================================
+  Embedded content
+========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement,
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.clearfix, .cf {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after, .cf:before, .cf:after {
+    content: "";
+    display: table; }
+  .clearfix:after, .cf:after {
+    clear: both; }
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+/* Colours */
+/******************************************************************
+Site Name: Meat
+Author: AndrewEivin
+
+Stylesheet: Sass Functions
+
+You can do a lot of really cool things in Sass. Functions help you
+make repeated actions a lot easier. They are really similar to mixins,
+but can be used for so much more.
+
+Anyway, keep them all in here so it's easier to find when you're
+looking for one.
+
+For more info on functions, go here:
+http://sass-lang.com/documentation/Sass/Script/Functions.html
+
+******************************************************************/
+/*********************
+COLOR FUNCTIONS
+These are helpful when you're working
+with shadows and such things. It's essentially
+a quicker way to write RGBA.
+
+Example:
+box-shadow: 0 0 4px black(0.3);
+compiles to:
+box-shadow: 0 0 4px rgba(0,0,0,0.3);
+*********************/
+/* 
+
+Rems for the future, PX for the past.
+
+This is a function that has been created to
+remove the need to write everything twice when it comes to REMs and PX.
+
+Basically, when you use u(3rem), the px-only variable on the style, 
+android and ie page tells the preprocessor to either change all 
+values in the breakpoint stylesheets to be either REM or PX, 
+and it'll do the math around it. So what you're left with is more hair
+at the end of the day.
+
+Source: http://davidwalsh.name/rem-px-browser-function-sass
+@Useage: u(3rem); 
+ 
+*/
+/* 1 */
+/************************
+	SQUARE ROOTS
+*************************/
+/*/////////////////////////////
+// Exponent
+/////////////////////////////*/
+/*************************************
+This converts columns to pixels based 
+on the $content width 
+*************************************/
+/*********************
+RESPONSIVE HELPER FUNCTION
+If you're creating a responsive site, then
+you've probably already read
+Responsive Web Design: http://www.abookapart.com/products/responsive-web-design
+
+Here's a nice little helper function for calculating
+target / context
+as mentioned in that book.
+
+Example:
+width: cp(650px, 1000px);
+or
+width: calc-percent(650px, 1000px);
+both compile to:
+width: 65%;
+*********************/
+/*
+	These are the breakpoints for your website.
+	These can be customised to your design. The 
+	more that I think about it, the more I'm 
+	starting to realise that these breakpoints 
+	need to change for the design, and not for 
+	the sizes they are. They're just a guide. 
+	In fact, I insist, you MUST change these.
+*/
+/* 
+	This is for something special. 
+	If px-only is defined in the rem
+	side of things, then the whole world
+	starts clapping. But this hasn't been
+	fuly implemented yet, so it's here
+	for when I start to develop it.
+*/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Typography
+
+Need to import a font or set of icons for your site? Drop them in
+here or just use this to establish your typographical grid. Or not.
+Do whatever you want to...GOSH!
+
+Helpful Articles:
+http://trentwalton.com/2012/06/19/fluid-type/
+http://ia.net/blog/responsive-typography-the-basics/
+http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+
+******************************************************************/
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
+*/
+/*********************************************
+		T y p e k i t   O v e r w r i t e
+		
+	If you've used any fonts from typekit
+	and you want to use them, plop them in here.
+
+*********************************************/
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+p {
+  -ms-word-break: break-all;
+  -ms-word-wrap: break-all;
+  word-break: break-word;
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig"; }
+
+/*
+	# Typekit and FOUT.
+
+	FOUT means "Flash of Unstyled Text"
+	and that happens when the site loads before the 
+	javascript can get the fonts needed for the 
+	page to be styled.
+	
+	Typekit have suggested "how about you hide 
+	everything until they load?" and have provided 
+	a javascript way of getting the fonts to load. 
+	
+	Which might work, but if the javascript doesn't 
+	load, we're still going to have a flash of 
+	text right?
+
+*/
+body {
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out; }
+
+.wf-loading body {
+  opacity: 0; }
+
+.wf-active body {
+  opacity: 1; }
+
+/*********************
+Text Overflow
+*********************/
+/********************************* 
+
+// This is for website rem to PX
+// so you can use @include font-size(2);
+// which outputs font-size: 24px; font-size:2rem;
+
+*********************************/
+/*********************************
+	Text alignment in classes	
+*********************************/
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.marginauto {
+  margin: 0 auto !important;
+  float: none !important; }
+
+/******************************************************************
+Site Name: Meat
+Author: AndrewEivin
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+.vertical {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+/* This mixin will help you nest mediaqueries easier.
+
+@Usage:
+	.font-size{
+		// Root font size
+		@include font-size(1);
+		// All sizes going up.
+		@include media(mobile){ @include font-size(1.1); }
+		@include media(tablet){ @include font-size(1.2); }
+		@include media(desktop){@include font-size(1.4); }
+		@include media(cinema){ @include font-size(1.6); }
+	}
+*/
+/* this is the padding */
+.padding-1 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+  .padding-1-top {
+    padding-top: 16px;
+    padding-top: 1rem;
+    padding-bottom: 0; }
+  .padding-1-bottom {
+    padding-bottom: 16px;
+    padding-bottom: 1rem;
+    padding-top: 0; }
+
+.padding-2 {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  .padding-2-top {
+    padding-top: 32px;
+    padding-top: 2rem;
+    padding-bottom: 0; }
+  .padding-2-bottom {
+    padding-bottom: 32px;
+    padding-bottom: 2rem;
+    padding-top: 0; }
+
+.padding-3 {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  .padding-3-top {
+    padding-top: 48px;
+    padding-top: 3rem;
+    padding-bottom: 0; }
+  .padding-3-bottom {
+    padding-bottom: 48px;
+    padding-bottom: 3rem;
+    padding-top: 0; }
+
+.padding-4 {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-top: 4rem;
+  padding-bottom: 4rem; }
+  .padding-4-top {
+    padding-top: 64px;
+    padding-top: 4rem;
+    padding-bottom: 0; }
+  .padding-4-bottom {
+    padding-bottom: 64px;
+    padding-bottom: 4rem;
+    padding-top: 0; }
+
+/*********************
+
+C O N T E N T   C H O R E O G R A P H Y
+
+Something that will reorder your content if used correctly.
+And on the right browser, of course.
+
+**********************/
+/*********************
+Placeholder Mixin
+
+Simply use this in a class somewhere to add placeholder styles.
+
+	@include placeholder {
+		colour: $brand-colour;
+	}
+
+*********************/
+/*********************
+TOOLS
+*********************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/************************
+ I N L I N E - B L O C K
+~ Gap Removal Technique ~
+
+@usage: @include ib();
+************************/
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*********************
+Background colour based on brightness
+*********************/
+/*********************
+IMPORTING MODULES
+Modules are reusable blocks or elements we use throughout the project.
+We can break them up as much as we want or just keep them all in one.
+I mean, you can do whatever you want. The world is your oyster. Unless
+you hate oysters, then the world is your peanut butter & jelly sandwich.
+*********************/
+/********************************************
+			   A N I M A T I C S
+
+	This is where all those lovely things
+	bourbon does can be kept, a place where
+	mixins and animation styles can be defined,
+	without including a whole library.
+
+********************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Alert Styles
+
+If you want to use these alerts in your design, you can. If not,
+you can just remove this stylesheet.
+
+******************************************************************/
+.alert-help, .alert-info, .alert-error, .alert-success {
+  padding: 5px 18px;
+  border: 1px solid;
+  color: #fff; }
+
+.alert-help {
+  border-color: #e8d71c;
+  background: #eadb33; }
+
+.alert-info {
+  border-color: #1d8dc0;
+  background: #209dd6; }
+
+.alert-error {
+  border-color: #aa2e2e;
+  background: #be3333; }
+
+.alert-success {
+  border-color: #96b31f;
+  background: #a8c923; }
+
+/******************************************************************
+Site Name: Meat
+Author: AndrewEivin
+
+Stylesheet: Button Styles
+
+Buttons are a pretty important part of your site's style, so it's
+important to have a consistent baseline for them. Use this stylesheet
+to create all kinds of buttons.
+
+Helpful Links:
+http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
+
+******************************************************************/
+/*********************
+BUTTON DEFAULTS
+We're gonna use a placeholder selector here
+so we can use common styles. We then use this
+to load up the defaults in all our buttons.
+
+Here's a quick video to show how it works:
+http://www.youtube.com/watch?v=hwdVpKiJzac
+
+*********************/
+/************************************
+		B U T T O N   C O L O U R S
+	
+	This mixin gives you a button in any
+	colour that you want. It then decides
+	if the background is dark or light and
+	gives you white or dark grey text colour.
+
+
+*************************************/
+/******************************
+Button Classes that you can have
+for free. Go on. Have them
+******************************/
+.button.brand {
+  border: none;
+  border-bottom: 5px solid #d10c00;
+  border-radius: 2px;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 7px 14px;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  /**********************************
+   This determines the background colour
+   in a greyscale manner, if it's lighter
+   than 40% lightness, the text colour
+   becomes dark to compensate.
+  **********************************/
+  color: #fff;
+  background: #ff4338;
+  color: #fff;
+  /**********************************
+   This is the style for the hovers,
+   the actives and the visited.
+  **********************************/ }
+  .button.brand:hover, .button.brand:focus, .button.brand:active {
+    color: #fff; }
+  .button.brand:hover {
+    background: #ff5b52; }
+  .button.brand:active {
+    background: #ff1305;
+    box-shadow: inset 0px 10px 5px -7px #d10c00;
+    position: relative;
+    top: 4px;
+    margin-bottom: 4px;
+    border-bottom-width: 1px; }
+  .button.brand:visited {
+    background: #ff4338;
+    border-bottom-color: #d10c00; }
+
+.button.highlight {
+  border: none;
+  border-bottom: 5px solid #004b58;
+  border-radius: 2px;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 7px 14px;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  /**********************************
+   This determines the background colour
+   in a greyscale manner, if it's lighter
+   than 40% lightness, the text colour
+   becomes dark to compensate.
+  **********************************/
+  color: #fff;
+  background: #00a1be;
+  color: #fff;
+  /**********************************
+   This is the style for the hovers,
+   the actives and the visited.
+  **********************************/ }
+  .button.highlight:hover, .button.highlight:focus, .button.highlight:active {
+    color: #fff; }
+  .button.highlight:hover {
+    background: #00b7d8; }
+  .button.highlight:active {
+    background: #00768b;
+    box-shadow: inset 0px 10px 5px -7px #004b58;
+    position: relative;
+    top: 4px;
+    margin-bottom: 4px;
+    border-bottom-width: 1px; }
+  .button.highlight:visited {
+    background: #00a1be;
+    border-bottom-color: #004b58; }
+
+.button.white {
+  border: none;
+  border-bottom: 5px solid #cccccc;
+  border-radius: 2px;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 7px 14px;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  /**********************************
+   This determines the background colour
+   in a greyscale manner, if it's lighter
+   than 40% lightness, the text colour
+   becomes dark to compensate.
+  **********************************/
+  color: #fff;
+  background: #fff;
+  color: #555;
+  /**********************************
+   This is the style for the hovers,
+   the actives and the visited.
+  **********************************/ }
+  .button.white:hover, .button.white:focus, .button.white:active {
+    color: #555; }
+  .button.white:hover {
+    background: white; }
+  .button.white:active {
+    background: #e6e6e6;
+    box-shadow: inset 0px 10px 5px -7px #cccccc;
+    position: relative;
+    top: 4px;
+    margin-bottom: 4px;
+    border-bottom-width: 1px; }
+  .button.white:visited {
+    background: #fff;
+    border-bottom-color: #cccccc; }
+
+.button.black {
+  border: none;
+  border-bottom: 5px solid black;
+  border-radius: 2px;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 7px 14px;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  /**********************************
+   This determines the background colour
+   in a greyscale manner, if it's lighter
+   than 40% lightness, the text colour
+   becomes dark to compensate.
+  **********************************/
+  color: #fff;
+  background: #000;
+  color: #fff;
+  /**********************************
+   This is the style for the hovers,
+   the actives and the visited.
+  **********************************/ }
+  .button.black:hover, .button.black:focus, .button.black:active {
+    color: #fff; }
+  .button.black:hover {
+    background: #0d0d0d; }
+  .button.black:active {
+    background: black;
+    box-shadow: inset 0px 10px 5px -7px black;
+    position: relative;
+    top: 4px;
+    margin-bottom: 4px;
+    border-bottom-width: 1px; }
+  .button.black:visited {
+    background: #000;
+    border-bottom-color: black; }
+
+.button.compliment {
+  border: none;
+  border-bottom: 5px solid #693975;
+  border-radius: 2px;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 7px 14px;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  /**********************************
+   This determines the background colour
+   in a greyscale manner, if it's lighter
+   than 40% lightness, the text colour
+   becomes dark to compensate.
+  **********************************/
+  color: #fff;
+  background: #a261b3;
+  color: #fff;
+  /**********************************
+   This is the style for the hovers,
+   the actives and the visited.
+  **********************************/ }
+  .button.compliment:hover, .button.compliment:focus, .button.compliment:active {
+    color: #fff; }
+  .button.compliment:hover {
+    background: #ac72bb; }
+  .button.compliment:active {
+    background: #884998;
+    box-shadow: inset 0px 10px 5px -7px #693975;
+    position: relative;
+    top: 4px;
+    margin-bottom: 4px;
+    border-bottom-width: 1px; }
+  .button.compliment:visited {
+    background: #a261b3;
+    border-bottom-color: #693975; }
+
+/******************************************************************
+Site Name: MEAT 
+Author: Eivin + Andrew 
+
+Stylesheet: Form Styles
+
+We put all the form and button styles in here to setup a consistent
+look. If we need to customize them, we can do this in the main
+stylesheets and just override them. Easy Peasy.
+
+You're gonna see a few data-uri thingies down there. If you're not
+sure what they are, check this link out:
+http://css-tricks.com/data-uris/
+If you want to create your own, use this helpful link:
+http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/
+
+******************************************************************/
+/*********************
+INPUTS
+*********************/
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea,
+.field {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 1em;
+  color: #555;
+  border-radius: 3px;
+  vertical-align: middle;
+  box-shadow: none;
+  border: 0;
+  width: 100%;
+  max-width: 400px;
+  font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ededed;
+  -webkit-transition: background-color 0.24s ease-in-out;
+  -transition: background-color 0.24s ease-in-out;
+  transition: background-color 0.24s ease-in-out; }
+  input[type="text"]:focus, input[type="text"]:active,
+  input[type="password"]:focus,
+  input[type="password"]:active,
+  input[type="datetime"]:focus,
+  input[type="datetime"]:active,
+  input[type="datetime-local"]:focus,
+  input[type="datetime-local"]:active,
+  input[type="date"]:focus,
+  input[type="date"]:active,
+  input[type="month"]:focus,
+  input[type="month"]:active,
+  input[type="time"]:focus,
+  input[type="time"]:active,
+  input[type="week"]:focus,
+  input[type="week"]:active,
+  input[type="number"]:focus,
+  input[type="number"]:active,
+  input[type="email"]:focus,
+  input[type="email"]:active,
+  input[type="url"]:focus,
+  input[type="url"]:active,
+  input[type="search"]:focus,
+  input[type="search"]:active,
+  input[type="tel"]:focus,
+  input[type="tel"]:active,
+  input[type="color"]:focus,
+  input[type="color"]:active,
+  select:focus,
+  select:active,
+  textarea:focus,
+  textarea:active,
+  .field:focus,
+  .field:active {
+    background-color: #f7f7f7; }
+  input[type="text"].error, input[type="text"].is-invalid,
+  input[type="password"].error,
+  input[type="password"].is-invalid,
+  input[type="datetime"].error,
+  input[type="datetime"].is-invalid,
+  input[type="datetime-local"].error,
+  input[type="datetime-local"].is-invalid,
+  input[type="date"].error,
+  input[type="date"].is-invalid,
+  input[type="month"].error,
+  input[type="month"].is-invalid,
+  input[type="time"].error,
+  input[type="time"].is-invalid,
+  input[type="week"].error,
+  input[type="week"].is-invalid,
+  input[type="number"].error,
+  input[type="number"].is-invalid,
+  input[type="email"].error,
+  input[type="email"].is-invalid,
+  input[type="url"].error,
+  input[type="url"].is-invalid,
+  input[type="search"].error,
+  input[type="search"].is-invalid,
+  input[type="tel"].error,
+  input[type="tel"].is-invalid,
+  input[type="color"].error,
+  input[type="color"].is-invalid,
+  select.error,
+  select.is-invalid,
+  textarea.error,
+  textarea.is-invalid,
+  .field.error,
+  .field.is-invalid {
+    color: #be3333;
+    border-color: #be3333;
+    background-color: #fff;
+    background-position: 99% center;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDREQkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDREQ0YwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ3ODRGRkE2RjA0QTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERBRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+U8iT5wAAAedJREFUeNqk1U9I02Ecx/HtV3aIFAc1hcRDUoGXRAq0oNLA2CrsEFmHbikZu0iQYIFGYAiegkCpLipBxPpDEBMUzB0EhSG2LhG7hMR2GviPgUTvB57Bw8P3+U23B16HPX8+e/b8nt93wezZSMCnhXETF3AcB5BDCnH8Dq98ExcGHcFn8Ah3cdDni+fxnPDv9oAnTB7CKu6VCFXtChZy56LxUjt+jfuB8toSOth9wd7xWAWhqrUjYR/FRTwWJm+iIPT/w7bQf5ljiZnBg45dtKFX6H+LU8gIY8OEV6vgTkStwXWE8BPTGDHGPqNPz2mCfSOOYkA99TvCt1bhGPL68zMcwmncMuape10jrI+q4BbHi/FLn31S9z2x5tRhTc+1W506ipM+T3oRD4X+8+qtc4SqFvL0z/Fr14S+Szjis8bz9Lvvaq8cwS/wwGfdlqfPSWqTiFlX77o13u9Ym1PBs8JAytpRoy44X9Ft9E/gvbA+rYKn8NcaaMVc8UHgBw4b9/iqUQZ6hOAJFbyDcUflmsEX4a6+wTtHGfhAIUqa1U29Zc2BytouThD8x6xuN5CtMPi2CrXLZkZf/HyZoRFCP7n+QVR4PV7uI/AjGghN7OU/r1ilnqILtfpNC+o6vIFljBKYlhb/F2AAgaBsWR5wRiIAAAAASUVORK5CYII=);
+    outline-color: #be3333; }
+  input[type="text"].success, input[type="text"].is-valid,
+  input[type="password"].success,
+  input[type="password"].is-valid,
+  input[type="datetime"].success,
+  input[type="datetime"].is-valid,
+  input[type="datetime-local"].success,
+  input[type="datetime-local"].is-valid,
+  input[type="date"].success,
+  input[type="date"].is-valid,
+  input[type="month"].success,
+  input[type="month"].is-valid,
+  input[type="time"].success,
+  input[type="time"].is-valid,
+  input[type="week"].success,
+  input[type="week"].is-valid,
+  input[type="number"].success,
+  input[type="number"].is-valid,
+  input[type="email"].success,
+  input[type="email"].is-valid,
+  input[type="url"].success,
+  input[type="url"].is-valid,
+  input[type="search"].success,
+  input[type="search"].is-valid,
+  input[type="tel"].success,
+  input[type="tel"].is-valid,
+  input[type="color"].success,
+  input[type="color"].is-valid,
+  select.success,
+  select.is-valid,
+  textarea.success,
+  textarea.is-valid,
+  .field.success,
+  .field.is-valid {
+    color: #a8c923;
+    border-color: #a8c923;
+    background-color: #fff;
+    background-position: 99% center;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDRERkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDRFMEYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0MzQ0NERERjA0QjExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERFRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+7olkTQAAAfhJREFUeNqklU9oE0EUhzdroWjw0tBeWlDxkEaIp55TsCU9VKIgCrHBelA8CQ1Kr1WPbZrQ3gqtQqvGqxpQc2jBk6BIIaAGD4qNCKURpDSKiPi98gLDsJt//uBjsztvfnk7895sIPAw6/joGMThFJyAXn2+A+9gA57/TaY/eU0OeBgfhGm4DiGnsb7DAszxBz/NAdcKjMJLuNWCqagHbsscN5+L+hmH4QkMOe1L5jzFfNA2PgT34ajTuY7AGuZB0/hmh5m+gS0r8xv1zRvg+gGCHZiOwnF4DP3iB3sQkYxPd2C6CWfhB9Xwlus5+K1j4jXuaq3a+gM1H9OPcAa+7q9lPidZJqHbiIm7Wg22rsEI7FrPSzAMX/T+ADyAKSsu7Fr1KplehLvwCs5DvfBf65p+MypqRbO1FXK9utH4/QKuaqYTsG3E3INJv00Q46px3+XxanJ/Ute2/vqP4FKDza2KcdljIKdnhS0xXYULTaqmLMZFn8FFSFtvt6x70ExFCS5oUXspq2ssa7oEl1swFa+CGFdgtkHgPDyDKy02zyxNU6lXRUZb1EuHYayNNs+Yh5B0WQo+/8fpJnNTZFuzz2OpjoQ2QruSOQlMy35fEGmEGMxY9e1brxobw7TkWA1h6xfckUPb+JhGoE/Hpfvew7qUld/H9J8AAwDpw3WYrxcZ3QAAAABJRU5ErkJggg==);
+    outline-color: #a8c923; }
+  input[type="text"][disabled], input[type="text"].is-disabled,
+  input[type="password"][disabled],
+  input[type="password"].is-disabled,
+  input[type="datetime"][disabled],
+  input[type="datetime"].is-disabled,
+  input[type="datetime-local"][disabled],
+  input[type="datetime-local"].is-disabled,
+  input[type="date"][disabled],
+  input[type="date"].is-disabled,
+  input[type="month"][disabled],
+  input[type="month"].is-disabled,
+  input[type="time"][disabled],
+  input[type="time"].is-disabled,
+  input[type="week"][disabled],
+  input[type="week"].is-disabled,
+  input[type="number"][disabled],
+  input[type="number"].is-disabled,
+  input[type="email"][disabled],
+  input[type="email"].is-disabled,
+  input[type="url"][disabled],
+  input[type="url"].is-disabled,
+  input[type="search"][disabled],
+  input[type="search"].is-disabled,
+  input[type="tel"][disabled],
+  input[type="tel"].is-disabled,
+  input[type="color"][disabled],
+  input[type="color"].is-disabled,
+  select[disabled],
+  select.is-disabled,
+  textarea[disabled],
+  textarea.is-disabled,
+  .field[disabled],
+  .field.is-disabled {
+    cursor: not-allowed;
+    border-color: #cfcfcf;
+    opacity: 0.6; }
+    input[type="text"][disabled]:focus, input[type="text"][disabled]:active, input[type="text"].is-disabled:focus, input[type="text"].is-disabled:active,
+    input[type="password"][disabled]:focus,
+    input[type="password"][disabled]:active,
+    input[type="password"].is-disabled:focus,
+    input[type="password"].is-disabled:active,
+    input[type="datetime"][disabled]:focus,
+    input[type="datetime"][disabled]:active,
+    input[type="datetime"].is-disabled:focus,
+    input[type="datetime"].is-disabled:active,
+    input[type="datetime-local"][disabled]:focus,
+    input[type="datetime-local"][disabled]:active,
+    input[type="datetime-local"].is-disabled:focus,
+    input[type="datetime-local"].is-disabled:active,
+    input[type="date"][disabled]:focus,
+    input[type="date"][disabled]:active,
+    input[type="date"].is-disabled:focus,
+    input[type="date"].is-disabled:active,
+    input[type="month"][disabled]:focus,
+    input[type="month"][disabled]:active,
+    input[type="month"].is-disabled:focus,
+    input[type="month"].is-disabled:active,
+    input[type="time"][disabled]:focus,
+    input[type="time"][disabled]:active,
+    input[type="time"].is-disabled:focus,
+    input[type="time"].is-disabled:active,
+    input[type="week"][disabled]:focus,
+    input[type="week"][disabled]:active,
+    input[type="week"].is-disabled:focus,
+    input[type="week"].is-disabled:active,
+    input[type="number"][disabled]:focus,
+    input[type="number"][disabled]:active,
+    input[type="number"].is-disabled:focus,
+    input[type="number"].is-disabled:active,
+    input[type="email"][disabled]:focus,
+    input[type="email"][disabled]:active,
+    input[type="email"].is-disabled:focus,
+    input[type="email"].is-disabled:active,
+    input[type="url"][disabled]:focus,
+    input[type="url"][disabled]:active,
+    input[type="url"].is-disabled:focus,
+    input[type="url"].is-disabled:active,
+    input[type="search"][disabled]:focus,
+    input[type="search"][disabled]:active,
+    input[type="search"].is-disabled:focus,
+    input[type="search"].is-disabled:active,
+    input[type="tel"][disabled]:focus,
+    input[type="tel"][disabled]:active,
+    input[type="tel"].is-disabled:focus,
+    input[type="tel"].is-disabled:active,
+    input[type="color"][disabled]:focus,
+    input[type="color"][disabled]:active,
+    input[type="color"].is-disabled:focus,
+    input[type="color"].is-disabled:active,
+    select[disabled]:focus,
+    select[disabled]:active,
+    select.is-disabled:focus,
+    select.is-disabled:active,
+    textarea[disabled]:focus,
+    textarea[disabled]:active,
+    textarea.is-disabled:focus,
+    textarea.is-disabled:active,
+    .field[disabled]:focus,
+    .field[disabled]:active,
+    .field.is-disabled:focus,
+    .field.is-disabled:active {
+      background-color: #209dd6; }
+
+textarea {
+  max-width: 100%;
+  min-height: 120px;
+  line-height: 1.5em; }
+
+select {
+  -webkit-appearance: none;
+  /* 1 */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHCAYAAADXhRcnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEOEZCMjYxMEYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEOEZCMjYxMUYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ4RkIyNjBFRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ4RkIyNjBGRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Vxkp9gAAAI9JREFUeNpidHFxucHAwKAOxE+AmJmBMPgLxDJAfJMFSKwD4kqoAClgA+P///8ZXF1dPaCGcBKh6QcQB+3evXs7WDMIAA2QB1I7gFgDj0aQFz2BGh+AOEwwUaDAQyBlCMR7cGjcC5KHaQQBuM3IAOiKTiBVhiTUDdRUhq4Oq2aoAelAahIQ5wM1zsCmBiDAADhYMJXVZ9u9AAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-position: 97.5% center; }
+
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+.respond-form label {
+  display: block; }
+
+.form li {
+  list-style-type: none;
+  clear: both;
+  margin-bottom: 0.7335em; }
+.form input[type=text],
+.form input[type=email],
+.form input[type=url],
+.form textarea {
+  padding: 3px 7px;
+  background: #efefef;
+  border: 2px solid #cecece;
+  /* form validation */ }
+  .form input[type=text]:focus,
+  .form input[type=email]:focus,
+  .form input[type=url]:focus,
+  .form textarea:focus {
+    background: #fff; }
+  .form input[type=text]:invalid,
+  .form input[type=email]:invalid,
+  .form input[type=url]:invalid,
+  .form textarea:invalid {
+    outline: none;
+    border-color: #962828;
+    background-color: #be3333;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+.form .email {
+  height: 30px; }
+.form select,
+.form input[type=text],
+.form input[type=email],
+.form input[type=url] {
+  max-width: 100%; }
+.form textarea {
+  resize: none;
+  width: 100%;
+  height: 150px; }
+
+/* comment form title */
+#comment-form-title {
+  margin: 0 0 1.1em; }
+
+/* allowed tags */
+/* no comments */
+input[type="search"] {
+  width: 61%;
+  float: left;
+  padding: 2% 1%; }
+
+.search-form .button {
+  float: right;
+  width: 35%; }
+
+/*
+BASE (MOBILE) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*/
+/******************************************************************
+Site Name: Meat
+Author: AndrewEivin
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/*************************************************
+	We include the grid for when you're 
+	using the lowest file, you might still
+	want to use this in the base, the 481 etc
+*************************************************/
+/********************************************
+			   G R I D  M A T H
+
+	Math. A bunch of it. This is the math
+	that makes the grid. Math can change
+	in here to completely change the whole
+	layout of your site. 
+			  
+********************************************/
+/* Adding an extra mixin to make widths fallbackabler.*/
+/* Offset class. Experimental, but looks nice */
+.offset-1 {
+  margin-left: 5.7969383057%;
+  margin-left: calc((99.95% - 11rem) / 12);
+  width: 91.3906307551%;
+  width: calc((99.95% - 0.0909090909rem) / 1.0909090909); }
+
+.offset-2 {
+  margin-left: 14.3563075506%;
+  margin-left: calc((99.95% - 5rem) / 6);
+  width: 82.8312615101%;
+  width: calc((99.95% - 0.2rem) / 1.2); }
+
+.offset-3 {
+  margin-left: 22.9156767956%;
+  margin-left: calc((99.95% - 3rem) / 4);
+  width: 74.2718922652%;
+  width: calc((99.95% - 0.3333333333rem) / 1.3333333333); }
+
+.offset-4 {
+  margin-left: 31.4750460405%;
+  margin-left: calc((99.95% - 2rem) / 3);
+  width: 65.7125230203%;
+  width: calc((99.95% - 0.5rem) / 1.5); }
+
+.offset-5 {
+  margin-left: 40.0344152855%;
+  margin-left: calc((99.95% - 1.4rem) / 2.4);
+  width: 57.1531537753%;
+  width: calc((99.95% - 0.7142857143rem) / 1.7142857143); }
+
+.offset-6 {
+  margin-left: 48.5937845304%;
+  margin-left: calc((99.95% - 1rem) / 2);
+  width: 48.5937845304%;
+  width: calc((99.95% - 1rem) / 2); }
+
+.offset-7 {
+  margin-left: 57.1531537753%;
+  margin-left: calc((99.95% - 0.7142857143rem) / 1.7142857143);
+  width: 40.0344152855%;
+  width: calc((99.95% - 1.4rem) / 2.4); }
+
+.offset-8 {
+  margin-left: 65.7125230203%;
+  margin-left: calc((99.95% - 0.5rem) / 1.5);
+  width: 31.4750460405%;
+  width: calc((99.95% - 2rem) / 3); }
+
+.offset-9 {
+  margin-left: 74.2718922652%;
+  margin-left: calc((99.95% - 0.3333333333rem) / 1.3333333333);
+  width: 22.9156767956%;
+  width: calc((99.95% - 3rem) / 4); }
+
+.offset-10 {
+  margin-left: 82.8312615101%;
+  margin-left: calc((99.95% - 0.2rem) / 1.2);
+  width: 14.3563075506%;
+  width: calc((99.95% - 5rem) / 6); }
+
+.offset-11 {
+  margin-left: 91.3906307551%;
+  margin-left: calc((99.95% - 0.0909090909rem) / 1.0909090909);
+  width: 5.7969383057%;
+  width: calc((99.95% - 11rem) / 12); }
+
+.offset-12 {
+  margin-left: 99.95%;
+  margin-left: calc((99.95% - 0rem) / 1);
+  width: NaN%;
+  width: calc((99.95% - Infinityrem) / Infinity); }
+
+body {
+  background: #fff;
+  -webkit-font-smoothing: antialiased; }
+
+.wrap {
+  width: 96%;
+  margin: 0 auto; }
+
+/*********************
+HEADING STYLES - Type
+*********************/
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizelegibility;
+  color: #ff4338;
+  font-weight: 300; }
+
+h1, .h1 {
+  font-size: 1.4908576024; }
+  @media (min-width: 481.008px) {
+    h1, .h1 {
+      font-size: 1.5907450617; } }
+  @media (min-width: 592px) {
+    h1, .h1 {
+      font-size: 1.6973249809; } }
+  @media (min-width: 768px) {
+    h1, .h1 {
+      font-size: 1.8110457546; } }
+  @media (min-width: 888px) {
+    h1, .h1 {
+      font-size: 1.9323858202; } }
+  @media (min-width: 1000px) {
+    h1, .h1 {
+      font-size: 2.0618556701; } }
+  @media (min-width: 1200px) {
+    h1, .h1 {
+      font-size: 2.2; } }
+
+h2, .h2 {
+  font-size: 1.2706172748; }
+  @media (min-width: 481.008px) {
+    h2, .h2 {
+      font-size: 1.3557486322; } }
+  @media (min-width: 592px) {
+    h2, .h2 {
+      font-size: 1.4465837905; } }
+  @media (min-width: 768px) {
+    h2, .h2 {
+      font-size: 1.5435049045; } }
+  @media (min-width: 888px) {
+    h2, .h2 {
+      font-size: 1.6469197331; } }
+  @media (min-width: 1000px) {
+    h2, .h2 {
+      font-size: 1.7572633552; } }
+  @media (min-width: 1200px) {
+    h2, .h2 {
+      font-size: 1.875; } }
+
+h3, .h3 {
+  font-size: 1.0164938198; }
+  @media (min-width: 481.008px) {
+    h3, .h3 {
+      font-size: 1.0845989057; } }
+  @media (min-width: 592px) {
+    h3, .h3 {
+      font-size: 1.1572670324; } }
+  @media (min-width: 768px) {
+    h3, .h3 {
+      font-size: 1.2348039236; } }
+  @media (min-width: 888px) {
+    h3, .h3 {
+      font-size: 1.3175357865; } }
+  @media (min-width: 1000px) {
+    h3, .h3 {
+      font-size: 1.4058106842; } }
+  @media (min-width: 1200px) {
+    h3, .h3 {
+      font-size: 1.5; } }
+
+h4, .h4 {
+  font-size: 0.7623703649; }
+  @media (min-width: 481.008px) {
+    h4, .h4 {
+      font-size: 0.8134491793; } }
+  @media (min-width: 592px) {
+    h4, .h4 {
+      font-size: 0.8679502743; } }
+  @media (min-width: 768px) {
+    h4, .h4 {
+      font-size: 0.9261029427; } }
+  @media (min-width: 888px) {
+    h4, .h4 {
+      font-size: 0.9881518399; } }
+  @media (min-width: 1000px) {
+    h4, .h4 {
+      font-size: 1.0543580131; } }
+  @media (min-width: 1200px) {
+    h4, .h4 {
+      font-size: 1.125; } }
+
+h5, .h5 {
+  font-size: 0.6776625465; }
+  @media (min-width: 481.008px) {
+    h5, .h5 {
+      font-size: 0.7230659372; } }
+  @media (min-width: 592px) {
+    h5, .h5 {
+      font-size: 0.7715113549; } }
+  @media (min-width: 768px) {
+    h5, .h5 {
+      font-size: 0.8232026157; } }
+  @media (min-width: 888px) {
+    h5, .h5 {
+      font-size: 0.878357191; } }
+  @media (min-width: 1000px) {
+    h5, .h5 {
+      font-size: 0.9372071228; } }
+  @media (min-width: 1200px) {
+    h5, .h5 {
+      font-size: 1; } }
+
+h6, .h6 {
+  font-size: 0.5760131646; }
+  @media (min-width: 481.008px) {
+    h6, .h6 {
+      font-size: 0.6146060466; } }
+  @media (min-width: 592px) {
+    h6, .h6 {
+      font-size: 0.6557846517; } }
+  @media (min-width: 768px) {
+    h6, .h6 {
+      font-size: 0.6997222234; } }
+  @media (min-width: 888px) {
+    h6, .h6 {
+      font-size: 0.7466036123; } }
+  @media (min-width: 1000px) {
+    h6, .h6 {
+      font-size: 0.7966260544; } }
+  @media (min-width: 1200px) {
+    h6, .h6 {
+      font-size: 0.85; } }
+
+/*********************
+TEXT BODY STYLES
+*********************/
+body {
+  font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 90%;
+  line-height: 1.4;
+  color: #555;
+  font-weight: 400; }
+
+b, strong {
+  font-weight: 500; }
+
+/*********************
+SEPARATION STYLES
+*********************/
+hr {
+  margin: 5.5248618785% 0;
+  border: 0;
+  border-bottom: 1px solid #000; }
+
+/*********************
+LINK STYLES
+*********************/
+a, a:visited {
+  color: #ff4338;
+  text-decoration: none;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */ }
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+    color: #ff180a; }
+  a:link, a:visited:link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+
+/*********************
+IMG STYLES
+*********************/
+.img {
+  vertical-align: bottom; }
+
+/*********************
+LOGO STYLES
+*********************/
+#logo {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 24px 0;
+  margin: 0; }
+  #logo a {
+    border-bottom: 0; }
+  #logo img {
+    max-width: 240px;
+    height: auto;
+    margin: 0 auto; }
+
+/*********************
+NAVIGATION AND MENUS
+*********************/
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+/*********************
+MOBILE DROPDOWN NAVIGATION STYLES
+*********************/
+.clickable {
+  margin: 0;
+  color: #555;
+  cursor: pointer;
+  padding: 0;
+  width: 45px;
+  position: absolute;
+  top: 20px;
+  right: 20px; }
+
+.menu-icon {
+  margin-top: 0px;
+  padding: 0;
+  /* Uncomment this for menu to be written after the burger style buttons
+  
+  		&:after{
+  			content: "Menu"; // How will you ever translate this?
+  			@include font-size(0.75);
+  			text-transform: uppercase;
+  			font-family: $sans-serif;
+  			display: block;
+  			text-align: center;
+  		}
+  */ }
+  .menu-icon div {
+    height: 4px;
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 1px;
+    background: #555; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav {
+  margin: 0;
+  font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* end .menu li */ }
+  @media only screen and (max-width: 768px) {
+    .js .nav {
+      overflow: hidden;
+      max-height: 0;
+      -webkit-transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+      -transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+      transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1); }
+      .js .nav.show {
+        max-height: 8000px; } }
+  .js .nav {
+    border-top: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 5; }
+    .js .nav li a {
+      width: 100%; }
+  .nav li a {
+    display: inline-block;
+    text-decoration: none; }
+  @media only screen and (max-width: 768px) {
+    .js .nav li ul.sub-menu, .js
+    .nav li ul.children {
+      overflow: hidden;
+      max-height: 0;
+      -webkit-transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+      -transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+      transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1); }
+      .js .nav li ul.sub-menu.show, .js
+      .nav li ul.children.show {
+        max-height: 8000px; } }
+  .nav li ul.sub-menu li a,
+  .nav li ul.children li a {
+    padding-left: 5.5248618785%; }
+
+/* end .nav */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+img {
+  margin: 0;
+  max-width: 100%;
+  height: auto; }
+
+/* post meta */
+.byline {
+  color: #999; }
+
+blockquote {
+  background: #ececec;
+  border-left: 10px solid;
+  margin: 0;
+  padding: 1em 2em; }
+
+.page-title {
+  /* Removing the */
+  margin: 0; }
+
+.entry-content {
+  /*
+  image alignment on a screen this size may be
+  a bit difficult. It's set to start aligning
+  and floating images at the next breakpoint,
+  but it's up to you. Feel free to change it up.
+  */ }
+  .entry-content ul {
+    list-style: disc;
+    margin-left: 8.2872928177%; }
+  .entry-content dd {
+    margin-left: 0;
+    color: #787878; }
+  .entry-content video, .entry-content object {
+    max-width: 100%;
+    height: auto; }
+  .entry-content pre {
+    background: #eee;
+    border: 1px solid #cecece;
+    padding: 10px; }
+
+/* end .entry-content */
+.wp-caption {
+  max-width: 100%;
+  background: #eee;
+  padding: 5px; }
+  .wp-caption p.wp-caption-text {
+    font-size: 0.85em;
+    margin: 4px 0 7px;
+    text-align: center; }
+
+/* end .wp-caption */
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+.page-navigation,
+.wp-prev-next {
+  margin: 1.1em 0 2.2em; }
+
+.meat_page_navi {
+  /* current page link */
+  /* end .meat_page_navi .bpn-current */
+  /* common styles for page-navi links */
+  /* remove the bg on end links */ }
+  .meat_page_navi li {
+    float: left;
+    margin-left: 10px; }
+    .meat_page_navi li a {
+      padding: 3px 6px;
+      display: block;
+      text-decoration: none;
+      position: relative; }
+      .meat_page_navi li a:hover, .meat_page_navi li a:focus {
+        color: #f01d4f;
+        text-decoration: underline; }
+  .meat_page_navi li.bpn-current {
+    padding: 3px 6px;
+    border-bottom: 2px solid #f01d4f;
+    position: relative; }
+  .meat_page_navi li.bpn-prev-link,
+  .meat_page_navi li.bpn-next-link {
+    font-weight: 700; }
+    .meat_page_navi li.bpn-prev-link a,
+    .meat_page_navi li.bpn-next-link a {
+      padding: 0; }
+  .meat_page_navi li.bpn-prev-link a:hover,
+  .meat_page_navi li.bpn-next-link a:hover,
+  .meat_page_navi li.bpn-first-page-link a:hover,
+  .meat_page_navi li.bpn-last-page-link a:hover {
+    background: none; }
+
+/* end .meat_page_navi */
+/* fallback previous & next links */
+.wp-prev-next .prev-link {
+  float: left; }
+.wp-prev-next .next-link {
+  float: right; }
+
+/* end .wp-prev-next */
+.pagination .page-numbers {
+  width: 100%;
+  display: inline-block;
+  text-align: center; }
+  .pagination .page-numbers li {
+    display: inline-block;
+    padding: 4px; }
+    .pagination .page-numbers li a, .pagination .page-numbers li .span {
+      background: #ff4338;
+      color: #fff;
+      border-radius: 2px;
+      display: block;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      vertical-align: middle; }
+
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+.commentlist {
+  /* general comment classes */
+  /* vcard */
+  /* end .commentlist .vcard */
+  /* comment content */
+  /* end .commentlist .comment_content */
+  /* comment reply link */
+  /* end .commentlist .comment-reply-link */ }
+  .commentlist li {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    list-style-type: none;
+    margin-bottom: 24px;
+    padding: 11.736px 10px;
+    /* end .commentlist li ul.children */ }
+    .commentlist li:last-child {
+      margin-bottom: 0; }
+    .commentlist li ul.children {
+      margin: 0; }
+  .commentlist li[class*=depth-] {
+    margin-top: 17.6px; }
+  .commentlist li.depth-1 {
+    margin-left: 0;
+    margin-top: 0; }
+  .commentlist li:not(.depth-1) {
+    margin-right: -10px;
+    margin-left: -10px;
+    margin-top: 0;
+    padding-bottom: 0; }
+  .commentlist .odd {
+    background: #aaa; }
+  .commentlist .even {
+    background: #ececec; }
+  .commentlist .vcard {
+    margin-left: 50px; }
+    .commentlist .vcard cite.fn {
+      font-weight: 700;
+      font-style: normal; }
+    .commentlist .vcard time {
+      float: right; }
+      .commentlist .vcard time a {
+        color: #999;
+        text-decoration: none; }
+        .commentlist .vcard time a:hover {
+          text-decoration: underline; }
+    .commentlist .vcard img.avatar {
+      position: absolute;
+      left: 10px;
+      padding: 2px;
+      border: 1px solid #cecece;
+      background: #fff; }
+  .commentlist .comment_content {
+    margin-left: 50px; }
+    .commentlist .comment_content p {
+      margin: 0.7335em 8px 1.5em;
+      font-size: 1em;
+      line-height: 1.5em; }
+  .commentlist .comment-reply-link {
+    text-decoration: none;
+    float: right;
+    background: #4598bb;
+    padding: 3px 5px;
+    color: #fff;
+    opacity: 0.65;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 0.9em; }
+    .commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
+      opacity: 1; }
+
+/* end .commentlist */
+/*********************
+SIDEBAR STYLES
+*********************/
+.sidebar ul {
+  margin: 0; }
+.sidebar li a {
+  display: block; }
+
+/*********************
+FOOTER STYLES
+*********************/
+/*
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*/
+@media only screen and (min-width: 481.008px) {
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: 481px and Up Stylesheet
+  
+  This stylesheet is loaded for larger devices. It's set to 
+  481px because at 480px it would load on a landscaped iPhone.
+  This isn't ideal because then you would be loading all those
+  extra styles on that same mobile connection. 
+  
+  A word of warning. This size COULD be a larger mobile device,
+  so you still want to keep it pretty light and simply expand
+  upon your base.scss styles.
+  
+  ******************************************************************/
+  .wrap {
+    max-width: 481.008px; }
+
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  /* entry content */
+  .entry-content {
+    /* at this larger size, we can start to align images */ }
+    .entry-content .alignleft, .entry-content img.alignleft {
+      margin-right: 1.5em;
+      display: inline;
+      float: left; }
+    .entry-content .alignright, .entry-content img.alignright {
+      margin-left: 1.5em;
+      display: inline;
+      float: right; }
+    .entry-content .aligncenter, .entry-content img.aligncenter {
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+      clear: both; }
+
+  /* end .entry-content */
+  /*********************
+  FOOTER STYLES
+  *********************/ }
+/*
+PHABLET
+In between Phone and tablet. Seriously. This covers things from nexus 7 to iphone6+ etc.
+*/
+@media only screen and (min-width: 592px) {
+  /********************************************
+  	G R I D  M A T H * MOBILE EDITION *
+  
+  	Math. A bunch of it. This is the math
+  	that makes the grid. Math can change
+  	in here to completely change the whole
+  	layout of your site. And it's all smaller
+  	than the next grid!
+  			  
+  ********************************************/
+  .onecol {
+    width: 5.787037037%;
+    width: calc((100% - 10.3125rem) / 12); }
+
+  .twocol {
+    width: 14.3518518519%;
+    width: calc((100% - 4.6875rem) / 6); }
+
+  .threecol {
+    width: 22.9166666667%;
+    width: calc((100% - 2.8125rem) / 4); }
+
+  .fourcol {
+    width: 31.4814814815%;
+    width: calc((100% - 1.875rem) / 3); }
+
+  .fivecol {
+    width: 40.0462962963%;
+    width: calc((100% - 1.3125rem) / 2.4); }
+
+  .sixcol {
+    width: 48.6111111111%;
+    width: calc((100% - 0.9375rem) / 2); }
+
+  .sevencol {
+    width: 57.1759259259%;
+    width: calc((100% - 0.6696428571rem) / 1.7142857143); }
+
+  .eightcol {
+    width: 65.7407407407%;
+    width: calc((100% - 0.46875rem) / 1.5); }
+
+  .ninecol {
+    width: 74.3055555556%;
+    width: calc((100% - 0.3125rem) / 1.3333333333); }
+
+  .tencol {
+    width: 82.8703703704%;
+    width: calc((100% - 0.1875rem) / 1.2); }
+
+  .elevencol {
+    width: 91.4351851852%;
+    width: calc((100% - 0.0852272727rem) / 1.0909090909); }
+
+  .twelvecol {
+    width: 100%;
+    width: calc((100% - 0rem) / 1); }
+
+  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol, .fifthcol, .threefifth {
+    position: relative;
+    float: left;
+    margin-left: 2.7777777778%;
+    margin-left: calc(0.9375rem * 1); }
+
+  .first {
+    margin-left: 0; }
+
+  .last {
+    float: right; }
+
+  .gutter-top {
+    margin-top: 2.7777777778%;
+    margin-top: calc(0.9375rem * 1); }
+
+  .gutter-bottom {
+    margin-bottom: 2.7777777778%;
+    margin-bottom: calc(0.9375rem * 1); }
+
+  .third, .quarter, .half {
+    float: left; }
+
+  .third {
+    width: 33.33333333333%; }
+
+  .quarter {
+    width: 25%; }
+
+  .half {
+    width: 50%; }
+
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: Phablet Stylsheet
+  
+  This is the Phablet size. It's larger than phone, smaller than a tablet...
+  
+  ******************************************************************/
+  .wrap {
+    max-width: 592px; } }
+/*
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: 768px) {
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: Tablet & Small Desktop Stylesheet
+  
+  Here's where you can start getting into the good stuff.
+  This size will work on iPads, other tablets, and desktops.
+  So you can start working with more styles, background images,
+  and other resources. You'll also notice the grid starts to
+  come into play. Have fun!
+  
+  ******************************************************************/
+  /*********************
+  GENERAL STYLES
+  *********************/
+  body {
+    font-size: 100%;
+    line-height: 1.5; }
+
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  .wrap {
+    max-width: 768px; }
+
+  /*********************
+  HEADER STYLES
+  *********************/
+  /*********************
+  LOGO STYLES
+  *********************/
+  #logo {
+    width: 22.9041666667%;
+    width: calc((99.95% - 2.8125rem) / 4);
+    text-align: left;
+    float: left;
+    margin-left: 0; }
+    #logo img {
+      margin: 0em auto;
+      max-width: 100%;
+      position: relative;
+      z-index: 20; }
+
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  .mobile-only {
+    display: none;
+    visibility: hidden; }
+
+  .nav {
+    text-align: center;
+    margin: 16px 0;
+    vertical-align: middle;
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .js .nav {
+      display: block;
+      top: auto;
+      right: auto;
+      left: auto;
+      max-height: 100%; }
+    .nav li {
+      display: inline-block;
+      position: relative;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */
+      /*
+      plan your menus and drop-downs wisely.
+      */
+      /* showing sub-menus */ }
+      .nav li:hover, .nav li:focus {
+        color: #fff;
+        background: #ff4338; }
+        .nav li:hover a, .nav li:focus a {
+          color: #fff; }
+      .nav li a {
+        border-bottom: 0;
+        color: #555;
+        font-size: 16px;
+        font-size: 1rem;
+        padding: 8px 16px;
+        font-weight: 400; }
+        .nav li a:hover, .nav li a:focus {
+          color: #fff;
+          background: #ff1305; }
+      .js .nav li ul.show.sub-menu, .js .nav li ul.show.children,
+      .nav li ul.sub-menu,
+      .nav li ul.children {
+        margin-top: 0;
+        border-top: 0;
+        position: absolute;
+        display: none;
+        z-index: 15;
+        text-align: left;
+        color: #fff;
+        background: #ff4338;
+        /* highlight sub-menu current page */ }
+        .js .nav li ul.show.sub-menu li, .js .nav li ul.show.children li,
+        .nav li ul.sub-menu li,
+        .nav li ul.children li {
+          /*
+          if you need to go deeper, go nuts
+          just remember deeper menus suck
+          for usability. k, bai.
+          */ }
+          .js .nav li ul.show.sub-menu li:hover a, .js .nav li ul.show.sub-menu li:focus a, .js .nav li ul.show.children li:hover a, .js .nav li ul.show.children li:focus a,
+          .nav li ul.sub-menu li:hover a,
+          .nav li ul.sub-menu li:focus a,
+          .nav li ul.children li:hover a,
+          .nav li ul.children li:focus a {
+            background: #ff1305;
+            border-radius: 2px; }
+          .js .nav li ul.show.sub-menu li a, .js .nav li ul.show.children li a,
+          .nav li ul.sub-menu li a,
+          .nav li ul.children li a {
+            font-size: 13.6px;
+            font-size: 0.85rem;
+            border-right: 0;
+            display: block;
+            width: 288px;
+            color: #fff; }
+          .js .nav li ul.show.sub-menu li:last-child a, .js .nav li ul.show.children li:last-child a,
+          .nav li ul.sub-menu li:last-child a,
+          .nav li ul.children li:last-child a {
+            border-bottom: 0; }
+      .nav li:hover ul {
+        top: auto;
+        display: block; }
+
+  /* end .nav */
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  .widget ul li {
+    margin-bottom: 12px;
+    /* deep nesting */ }
+    .widget ul li ul {
+      margin-top: 12px;
+      padding-left: 16px; }
+
+  /*********************
+  FOOTER STYLES
+  *********************/
+  /*
+  you'll probably need to do quite a bit
+  of overriding here if you styled them for
+  mobile. Make sure to double check these!
+  */
+  .footer {
+    text-align: left; }
+    .footer .widget {
+      width: 22.9041666667%;
+      width: calc((99.95% - 2.8125rem) / 4); }
+      .footer .widget.first {
+        margin-left: 0; }
+      .footer .widget.last {
+        float: right; }
+      .footer .widget:first-child {
+        margin-left: 0; }
+      .footer .widget ul {
+        padding: 0;
+        margin: 0; }
+        .footer .widget ul li {
+          padding: 0;
+          margin: 0; }
+    .footer a:hover {
+      color: #ff4338;
+      text-decoration: underline; }
+
+  /* Desktop only Plugins.
+  	@import "plugins/gravity";
+  */ }
+/*
+DESKLET
+In between desktop and tablet
+*/
+@media only screen and (min-width: 888px) {
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: Grid Stylesheet
+  
+  I've seperated the grid so you can swap it out easily. It's
+  called at the top the style.scss stylesheet.
+  
+  There are a ton of grid solutions out there. You should definitely
+  experiment with your own. Here are some recommendations:
+  
+  http://gridsetapp.com - Love this site. Responsive Grids made easy.
+  http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+  http://gridpak.com/ - Create your own responsive grid.
+  
+  The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+  I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+  together, let's see how this works out. If you want to use 1140, the original 
+  values are commented out on each line.
+  
+  ******************************************************************/
+  /********************************************
+  			   G R I D  M A T H
+  
+  	Math. A bunch of it. This is the math
+  	that makes the grid. Math can change
+  	in here to completely change the whole
+  	layout of your site. 
+  			  
+  ********************************************/
+  /* Adding an extra mixin to make widths fallbackabler.*/
+  /* Offset class. Experimental, but looks nice */
+  .offset-1 {
+    margin-left: 5.7969383057%;
+    margin-left: calc((99.95% - 11rem) / 12);
+    width: 91.3906307551%;
+    width: calc((99.95% - 0.0909090909rem) / 1.0909090909); }
+
+  .offset-2 {
+    margin-left: 14.3563075506%;
+    margin-left: calc((99.95% - 5rem) / 6);
+    width: 82.8312615101%;
+    width: calc((99.95% - 0.2rem) / 1.2); }
+
+  .offset-3 {
+    margin-left: 22.9156767956%;
+    margin-left: calc((99.95% - 3rem) / 4);
+    width: 74.2718922652%;
+    width: calc((99.95% - 0.3333333333rem) / 1.3333333333); }
+
+  .offset-4 {
+    margin-left: 31.4750460405%;
+    margin-left: calc((99.95% - 2rem) / 3);
+    width: 65.7125230203%;
+    width: calc((99.95% - 0.5rem) / 1.5); }
+
+  .offset-5 {
+    margin-left: 40.0344152855%;
+    margin-left: calc((99.95% - 1.4rem) / 2.4);
+    width: 57.1531537753%;
+    width: calc((99.95% - 0.7142857143rem) / 1.7142857143); }
+
+  .offset-6 {
+    margin-left: 48.5937845304%;
+    margin-left: calc((99.95% - 1rem) / 2);
+    width: 48.5937845304%;
+    width: calc((99.95% - 1rem) / 2); }
+
+  .offset-7 {
+    margin-left: 57.1531537753%;
+    margin-left: calc((99.95% - 0.7142857143rem) / 1.7142857143);
+    width: 40.0344152855%;
+    width: calc((99.95% - 1.4rem) / 2.4); }
+
+  .offset-8 {
+    margin-left: 65.7125230203%;
+    margin-left: calc((99.95% - 0.5rem) / 1.5);
+    width: 31.4750460405%;
+    width: calc((99.95% - 2rem) / 3); }
+
+  .offset-9 {
+    margin-left: 74.2718922652%;
+    margin-left: calc((99.95% - 0.3333333333rem) / 1.3333333333);
+    width: 22.9156767956%;
+    width: calc((99.95% - 3rem) / 4); }
+
+  .offset-10 {
+    margin-left: 82.8312615101%;
+    margin-left: calc((99.95% - 0.2rem) / 1.2);
+    width: 14.3563075506%;
+    width: calc((99.95% - 5rem) / 6); }
+
+  .offset-11 {
+    margin-left: 91.3906307551%;
+    margin-left: calc((99.95% - 0.0909090909rem) / 1.0909090909);
+    width: 5.7969383057%;
+    width: calc((99.95% - 11rem) / 12); }
+
+  .offset-12 {
+    margin-left: 99.95%;
+    margin-left: calc((99.95% - 0rem) / 1);
+    width: NaN%;
+    width: calc((99.95% - Infinityrem) / Infinity); }
+
+  .onecol {
+    width: 5.7969383057%;
+    width: calc((99.95% - 11rem) / 12); }
+
+  .twocol {
+    width: 14.3563075506%;
+    width: calc((99.95% - 5rem) / 6); }
+
+  .threecol {
+    width: 22.9156767956%;
+    width: calc((99.95% - 3rem) / 4); }
+
+  .fourcol {
+    width: 31.4750460405%;
+    width: calc((99.95% - 2rem) / 3); }
+
+  .fivecol {
+    width: 40.0344152855%;
+    width: calc((99.95% - 1.4rem) / 2.4); }
+
+  .sixcol {
+    width: 48.5937845304%;
+    width: calc((99.95% - 1rem) / 2); }
+
+  .sevencol {
+    width: 57.1531537753%;
+    width: calc((99.95% - 0.7142857143rem) / 1.7142857143); }
+
+  .eightcol {
+    width: 65.7125230203%;
+    width: calc((99.95% - 0.5rem) / 1.5); }
+
+  .ninecol {
+    width: 74.2718922652%;
+    width: calc((99.95% - 0.3333333333rem) / 1.3333333333); }
+
+  .tencol {
+    width: 82.8312615101%;
+    width: calc((99.95% - 0.2rem) / 1.2); }
+
+  .elevencol {
+    width: 91.3906307551%;
+    width: calc((99.95% - 0.0909090909rem) / 1.0909090909); }
+
+  .twelvecol {
+    width: 99.95%;
+    width: calc((99.95% - 0rem) / 1); }
+
+  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol, .fifthcol, .threefifth {
+    position: relative;
+    float: left;
+    margin-left: 2.7624309392%;
+    margin-left: calc(1rem * 1); }
+
+  /* Adding an extra mixin to make widths fallbackabler.*/
+  .first {
+    margin-left: 0; }
+
+  .last {
+    float: right; }
+
+  .gutter-top {
+    margin-top: 2.7624309392%;
+    margin-top: calc(1rem * 1); }
+
+  .gutter-bottom {
+    margin-bottom: 2.7624309392%;
+    margin-bottom: calc(1rem * 1); }
+
+  .third, .quarter, .half {
+    float: left; }
+
+  .third {
+    width: 33.33333333333%; }
+
+  .quarter {
+    width: 25%; }
+
+  .half {
+    width: 50%; }
+
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: Desklet Stylsheet
+  
+  This is the desklet size. It's larger than tablet, smaller than a large screen...
+  
+  ******************************************************************/
+  .wrap {
+    max-width: 888px;
+    margin: 0 auto; } }
+/*
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: 1000px) {
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: Desktop Stylsheet
+  
+  This is the desktop size. It's larger than an iPad so it will only
+  be seen on the Desktop. 
+  
+  ******************************************************************/
+  .fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 30; } }
+/*
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*/
+@media only screen and (min-width: 1200px) {
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: Super Large Monitor Stylesheet
+  
+  You can add some advanced styles here if you like. This kicks in
+  on larger screens.
+  
+  ******************************************************************/ }
+/*
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: Retina Screens & Devices Stylesheet
+  
+  When handling retina screens you need to make adjustments, especially
+  if you're not using font icons. Here you can add them in one neat
+  place.
+  
+  ******************************************************************/
+  /* 
+  
+  EXAMPLE 
+  Let's say you have an image and you need to make sure it looks ok
+  on retina screens. Let's say we have an icon which dimension are
+  24px x 24px. In your regular stylesheets, it would look something
+  like this:
+  
+  .icon {
+  	width: 24px;
+  	height: 24px;
+  	background: url(img/test.png) no-repeat;
+  }
+  
+  For retina screens, we have to make some adjustments, so that image
+  doesn't look blurry. So, taking into account the image above and the
+  dimensions, this is what we would put in our retina stylesheet:
+  
+  .icon {
+  	background: url(img/test@2x.png) no-repeat;
+  	background-size: 24px 24px;
+  }
+  
+  So, you would create the same icon, but at double the resolution, meaning 
+  it would be 48px x 48px. You'd name it the same, but with a @2x at the end
+  (this is pretty standard practice). Set the background image so it matches
+  the original dimensions and you are good to go. 
+  
+  */ }
+/*
+iPHONE 5 MEDIA QUERY
+Want to get fancy for no good reason? Knock yourself out.
+*/
+/*
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*/
+@media print {
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: Print Stylesheet
+  
+  This is the print stylesheet. There's probably not a lot
+  of reasons to edit this stylesheet. If you want to
+  though, go for it.
+  
+  ******************************************************************/
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important; }
+
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline; }
+    a:after, a:visited:after {
+      content: " (" attr(href) ")"; }
+    a abbr[title]:after, a:visited abbr[title]:after {
+      content: " (" attr(title) ")"; }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  tr, img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; }
+
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none; } }

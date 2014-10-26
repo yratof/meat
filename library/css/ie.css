@@ -1,30 +1,54 @@
 /*
-Error: File to import not found or unreadable: breakpoints/phablet.
-       Load paths:
-         /Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss
-         /Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets
-         Sass::Globbing::Importer
-        on line 58 of /Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss/ie.scss
+Error: Undefined mixin 'width'.
+        on line 48 of /Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss, in `width'
+        from line 48 of /Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss
+        from line 59 of /Users/yratof/Desktop/meat-master/library/scss/ie.scss
 
+43: // Sass functions
+44: @import "partials/functions";
+45: 
+46: // Import mixins
+47: @import "partials/mixins";
+48: 
+49: @import "modules/buttons"; // import buttons
+50: @import "modules/forms"; // import buttons
+51: @import "modules/alerts"; // import buttons
+52: @import "modules/animations"; // import Animations
 53: 
-54: @import "partials/ie_grid"; // import grid
-55: 
-56: // import everything inside media queries
-57: @import "breakpoints/mobile";
-58: @import "breakpoints/phablet";
-59: @import "breakpoints/tablet";
-60: @import "breakpoints/desklet";
-61: @import "breakpoints/desktop";
-62: 
-63: 
 
 Backtrace:
-/Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss/ie.scss:58
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:66:in `rescue in import'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:45:in `import'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
+/Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss:48:in `width'
+/Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss:48
+/Users/yratof/Desktop/meat-master/library/scss/ie.scss:59
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `block in with_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `with_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:336:in `visit_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:420:in `map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:315:in `block (2 levels) in visit_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:315:in `map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:315:in `block in visit_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:88:in `block in with_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:88:in `with_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
@@ -54,4 +78,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: breakpoints/phablet.\A        Load paths:\A          /Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss\A          /Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets\A          Sass::Globbing::Importer\A         on line 58 of /Users/yratof/Google Drive/Meat/meat_0.2/meat/library/scss/ie.scss\A \A 53: \A 54: @import \"partials/ie_grid\"; // import grid\A 55: \A 56: // import everything inside media queries\A 57: @import \"breakpoints/mobile\";\A 58: @import \"breakpoints/phablet\";\A 59: @import \"breakpoints/tablet\";\A 60: @import \"breakpoints/desklet\";\A 61: @import \"breakpoints/desktop\";\A 62: \A 63: "; }
+  content: "Error: Undefined mixin 'width'.\A         on line 48 of /Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss, in `width'\A         from line 48 of /Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss\A         from line 59 of /Users/yratof/Desktop/meat-master/library/scss/ie.scss\A \A 43: // Sass functions\A 44: @import \"partials/functions\";\A 45: \A 46: // Import mixins\A 47: @import \"partials/mixins\";\A 48: \A 49: @import \"modules/buttons\"; // import buttons\A 50: @import \"modules/forms\"; // import buttons\A 51: @import \"modules/alerts\"; // import buttons\A 52: @import \"modules/animations\"; // import Animations\A 53: "; }
