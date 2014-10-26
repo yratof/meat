@@ -1,0 +1,67 @@
+/* Colours */
+
+// Primary alert colours
+
+	$alert-yellow:		#eadb33;
+	$alert-red:			#be3333;
+	$alert-green:		#a8c923;
+	$alert-blue:		#209dd6;
+	
+// Newsprint, black and white
+	
+	$black:				#000;
+	$white:				#fff;
+	$text-colour:       #555;
+
+// Primary colours
+	
+	$red:				#ff4338;
+	$yellow:			#f7a800;
+	$green:				#00a23a;
+	$blue:				#00a1be;
+	$purple:			#a261b3;
+	
+	$brand-colour:		$red;
+	$brand-highlight:	$blue;
+	$brand-compliment:	$purple;
+	
+// Links and Anchors
+	
+	$link-color:		$brand-colour;
+	$link-hover:		darken($link-color, 9%);
+	
+// Shades of Grey
+
+	$disabled-grey:     #cfcfcf;
+	$grey:			   	#aaa;
+	$grey-dark:			darken($grey, 13%);
+	$grey-darker:		darken($grey-dark, 13%);
+	$grey-light:		lighten($grey, 13%);
+	$grey-lighter:		lighten($grey-light, 13%);
+	
+//Social Networks
+
+	$twitter:			#00aee7;
+	$facebook:			#0065b2;
+	$google: 			#f75539;
+	
+//Alerts	
+	$warning_text: 		$grey-dark;
+	$error_text: 		$alert-red;
+	$warning_text: 		$grey-dark;
+	$info_text: 		$alert-yellow;
+	$success_text: 		$alert-green;
+
+// Separators
+
+	$hr_border: 		$grey;
+	$menu-border: 		$grey-dark;
+	
+// Headings
+	
+	$headings-color: 	$alert-blue;
+	
+	
+// Gradients
+
+	$love: linear-gradient(to bottom, rgba(218, 69, 63, 0.95) 0px, rgba(255, 99, 164, 0.95) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);

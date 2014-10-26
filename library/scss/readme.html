@@ -1,0 +1,34 @@
+<h1>HOW TO GRID THIS SHIT</h1>
+
+<blockquote><p>We use two files for the grid.</p></blockquote>
+
+<p><code>_gridmath.scss</code> and <code>_grid.scss</code></p>
+
+<hr />
+
+<h2>Gridmath</h2>
+
+<p>This is where you can set up the grid. and by setup, i mean change upto 2 whole options!</p>
+
+<hr />
+
+<p><code>$gutter_em: 1rem !global;</code></p>
+
+<p>The <code>$gutter_em</code> is set to <code>1rem</code> which is the base font size (which is a good thing).
+It&rsquo;s also <code>rem</code> because the math gets fucked up using <code>em</code>.</p>
+
+<hr />
+
+<p><code>$divisor: 12 / $n;</code></p>
+
+<p>This one is how you split your grid. I use <code>12</code> because it&rsquo;s fucking perfect. You can change it to <code>16</code> or something, but you&rsquo;d be a right arsehole.</p>
+
+<hr />
+
+<h2>Grid</h2>
+
+<p>This is where we keep the classes. Though nowadays, I find it easier to do this:</p>
+
+<p><code>@include width(6);</code> which will give you 6 columns. Then you can give it some extra shit like <code>&amp; + .sameClass { margin-left: $gutter_em }</code> which will add the gutter on all items after your first class.</p>
+
+<p>Fucking simple.</p>

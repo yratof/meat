@@ -1,0 +1,26 @@
+/********************************************
+			   G R I D  M A T H
+
+	Math. A bunch of it. This is the math
+	that makes the grid. Math can change
+	in here to completely change the whole
+	layout of your site. 
+			  
+********************************************/
+
+$gutter: 100% / 36.2 !global;
+$gutter_em: 1rem !global; // This needs to be rem to not mess up margins
+
+// This calculate the gutter
+@function col_width($n, $use_calc: false) {
+	// We'll use a 12 column grid
+	$divisor: 12 / $n;
+	@if ($use_calc) {
+		$gutter_offset: $gutter_em * ($divisor - 1);
+		// We use 99.95% because ie10 isn't great at math.
+		@return calc((99.95% - #{$gutter_offset}) / #{$divisor});
+	}
+	@else {
+		@return (99.95% - $gutter * ($divisor - 1)) / $divisor;
+	}
+}

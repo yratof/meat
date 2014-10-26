@@ -1,0 +1,226 @@
+/*! Made with Meat: http://forsvunnet.github.io/meat/  */
+
+/* Ownership of the stylesheets is global. */
+
+$site-name: Meat !global;
+$author:	Andrew + Eivin !global;
+
+/******************************************************************
+Site Name: #{$site-name}
+Author: #{$author}
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+
+// Android stylesheet for Samsung Notes. The wanker, making me do something like this. OH WELL. THE FUTURE!
+
+/********************************************
+				B O U R B O N
+
+	Note: If you don't know what you
+	do and don't want, just uncomment
+	bourbon below and just enjoy life
+	with a glass of bourbon.
+
+********************************************/
+
+@import 'bourbon';
+
+/*
+	Fucking Samsung tab. Fucking wanker.
+	Can't handle REMS. So do I build a whole
+	stylesheet for it? Or do I leave it?
+	Do I do em instead?
+*/
+
+$px-only: true;
+
+/*********************
+IMPORTING PARTIALS
+These files are needed at the beginning so that we establish all
+our mixins, functions, and variables that we'll be using across
+the whole project.
+*********************/
+
+// Normalize: http://necolas.github.io/normalize.css/
+@import "partials/normalize";
+
+// Sass variables
+@import "partials/variables";
+
+// Sass functions
+@import "partials/functions";
+
+// Breakpoints
+@import "breakpoints"; // These are the sizes for the responsive design
+
+// Typography
+@import "partials/typography";
+
+// Import mixins
+@import "partials/mixins";
+
+
+/*********************
+IMPORTING MODULES
+Modules are reusable blocks or elements we use throughout the project.
+We can break them up as much as we want or just keep them all in one.
+I mean, you can do whatever you want. The world is your oyster. Unless
+you hate oysters, then the world is your peanut butter & jelly sandwich.
+*********************/
+// Animations
+@import "modules/animations";
+
+// alert boxes
+@import "modules/alerts";
+
+// buttons
+@import "modules/buttons";
+
+// forms (inputs & labels)
+@import "modules/forms";
+
+
+
+/*
+BASE (MOBILE) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*/
+
+
+// styles in base.scss
+@import "breakpoints/base";
+
+/*
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*/
+
+@media only screen and (min-width: $mobile){
+
+
+	// styles in 481up.scss
+	@import "breakpoints/mobile";
+	
+} // end of media query
+
+
+/*
+PHABLET
+In between Phone and tablet. Seriously. This covers things from nexus 7 to iphone6+ etc.
+*/
+
+@media only screen and (min-width: $phablet){
+
+	// Mobile Grid - This is a 15px gutter
+	@import "partials/gridmobile";
+	
+	@import "breakpoints/phablet";
+
+} // end of media query
+
+
+
+/*
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: $tablet){
+
+	// styles in 768up.scss
+	@import "breakpoints/tablet";
+	
+	/* Desktop only Plugins.
+		@import "plugins/gravity";
+	*/
+
+} // end of media query
+
+
+
+
+/*
+DESKLET
+In between desktop and tablet
+*/
+
+@media only screen and (min-width: $desklet){
+
+	// Desktop Grid - This is a 30px gutter
+	@import "partials/grid";
+	
+	@import "breakpoints/desklet";
+
+} // end of media query
+
+
+
+/*
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: $desktop){
+
+	// styles in 1030up.scss
+	@import "breakpoints/desktop";
+
+} // end of media query
+
+/*
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*/
+@media only screen and (min-width: $cinema){
+
+	// styles in 1240up.scss
+	@import "breakpoints/cinema";
+
+} // end of media query
+
+/*
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+
+	// styles in 2x.scss
+	@import "breakpoints/2x";
+
+} // end of media query
+
+/*
+iPHONE 5 MEDIA QUERY
+Want to get fancy for no good reason? Knock yourself out.
+*/
+@media (device-height: 35.500em) and (-webkit-min-device-pixel-ratio: 2) {
+  
+  // iPhone 5 or iPod Touch 5th generation styles (you can include your own file if you want)
+  
+}
+
+/*
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*/
+@media print {
+	@import "print/print";
+}

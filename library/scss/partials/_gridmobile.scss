@@ -1,0 +1,99 @@
+/********************************************
+	G R I D  M A T H * MOBILE EDITION *
+
+	Math. A bunch of it. This is the math
+	that makes the grid. Math can change
+	in here to completely change the whole
+	layout of your site. And it's all smaller
+	than the next grid!
+			  
+********************************************/
+
+$gutter: 100% / 36 !global;
+$gutter_em: 0.9375rem !global; // This needs to be rem to not mess up margins
+
+// This calculate the gutter
+@function mob_col_width($n, $use_calc: false) {
+	// We'll use a 12 column grid
+	$divisor: 12 / $n;
+	@if ($use_calc) {
+		$gutter_offset: $gutter_em * ($divisor - 1);
+		// We use 99.95% because ie10 isn't great at math.
+		@return calc((100% - #{$gutter_offset}) / #{$divisor});
+	}
+	@else {
+		@return (100% - $gutter * ($divisor - 1)) / $divisor;
+	}
+}
+
+
+// Each number here becomes a grid: onecol, twocol etc. 
+$grids: one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve !global;
+$i: 1 !global;
+@each $grid in $grids {
+	.#{$grid}col {
+		width: mob_col_width( $i );
+		width: mob_col_width( $i, true );
+	}
+	$i: $i + 1 !global;
+}
+
+
+// This then collates these classes into one class to apply the gutter
+$classes: () !global;
+@each $grid in $grids {
+    $classes: join($classes, unquote(".#{$grid}col"), comma) !global;
+}
+
+#{$classes}, .fifthcol, .threefifth{
+  position: relative;
+  float: left;
+  margin-left: $gutter;
+  margin-left: calc(#{$gutter_em} * 1);
+}
+
+%grid{
+  position: relative;
+  float: left;
+  margin-left: $gutter;
+  margin-left: calc(#{$gutter_em} * 1);
+}
+
+.first {
+  margin-left: 0;
+}
+
+.last {
+  float: right;
+}
+
+
+// Extra Gutters
+
+.gutter-top{
+	margin-top: $gutter;
+	margin-top: calc(#{$gutter_em} * 1);
+}
+
+.gutter-bottom{
+	margin-bottom: $gutter;
+	margin-bottom: calc(#{$gutter_em} * 1);
+}
+
+// No margin grid
+
+.third, .quarter, .half {
+	float: left;
+}
+
+.third {
+    width: 33.33333333333%;
+}
+
+.quarter {
+	width: 25%;
+}
+
+.half {
+	width: 50%;
+}

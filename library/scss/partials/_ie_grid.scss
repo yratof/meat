@@ -1,0 +1,122 @@
+/******************************************************************
+Site Name: #{$site-name}
+Author: #{$author}
+
+Stylesheet: IE Grid Styles
+
+Since the example grid is based on media queries, so rather than
+setup some js library that would make IE8 and below understand
+media queries, let's just add some styles that serves a fixed grid.
+
+Again, if you want to roll your own, just remove this junk and put
+whatever you use in here.
+
+******************************************************************/
+
+$gutter: 100% / 36.2 !global;
+$gutter_em: 1rem !global; // This needs to be rem to not mess up margins
+
+// This calculate the gutter
+@function col_width($n, $use_calc: false) {
+	// We'll use a 12 column grid
+	$divisor: 12 / $n;
+	@if ($use_calc) {
+		$gutter_offset: $gutter_em * ($divisor - 1);
+		// We use 99.95% because ie10 isn't great at math.
+		@return calc((99.95% - #{$gutter_offset}) / #{$divisor});
+	}
+	@else {
+		@return (99.95% - $gutter * ($divisor - 1)) / $divisor;
+	}
+}
+
+// Each number here becomes a grid: onecol, twocol etc. 
+$grids: one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve !global;
+$i: 1 !global;
+@each $grid in $grids {
+	.#{$grid}col {
+		width: col_width( $i );
+		width: col_width( $i, true );
+	}
+	
+	%#{$grid}col {
+		width: col_width( $i );
+		width: col_width( $i, true );
+	}
+	$i: $i + 1 !global;
+}
+
+/*	//This is how i've been using responsive widths, you're able to overwrite these per stylesheet
+
+	article {
+		width: col_width(6);
+		width: col_width(6, true);
+		
+		float: left;
+		margin-left: $gutter;
+		margin-left: calc(#{$gutter_em} * 1);	
+			
+		&.first{ margin-left: 0;}
+		&.last{ float: right;}
+	}
+*/
+
+
+// This then collates these classes into one class to apply the gutter
+$classes: () !global;
+@each $grid in $grids {
+    $classes: join($classes, unquote(".#{$grid}col"), comma) !global;
+}
+
+#{$classes}, .fifthcol, .threefifth{
+  position: relative;
+  float: left;
+  margin-left: $gutter;
+  margin-left: calc(#{$gutter_em} * 1);
+}
+
+%grid{
+  position: relative;
+  float: left;
+  margin-left: $gutter;
+  margin-left: calc(#{$gutter_em} * 1);
+}
+
+.first {
+  margin-left: 0;
+}
+
+.last {
+  float: right;
+}
+
+
+// Extra Gutters
+
+.gutter-top{
+	margin-top: $gutter;
+	margin-top: calc(#{$gutter_em} * 1);
+}
+
+.gutter-bottom{
+	margin-bottom: $gutter;
+	margin-bottom: calc(#{$gutter_em} * 1);
+}
+
+// No margin grid
+
+.third, .quarter, .half {
+	float: left;
+}
+
+.third {
+    width: 33.33333333333%;
+}
+
+.quarter {
+	width: 25%;
+}
+
+.half {
+	width: 50%;
+}

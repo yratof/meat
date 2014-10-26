@@ -1,0 +1,16 @@
+/******************************************************************
+Site Name: #{$site-name}
+Author: #{$author}
+
+Stylesheet: Desklet Stylsheet
+
+This is the desklet size. It's larger than tablet, smaller than a large screen...
+
+******************************************************************/
+
+$wrap: $desklet;
+
+.wrap {
+	max-width: $wrap;
+	margin: 0 auto;
+}
