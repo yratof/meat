@@ -51,6 +51,10 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 //require_once('library/woocommerce.php');
 
 
+// Include some much needed WooCommerce functions
+// require_once('library/skin.php');
+
+
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
