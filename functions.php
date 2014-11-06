@@ -51,7 +51,7 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 //require_once('library/woocommerce.php');
 
 
-// Include some much needed WooCommerce functions
+// Custom Theme Builder
 // require_once('library/skin.php');
 
 
@@ -60,8 +60,8 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 
 // Thumbnail sizes
 // Per theme basis, enable if wanted
- add_image_size( 'meat-600', 600, 9999, true );
-add_image_size( 'meat-300', 300, 9999, true );
+add_image_size( 'meat-featured', 1600, 500, true );
+add_image_size( 'meat-square', 800, 800, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -75,8 +75,8 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'meat-600' => __('600px by 150px'),
-        'meat-300' => __('300px by 100px'),
+        'meat-featured' => __('1600px by 500px'),
+        'meat-square' => __('800px by 800px'),
     ) );
 }
 
@@ -179,33 +179,5 @@ function bones_wpsearch($form) {
 	</form>';
 	return $form;
 } // don't remove this bracket!
-
-
-// REMOVE UPDATE NOTICES FOR NONE-ADMINS
-remove_action( 'admin_notices', 'update_nag', 3 );
-remove_action( 'network_admin_notices', 'update_nag', 3 );
-function my_custom_update_nag() {
-        if ( is_multisite() && !current_user_can('update_core') )
-                return false;
-
-        global $pagenow;
-
-        if ( 'update-core.php' == $pagenow )
-                return;
-
-        $cur = get_preferred_from_update_core();
-
-        if ( ! isset( $cur->response ) || $cur->response != 'upgrade' )
-                return false;
-
-        if ( current_user_can('update_core') ) {
-                $msg = sprintf( __('<a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> is available! <a href="%2$s">Please update now</a>.'), $cur->current, network_admin_url( 'update-core.php' ) );
-        } else {
-                $msg = sprintf( __('<a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> is available! Please contact <a href="mailto:andrew@fullphatdesign.co.uk?subject='.get_bloginfo('name').' Update Wordpress: '.get_bloginfo('url').'">Full Phat Design</a>.'), $cur->current );
-        }
-        echo "<div class='update-nag'>$msg</div>";
-}
-add_action( 'admin_notices', 'my_custom_update_nag', 3 );
-add_action( 'network_admin_notices', 'my_custom_update_nag', 3 );
 
 ?>
