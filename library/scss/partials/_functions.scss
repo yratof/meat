@@ -107,8 +107,9 @@ $pxBase : 16; /* 1 */
 
             $unit : unit($value); /* 6 */
             $val  : parseInt($value); /* 2 */
-
-			@if $value == 0 or type-of($value) != "number" {
+			
+			/* 11.11.14 - Changed from $value to $val for sass depreciation */
+			@if $val == 0 or type-of($value) != "number" {
 				$list: append($list, $value);
 			}
 			
