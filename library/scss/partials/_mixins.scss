@@ -125,6 +125,14 @@ $gutter: 7px;
 	    }
 	}
 
+// What about the times when you need to remove margins from things
+
+$margins: top, bottom, left, right;
+@each $margin in $margins {
+    .no-margin-#{$margin}{
+		margin-#{$margin}: 0;
+    }
+}
 
 
 
@@ -274,13 +282,13 @@ $double-octave:    4;
 
 @mixin modular($largest){
 	$ratio: $minor-second;
-	font-size: modular-scale($largest,  -6, $ratio);
-	@media(min-width: $mobile){ 	font-size: modular-scale($largest,  -5, $ratio); };
-	@media(min-width: $phablet){ 	font-size: modular-scale($largest,  -4, $ratio); };
-	@media(min-width: $tablet){ 	font-size: modular-scale($largest,  -3, $ratio); };
-	@media(min-width: $desklet){ 	font-size: modular-scale($largest,  -2, $ratio); };
-	@media(min-width: $desktop){ 	font-size: modular-scale($largest,  -1, $ratio); };
-	@media(min-width: $cinema){ 	font-size: $largest; };
+									@include font-size(modular-scale($largest,  -6, $ratio));
+	@media(min-width: $mobile){ 	@include font-size(modular-scale($largest,  -5, $ratio)); }
+	@media(min-width: $phablet){ 	@include font-size(modular-scale($largest,  -4, $ratio)); }
+	@media(min-width: $tablet){ 	@include font-size(modular-scale($largest,  -3, $ratio)); }
+	@media(min-width: $desklet){ 	@include font-size(modular-scale($largest,  -2, $ratio)); }
+	@media(min-width: $desktop){ 	@include font-size(modular-scale($largest,  -1, $ratio)); }
+	@media(min-width: $cinema){ 	@include font-size($largest); }
 }
 
 
