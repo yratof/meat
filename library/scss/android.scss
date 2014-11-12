@@ -120,9 +120,6 @@ In between Phone and tablet. Seriously. This covers things from nexus 7 to iphon
 */
 
 @media only screen and (min-width: $phablet){
-
-	// Mobile Grid - This is a 15px gutter
-	@import "partials/gridmobile";
 	
 	@import "breakpoints/phablet";
 
@@ -138,6 +135,9 @@ you can add resource intensive styles.
 */
 @media only screen and (min-width: $tablet){
 
+	// Desktop Grid - This is a 30px gutter
+	@import "partials/grid";
+	
 	// styles in 768up.scss
 	@import "breakpoints/tablet";
 	
@@ -157,8 +157,7 @@ In between desktop and tablet
 
 @media only screen and (min-width: $desklet){
 
-	// Desktop Grid - This is a 30px gutter
-	@import "partials/grid";
+
 	
 	@import "breakpoints/desklet";
 
