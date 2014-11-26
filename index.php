@@ -34,15 +34,29 @@
 
 							<?php endwhile; ?>
 
-									<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
-											<?php bones_page_navi(); ?>
+									<?php if ( function_exists( 'meat_pagination_number' ) ) { ?>
+											<?php meat_pagination_number(); ?>
 									<?php } else { ?>
-											<nav class="wp-prev-next">
-													<ul class="clearfix">
-														<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
-														<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
-													</ul>
-											</nav>
+										<nav class="pagination">
+											<?php if ( get_adjacent_post(false, '', true) ) { 
+													previous_post_link('%link', '&larr; Previous Post');
+												} else { 
+												    $first = new WP_Query('posts_per_page=1&order=DESC'); $first->the_post();
+												    	echo '<a href="' . get_permalink() . '">&larr; Previous Post</a>';
+												  	wp_reset_query();
+												}; ?>
+												
+												<a class="button pink" href="/news">Back to News</a>
+																			
+												<?php if ( get_adjacent_post(false, '', false) ) { 
+													next_post_link('%link', 'Next Post &rarr;');
+												} else { 
+													$last = new WP_Query('posts_per_page=1&order=ASC'); $last->the_post();
+												    	echo '<a href="' . get_permalink() . '">Next Post &rarr;</a>';
+												    wp_reset_query();
+												}; 
+											?>
+										</nav>
 									<?php } ?>
 
 							<?php else : ?>

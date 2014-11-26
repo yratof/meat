@@ -30,5 +30,4 @@ require_once( 'woocommerce_extras/clean-tabs.php' ); 	// Removes Tabs on product
 	
 	This will create a purchase trap that stops the user from getting distracted and leaving the site. It's the same practise that amazon have taken up. 
 	
-	
 */
