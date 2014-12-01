@@ -496,6 +496,7 @@ Source: http://davidwalsh.name/rem-px-browser-function-sass
  
 */
 /* 1 */
+/* This solves an issue with 1px == 1 and 1em == 1, thus 1px == 1em */
 /************************
 	SQUARE ROOTS
 *************************/
@@ -748,6 +749,18 @@ CLEARFIXIN'
     padding-bottom: 64px;
     padding-bottom: 4rem;
     padding-top: 0; }
+
+.no-margin-top {
+  margin-top: 0; }
+
+.no-margin-bottom {
+  margin-bottom: 0; }
+
+.no-margin-left {
+  margin-left: 0; }
+
+.no-margin-right {
+  margin-right: 0; }
 
 /*********************
 
@@ -1576,130 +1589,172 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300; }
 
 h1, .h1 {
-  font-size: 1.4908576024; }
+  font-size: 23.8537216381px;
+  font-size: 1.4908576024rem; }
   @media (min-width: 481.008px) {
     h1, .h1 {
-      font-size: 1.5907450617; } }
+      font-size: 25.4519209878px;
+      font-size: 1.5907450617rem; } }
   @media (min-width: 592px) {
     h1, .h1 {
-      font-size: 1.6973249809; } }
+      font-size: 27.157199694px;
+      font-size: 1.6973249809rem; } }
   @media (min-width: 768px) {
     h1, .h1 {
-      font-size: 1.8110457546; } }
+      font-size: 28.9767320735px;
+      font-size: 1.8110457546rem; } }
   @media (min-width: 888px) {
     h1, .h1 {
-      font-size: 1.9323858202; } }
+      font-size: 30.9181731224px;
+      font-size: 1.9323858202rem; } }
   @media (min-width: 1000px) {
     h1, .h1 {
-      font-size: 2.0618556701; } }
+      font-size: 32.9896907216px;
+      font-size: 2.0618556701rem; } }
   @media (min-width: 1200px) {
     h1, .h1 {
-      font-size: 2.2; } }
+      font-size: 35.2px;
+      font-size: 2.2rem; } }
 
 h2, .h2 {
-  font-size: 1.2706172748; }
+  font-size: 20.3298763961px;
+  font-size: 1.2706172748rem; }
   @media (min-width: 481.008px) {
     h2, .h2 {
-      font-size: 1.3557486322; } }
+      font-size: 21.6919781146px;
+      font-size: 1.3557486322rem; } }
   @media (min-width: 592px) {
     h2, .h2 {
-      font-size: 1.4465837905; } }
+      font-size: 23.1453406483px;
+      font-size: 1.4465837905rem; } }
   @media (min-width: 768px) {
     h2, .h2 {
-      font-size: 1.5435049045; } }
+      font-size: 24.6960784717px;
+      font-size: 1.5435049045rem; } }
   @media (min-width: 888px) {
     h2, .h2 {
-      font-size: 1.6469197331; } }
+      font-size: 26.3507157294px;
+      font-size: 1.6469197331rem; } }
   @media (min-width: 1000px) {
     h2, .h2 {
-      font-size: 1.7572633552; } }
+      font-size: 28.1162136832px;
+      font-size: 1.7572633552rem; } }
   @media (min-width: 1200px) {
     h2, .h2 {
-      font-size: 1.875; } }
+      font-size: 30px;
+      font-size: 1.875rem; } }
 
 h3, .h3 {
-  font-size: 1.0164938198; }
+  font-size: 16.2639011169px;
+  font-size: 1.0164938198rem; }
   @media (min-width: 481.008px) {
     h3, .h3 {
-      font-size: 1.0845989057; } }
+      font-size: 17.3535824917px;
+      font-size: 1.0845989057rem; } }
   @media (min-width: 592px) {
     h3, .h3 {
-      font-size: 1.1572670324; } }
+      font-size: 18.5162725187px;
+      font-size: 1.1572670324rem; } }
   @media (min-width: 768px) {
     h3, .h3 {
-      font-size: 1.2348039236; } }
+      font-size: 19.7568627774px;
+      font-size: 1.2348039236rem; } }
   @media (min-width: 888px) {
     h3, .h3 {
-      font-size: 1.3175357865; } }
+      font-size: 21.0805725835px;
+      font-size: 1.3175357865rem; } }
   @media (min-width: 1000px) {
     h3, .h3 {
-      font-size: 1.4058106842; } }
+      font-size: 22.4929709466px;
+      font-size: 1.4058106842rem; } }
   @media (min-width: 1200px) {
     h3, .h3 {
-      font-size: 1.5; } }
+      font-size: 24px;
+      font-size: 1.5rem; } }
 
 h4, .h4 {
-  font-size: 0.7623703649; }
+  font-size: 12.1979258377px;
+  font-size: 0.7623703649rem; }
   @media (min-width: 481.008px) {
     h4, .h4 {
-      font-size: 0.8134491793; } }
+      font-size: 13.0151868688px;
+      font-size: 0.8134491793rem; } }
   @media (min-width: 592px) {
     h4, .h4 {
-      font-size: 0.8679502743; } }
+      font-size: 13.887204389px;
+      font-size: 0.8679502743rem; } }
   @media (min-width: 768px) {
     h4, .h4 {
-      font-size: 0.9261029427; } }
+      font-size: 14.817647083px;
+      font-size: 0.9261029427rem; } }
   @media (min-width: 888px) {
     h4, .h4 {
-      font-size: 0.9881518399; } }
+      font-size: 15.8104294376px;
+      font-size: 0.9881518399rem; } }
   @media (min-width: 1000px) {
     h4, .h4 {
-      font-size: 1.0543580131; } }
+      font-size: 16.8697282099px;
+      font-size: 1.0543580131rem; } }
   @media (min-width: 1200px) {
     h4, .h4 {
-      font-size: 1.125; } }
+      font-size: 18px;
+      font-size: 1.125rem; } }
 
 h5, .h5 {
-  font-size: 0.6776625465; }
+  font-size: 10.8426007446px;
+  font-size: 0.6776625465rem; }
   @media (min-width: 481.008px) {
     h5, .h5 {
-      font-size: 0.7230659372; } }
+      font-size: 11.5690549945px;
+      font-size: 0.7230659372rem; } }
   @media (min-width: 592px) {
     h5, .h5 {
-      font-size: 0.7715113549; } }
+      font-size: 12.3441816791px;
+      font-size: 0.7715113549rem; } }
   @media (min-width: 768px) {
     h5, .h5 {
-      font-size: 0.8232026157; } }
+      font-size: 13.1712418516px;
+      font-size: 0.8232026157rem; } }
   @media (min-width: 888px) {
     h5, .h5 {
-      font-size: 0.878357191; } }
+      font-size: 14.0537150557px;
+      font-size: 0.878357191rem; } }
   @media (min-width: 1000px) {
     h5, .h5 {
-      font-size: 0.9372071228; } }
+      font-size: 14.9953139644px;
+      font-size: 0.9372071228rem; } }
   @media (min-width: 1200px) {
     h5, .h5 {
-      font-size: 1; } }
+      font-size: 16px;
+      font-size: 1rem; } }
 
 h6, .h6 {
-  font-size: 0.5760131646; }
+  font-size: 9.2162106329px;
+  font-size: 0.5760131646rem; }
   @media (min-width: 481.008px) {
     h6, .h6 {
-      font-size: 0.6146060466; } }
+      font-size: 9.8336967453px;
+      font-size: 0.6146060466rem; } }
   @media (min-width: 592px) {
     h6, .h6 {
-      font-size: 0.6557846517; } }
+      font-size: 10.4925544272px;
+      font-size: 0.6557846517rem; } }
   @media (min-width: 768px) {
     h6, .h6 {
-      font-size: 0.6997222234; } }
+      font-size: 11.1955555739px;
+      font-size: 0.6997222234rem; } }
   @media (min-width: 888px) {
     h6, .h6 {
-      font-size: 0.7466036123; } }
+      font-size: 11.9456577973px;
+      font-size: 0.7466036123rem; } }
   @media (min-width: 1000px) {
     h6, .h6 {
-      font-size: 0.7966260544; } }
+      font-size: 12.7460168697px;
+      font-size: 0.7966260544rem; } }
   @media (min-width: 1200px) {
     h6, .h6 {
-      font-size: 0.85; } }
+      font-size: 13.6px;
+      font-size: 0.85rem; } }
 
 /*********************
 TEXT BODY STYLES
@@ -2107,96 +2162,6 @@ PHABLET
 In between Phone and tablet. Seriously. This covers things from nexus 7 to iphone6+ etc.
 */
 @media only screen and (min-width: 592px) {
-  /********************************************
-  	G R I D  M A T H * MOBILE EDITION *
-  
-  	Math. A bunch of it. This is the math
-  	that makes the grid. Math can change
-  	in here to completely change the whole
-  	layout of your site. And it's all smaller
-  	than the next grid!
-  			  
-  ********************************************/
-  .onecol {
-    width: 5.787037037%;
-    width: calc((100% - 10.3125rem) / 12); }
-
-  .twocol {
-    width: 14.3518518519%;
-    width: calc((100% - 4.6875rem) / 6); }
-
-  .threecol {
-    width: 22.9166666667%;
-    width: calc((100% - 2.8125rem) / 4); }
-
-  .fourcol {
-    width: 31.4814814815%;
-    width: calc((100% - 1.875rem) / 3); }
-
-  .fivecol {
-    width: 40.0462962963%;
-    width: calc((100% - 1.3125rem) / 2.4); }
-
-  .sixcol {
-    width: 48.6111111111%;
-    width: calc((100% - 0.9375rem) / 2); }
-
-  .sevencol {
-    width: 57.1759259259%;
-    width: calc((100% - 0.6696428571rem) / 1.7142857143); }
-
-  .eightcol {
-    width: 65.7407407407%;
-    width: calc((100% - 0.46875rem) / 1.5); }
-
-  .ninecol {
-    width: 74.3055555556%;
-    width: calc((100% - 0.3125rem) / 1.3333333333); }
-
-  .tencol {
-    width: 82.8703703704%;
-    width: calc((100% - 0.1875rem) / 1.2); }
-
-  .elevencol {
-    width: 91.4351851852%;
-    width: calc((100% - 0.0852272727rem) / 1.0909090909); }
-
-  .twelvecol {
-    width: 100%;
-    width: calc((100% - 0rem) / 1); }
-
-  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol, .fifthcol, .threefifth {
-    position: relative;
-    float: left;
-    margin-left: 2.7777777778%;
-    margin-left: calc(0.9375rem * 1); }
-
-  .first {
-    margin-left: 0; }
-
-  .last {
-    float: right; }
-
-  .gutter-top {
-    margin-top: 2.7777777778%;
-    margin-top: calc(0.9375rem * 1); }
-
-  .gutter-bottom {
-    margin-bottom: 2.7777777778%;
-    margin-bottom: calc(0.9375rem * 1); }
-
-  .third, .quarter, .half {
-    float: left; }
-
-  .third {
-    width: 33.33333333333%; }
-
-  .quarter {
-    width: 25%; }
-
-  .half {
-    width: 50%; }
-
   /******************************************************************
   Site Name: Meat
   Author: AndrewEivin
@@ -2215,188 +2180,6 @@ in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 */
 @media only screen and (min-width: 768px) {
-  /******************************************************************
-  Site Name: Meat
-  Author: AndrewEivin
-  
-  Stylesheet: Tablet & Small Desktop Stylesheet
-  
-  Here's where you can start getting into the good stuff.
-  This size will work on iPads, other tablets, and desktops.
-  So you can start working with more styles, background images,
-  and other resources. You'll also notice the grid starts to
-  come into play. Have fun!
-  
-  ******************************************************************/
-  /*********************
-  GENERAL STYLES
-  *********************/
-  body {
-    font-size: 100%;
-    line-height: 1.5; }
-
-  /*********************
-  LAYOUT & GRID STYLES
-  *********************/
-  .wrap {
-    max-width: 768px; }
-
-  /*********************
-  HEADER STYLES
-  *********************/
-  /*********************
-  LOGO STYLES
-  *********************/
-  #logo {
-    width: 22.9041666667%;
-    width: calc((99.95% - 2.8125rem) / 4);
-    text-align: left;
-    float: left;
-    margin-left: 0; }
-    #logo img {
-      margin: 0em auto;
-      max-width: 100%;
-      position: relative;
-      z-index: 20; }
-
-  /*********************
-  NAVIGATION STYLES
-  *********************/
-  .mobile-only {
-    display: none;
-    visibility: hidden; }
-
-  .nav {
-    text-align: center;
-    margin: 16px 0;
-    vertical-align: middle;
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
-    .js .nav {
-      display: block;
-      top: auto;
-      right: auto;
-      left: auto;
-      max-height: 100%; }
-    .nav li {
-      display: inline-block;
-      position: relative;
-      /*
-      you can use hover styles here even though this size
-      has the possibility of being a mobile device.
-      */
-      /*
-      plan your menus and drop-downs wisely.
-      */
-      /* showing sub-menus */ }
-      .nav li:hover, .nav li:focus {
-        color: #fff;
-        background: #ff4338; }
-        .nav li:hover a, .nav li:focus a {
-          color: #fff; }
-      .nav li a {
-        border-bottom: 0;
-        color: #555;
-        font-size: 16px;
-        font-size: 1rem;
-        padding: 8px 16px;
-        font-weight: 400; }
-        .nav li a:hover, .nav li a:focus {
-          color: #fff;
-          background: #ff1305; }
-      .js .nav li ul.show.sub-menu, .js .nav li ul.show.children,
-      .nav li ul.sub-menu,
-      .nav li ul.children {
-        margin-top: 0;
-        border-top: 0;
-        position: absolute;
-        display: none;
-        z-index: 15;
-        text-align: left;
-        color: #fff;
-        background: #ff4338;
-        /* highlight sub-menu current page */ }
-        .js .nav li ul.show.sub-menu li, .js .nav li ul.show.children li,
-        .nav li ul.sub-menu li,
-        .nav li ul.children li {
-          /*
-          if you need to go deeper, go nuts
-          just remember deeper menus suck
-          for usability. k, bai.
-          */ }
-          .js .nav li ul.show.sub-menu li:hover a, .js .nav li ul.show.sub-menu li:focus a, .js .nav li ul.show.children li:hover a, .js .nav li ul.show.children li:focus a,
-          .nav li ul.sub-menu li:hover a,
-          .nav li ul.sub-menu li:focus a,
-          .nav li ul.children li:hover a,
-          .nav li ul.children li:focus a {
-            background: #ff1305;
-            border-radius: 2px; }
-          .js .nav li ul.show.sub-menu li a, .js .nav li ul.show.children li a,
-          .nav li ul.sub-menu li a,
-          .nav li ul.children li a {
-            font-size: 13.6px;
-            font-size: 0.85rem;
-            border-right: 0;
-            display: block;
-            width: 288px;
-            color: #fff; }
-          .js .nav li ul.show.sub-menu li:last-child a, .js .nav li ul.show.children li:last-child a,
-          .nav li ul.sub-menu li:last-child a,
-          .nav li ul.children li:last-child a {
-            border-bottom: 0; }
-      .nav li:hover ul {
-        top: auto;
-        display: block; }
-
-  /* end .nav */
-  /*********************
-  SIDEBARS & ASIDES
-  *********************/
-  .widget ul li {
-    margin-bottom: 12px;
-    /* deep nesting */ }
-    .widget ul li ul {
-      margin-top: 12px;
-      padding-left: 16px; }
-
-  /*********************
-  FOOTER STYLES
-  *********************/
-  /*
-  you'll probably need to do quite a bit
-  of overriding here if you styled them for
-  mobile. Make sure to double check these!
-  */
-  .footer {
-    text-align: left; }
-    .footer .widget {
-      width: 22.9041666667%;
-      width: calc((99.95% - 2.8125rem) / 4); }
-      .footer .widget.first {
-        margin-left: 0; }
-      .footer .widget.last {
-        float: right; }
-      .footer .widget:first-child {
-        margin-left: 0; }
-      .footer .widget ul {
-        padding: 0;
-        margin: 0; }
-        .footer .widget ul li {
-          padding: 0;
-          margin: 0; }
-    .footer a:hover {
-      color: #ff4338;
-      text-decoration: underline; }
-
-  /* Desktop only Plugins.
-  	@import "plugins/gravity";
-  */ }
-/*
-DESKLET
-In between desktop and tablet
-*/
-@media only screen and (min-width: 888px) {
   /******************************************************************
   Site Name: Meat
   Author: AndrewEivin
@@ -2583,6 +2366,188 @@ In between desktop and tablet
   .half {
     width: 50%; }
 
+  /******************************************************************
+  Site Name: Meat
+  Author: AndrewEivin
+  
+  Stylesheet: Tablet & Small Desktop Stylesheet
+  
+  Here's where you can start getting into the good stuff.
+  This size will work on iPads, other tablets, and desktops.
+  So you can start working with more styles, background images,
+  and other resources. You'll also notice the grid starts to
+  come into play. Have fun!
+  
+  ******************************************************************/
+  /*********************
+  GENERAL STYLES
+  *********************/
+  body {
+    font-size: 100%;
+    line-height: 1.5; }
+
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  .wrap {
+    max-width: 768px; }
+
+  /*********************
+  HEADER STYLES
+  *********************/
+  /*********************
+  LOGO STYLES
+  *********************/
+  #logo {
+    width: 22.9156767956%;
+    width: calc((99.95% - 3rem) / 4);
+    text-align: left;
+    float: left;
+    margin-left: 0; }
+    #logo img {
+      margin: 0em auto;
+      max-width: 100%;
+      position: relative;
+      z-index: 20; }
+
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  .mobile-only {
+    display: none;
+    visibility: hidden; }
+
+  .nav {
+    text-align: center;
+    margin: 16px 0;
+    vertical-align: middle;
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .js .nav {
+      display: block;
+      top: auto;
+      right: auto;
+      left: auto;
+      max-height: 100%; }
+    .nav li {
+      display: inline-block;
+      position: relative;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */
+      /*
+      plan your menus and drop-downs wisely.
+      */
+      /* showing sub-menus */ }
+      .nav li:hover, .nav li:focus {
+        color: #fff;
+        background: #ff4338; }
+        .nav li:hover a, .nav li:focus a {
+          color: #fff; }
+      .nav li a {
+        border-bottom: 0;
+        color: #555;
+        font-size: 16px;
+        font-size: 1rem;
+        padding: 8px 16px;
+        font-weight: 400; }
+        .nav li a:hover, .nav li a:focus {
+          color: #fff;
+          background: #ff1305; }
+      .js .nav li ul.show.sub-menu, .js .nav li ul.show.children,
+      .nav li ul.sub-menu,
+      .nav li ul.children {
+        margin-top: 0;
+        border-top: 0;
+        position: absolute;
+        display: none;
+        z-index: 15;
+        text-align: left;
+        color: #fff;
+        background: #ff4338;
+        /* highlight sub-menu current page */ }
+        .js .nav li ul.show.sub-menu li, .js .nav li ul.show.children li,
+        .nav li ul.sub-menu li,
+        .nav li ul.children li {
+          /*
+          if you need to go deeper, go nuts
+          just remember deeper menus suck
+          for usability. k, bai.
+          */ }
+          .js .nav li ul.show.sub-menu li:hover a, .js .nav li ul.show.sub-menu li:focus a, .js .nav li ul.show.children li:hover a, .js .nav li ul.show.children li:focus a,
+          .nav li ul.sub-menu li:hover a,
+          .nav li ul.sub-menu li:focus a,
+          .nav li ul.children li:hover a,
+          .nav li ul.children li:focus a {
+            background: #ff1305;
+            border-radius: 2px; }
+          .js .nav li ul.show.sub-menu li a, .js .nav li ul.show.children li a,
+          .nav li ul.sub-menu li a,
+          .nav li ul.children li a {
+            font-size: 13.6px;
+            font-size: 0.85rem;
+            border-right: 0;
+            display: block;
+            width: 288px;
+            color: #fff; }
+          .js .nav li ul.show.sub-menu li:last-child a, .js .nav li ul.show.children li:last-child a,
+          .nav li ul.sub-menu li:last-child a,
+          .nav li ul.children li:last-child a {
+            border-bottom: 0; }
+      .nav li:hover ul {
+        top: auto;
+        display: block; }
+
+  /* end .nav */
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  .widget ul li {
+    margin-bottom: 12px;
+    /* deep nesting */ }
+    .widget ul li ul {
+      margin-top: 12px;
+      padding-left: 16px; }
+
+  /*********************
+  FOOTER STYLES
+  *********************/
+  /*
+  you'll probably need to do quite a bit
+  of overriding here if you styled them for
+  mobile. Make sure to double check these!
+  */
+  .footer {
+    text-align: left; }
+    .footer .widget {
+      width: 22.9156767956%;
+      width: calc((99.95% - 3rem) / 4); }
+      .footer .widget.first {
+        margin-left: 0; }
+      .footer .widget.last {
+        float: right; }
+      .footer .widget:first-child {
+        margin-left: 0; }
+      .footer .widget ul {
+        padding: 0;
+        margin: 0; }
+        .footer .widget ul li {
+          padding: 0;
+          margin: 0; }
+    .footer a:hover {
+      color: #ff4338;
+      text-decoration: underline; }
+
+  /* Desktop only Plugins.
+  	@import "plugins/gravity";
+  */ }
+/*
+DESKLET
+In between desktop and tablet
+*/
+@media only screen and (min-width: 888px) {
   /******************************************************************
   Site Name: Meat
   Author: AndrewEivin

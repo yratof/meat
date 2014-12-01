@@ -1,8 +1,8 @@
 /*
 Error: Undefined mixin 'width'.
-        on line 48 of /Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss, in `width'
-        from line 48 of /Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss
-        from line 59 of /Users/yratof/Desktop/meat-master/library/scss/ie.scss
+        on line 48 of /Users/fullphatdesign/Desktop/meat/library/scss/breakpoints/_tablet.scss, in `width'
+        from line 48 of /Users/fullphatdesign/Desktop/meat/library/scss/breakpoints/_tablet.scss
+        from line 59 of /Users/fullphatdesign/Desktop/meat/library/scss/ie.scss
 
 43: // Sass functions
 44: @import "partials/functions";
@@ -17,9 +17,9 @@ Error: Undefined mixin 'width'.
 53: 
 
 Backtrace:
-/Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss:48:in `width'
-/Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss:48
-/Users/yratof/Desktop/meat-master/library/scss/ie.scss:59
+/Users/fullphatdesign/Desktop/meat/library/scss/breakpoints/_tablet.scss:48:in `width'
+/Users/fullphatdesign/Desktop/meat/library/scss/breakpoints/_tablet.scss:48
+/Users/fullphatdesign/Desktop/meat/library/scss/ie.scss:59
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `block in with_mixin'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
@@ -78,4 +78,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'width'.\A         on line 48 of /Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss, in `width'\A         from line 48 of /Users/yratof/Desktop/meat-master/library/scss/breakpoints/_tablet.scss\A         from line 59 of /Users/yratof/Desktop/meat-master/library/scss/ie.scss\A \A 43: // Sass functions\A 44: @import \"partials/functions\";\A 45: \A 46: // Import mixins\A 47: @import \"partials/mixins\";\A 48: \A 49: @import \"modules/buttons\"; // import buttons\A 50: @import \"modules/forms\"; // import buttons\A 51: @import \"modules/alerts\"; // import buttons\A 52: @import \"modules/animations\"; // import Animations\A 53: "; }
+  content: "Error: Undefined mixin 'width'.\A         on line 48 of /Users/fullphatdesign/Desktop/meat/library/scss/breakpoints/_tablet.scss, in `width'\A         from line 48 of /Users/fullphatdesign/Desktop/meat/library/scss/breakpoints/_tablet.scss\A         from line 59 of /Users/fullphatdesign/Desktop/meat/library/scss/ie.scss\A \A 43: // Sass functions\A 44: @import \"partials/functions\";\A 45: \A 46: // Import mixins\A 47: @import \"partials/mixins\";\A 48: \A 49: @import \"modules/buttons\"; // import buttons\A 50: @import \"modules/forms\"; // import buttons\A 51: @import \"modules/alerts\"; // import buttons\A 52: @import \"modules/animations\"; // import Animations\A 53: "; }

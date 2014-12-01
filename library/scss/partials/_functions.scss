@@ -99,6 +99,20 @@ $pxBase : 16; /* 1 */
 	@return $n / ($n * 0 + 1); /* 2 */
 }
 
+/* This solves an issue with 1px == 1 and 1em == 1, thus 1px == 1em */
+@function _true-is-equal($one, $two) {
+  @if type-of($one) == number and type-of($two) == number {
+	@if unit($one) == unit($two) {
+	  @return $one == $two;
+	} @else {
+	  @return false;
+	}
+  } @else {
+	@return $one == $two;
+  }
+}
+
+
 @function u($values){ /* 3 */
 
       $list: (); /* 4 */
@@ -109,7 +123,7 @@ $pxBase : 16; /* 1 */
             $val  : parseInt($value); /* 2 */
 			
 			/* 11.11.14 - Changed from $value to $val for sass depreciation */
-			@if $val == 0 or type-of($value) != "number" {
+			@if _true-is-equal($val,0) or type-of($value) != "number" {
 				$list: append($list, $value);
 			}
 			
