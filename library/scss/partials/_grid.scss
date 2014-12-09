@@ -60,15 +60,15 @@ $classes: () !global;
   margin-left: calc(#{$gutter_em} * 1);
 }
 
-
-
-/* Adding an extra mixin to make widths fallbackabler.*/
+/* 
+	This is a simpler way of using widths.
+	Adding an extra mixin to make widths fallbackabler.
+*/
 
 @mixin width($columns){
 	width: col_width($columns);
 	width: col_width($columns, true);
 }
-
 
 
 

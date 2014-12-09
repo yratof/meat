@@ -839,6 +839,110 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 	without including a whole library.
 
 ********************************************/
+/* 
+	Animated Menu Icon. 
+	-------------------
+	It's not a burger, it's a smaller 
+	representation of the way menus 
+	look on a mobile environment 
+	
+	You can turn this off in the meat.js file
+*/
+.animated.clickable {
+  margin: 0;
+  color: #555;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  position: absolute;
+  top: 32px;
+  right: 4%;
+  z-index: 100; }
+  .animated.clickable .menu-icon {
+    margin-top: 0px;
+    padding: 0;
+    -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+    -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+    transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+    .animated.clickable .menu-icon > div {
+      height: 4px;
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      background: #000;
+      -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+      -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+      transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg); }
+      .animated.clickable .menu-icon > div + div {
+        opacity: 1;
+        -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+        -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+        transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg); }
+        .animated.clickable .menu-icon > div + div + div {
+          -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+          -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+          transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+          opacity: 1;
+          position: relative; }
+  .animated.clickable.close {
+    position: fixed;
+    z-index: 150;
+    width: 32px;
+    height: 32px; }
+    .animated.clickable.close .menu-icon {
+      -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+      -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+      transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      position: relative;
+      z-index: 150; }
+      .animated.clickable.close .menu-icon > div {
+        -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+        -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+        transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin: -4px 11px; }
+        .animated.clickable.close .menu-icon > div + div {
+          opacity: 0;
+          -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+          -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+          transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+          .animated.clickable.close .menu-icon > div + div + div {
+            -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+            -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+            transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+            opacity: 1;
+            position: relative; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -2339,7 +2443,10 @@ you can add resource intensive styles.
     margin-left: 2.7624309392%;
     margin-left: calc(1rem * 1); }
 
-  /* Adding an extra mixin to make widths fallbackabler.*/
+  /* 
+  	This is a simpler way of using widths.
+  	Adding an extra mixin to make widths fallbackabler.
+  */
   .first {
     margin-left: 0; }
 

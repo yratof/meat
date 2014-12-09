@@ -90,6 +90,16 @@ $classes: () !global;
   float: right;
 }
 
+/* 
+	This is a simpler way of using widths.
+	Adding an extra mixin to make widths fallbackabler.
+*/
+
+@mixin width($columns){
+	width: col_width($columns);
+	width: col_width($columns, true);
+}
+
 
 // Extra Gutters
 

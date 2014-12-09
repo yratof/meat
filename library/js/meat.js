@@ -102,7 +102,7 @@ jQuery(document).ready(function($) {
 
   // Menu (button) script:
   $('body').addClass('js');
-  var menu_button = $('<p>').addClass('clickable mobile-only'); //.text(window.main_nav_name || ''); <-- This adds the name of the navigation to the nav on mobile
+  var menu_button = $('<p>').addClass('clickable animated mobile-only'); //.text(window.main_nav_name || ''); <-- This adds the name of the navigation to the nav on mobile
   var menu_icon = '<div class="menu-icon"><div></div><div></div><div></div></div>';
   menu_button.append(menu_icon);
   $('.nav').before(menu_button);
@@ -113,6 +113,7 @@ jQuery(document).ready(function($) {
     if (event.which === 1 && sub.length && sub[0].nodeName.toLowerCase() == 'ul') {
       if (this.nodeName.toLowerCase() == 'p' || !sub.hasClass('show')) {
         sub.toggleClass('show');
+        $('.clickable.animated').toggleClass('close');
         return false;
       }
     }

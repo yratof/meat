@@ -11,3 +11,87 @@
 $ease-in-out-quart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
 
 
+/* 
+	Animated Menu Icon. 
+	-------------------
+	It's not a burger, it's a smaller 
+	representation of the way menus 
+	look on a mobile environment 
+	
+	You can turn this off in the meat.js file
+*/
+
+.animated.clickable {
+	margin: 0;
+	color: $text-colour;
+	cursor: pointer;
+	padding: 0;
+	width: u(2rem);
+	position: absolute;
+	top: u(2rem);
+	right: 4%;
+	z-index: 100; // nav .js & .show
+
+	.menu-icon {
+		margin-top: 0px;
+		padding: 0;
+		@include transition(0.5s all $ease-in-out-quart);
+		@include transform(rotate(0deg));
+		
+		> div {
+			height: 4px;
+			width: 100%;
+			margin-top: 0px;
+			margin-bottom: 5px;
+			border-radius: 5px;
+			background: $black;
+			@include transition(0.5s all $ease-in-out-quart);
+		    @include transform(rotate(0deg));
+	
+			& + div {
+			    opacity: 1;
+			    @include transition(0.5s all $ease-in-out-quart);
+			    @include transform(rotate(0deg));
+		
+				& + div {
+					@include transition(0.5s all $ease-in-out-quart);
+				    opacity: 1;
+				    position: relative;
+			    }
+		    }
+		}	
+	}
+
+	&.close{
+		position: fixed;
+		z-index: 150;
+		width: u(2rem);
+		height: u(2rem);
+		
+		// Fuck it, Add an animated icon for when we open the menu
+		.menu-icon{
+			@include transition(0.5s all $ease-in-out-quart);
+			@include transform(rotate(90deg));
+			position: relative;
+			z-index: 150;
+
+			> div {
+				@include transition(0.5s all $ease-in-out-quart);
+			    @include transform(rotate(45deg));
+			    margin: -4px 11px;
+		
+				& + div {
+				    opacity: 0;
+				    @include transition(0.5s all $ease-in-out-quart);
+				    @include transform(rotate(-45deg));
+			
+					& + div {
+						@include transition(0.5s all $ease-in-out-quart);
+					    opacity: 1;
+					    position: relative;
+				    }
+			    }
+			}
+		}
+	}
+}
