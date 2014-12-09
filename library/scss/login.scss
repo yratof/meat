@@ -24,12 +24,17 @@ $brand: #3E454C;
 
 /***********/
 
-// Don't forget to change the link to the background to the right theme
-
 html, body.login {
-	background: url('/wp-content/themes/meat/library/images/background.png') $brand;
+	background-color: $brand;
 }
 
+
+body.login {
+	// Gorgeous Background Image.	
+	background-image: url('https://unsplash.it/1440/1024?random');
+	background-size: 100% auto;
+	background-size: cover;
+}
 
 #login {} /* the form box */
 

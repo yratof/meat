@@ -16,10 +16,13 @@ http://codex.wordpress.org/Creating_Admin_Themes
 VARIABLES
 ***********/
 /***********/
-/* line 29, ../scss/login.scss */
 html, body.login {
-  background: url("/wp-content/themes/meat/library/images/background.png") #3e454c;
-}
+  background-color: #3E454C; }
+
+body.login {
+  background-image: url("https://unsplash.it/1440/1024?random");
+  background-size: 100% auto;
+  background-size: cover; }
 
 /* the form box */
 /*
@@ -27,7 +30,6 @@ This is the Wordpress logo in the admin area.
 You'll have to load your own images and mess
 with the width and height.
 */
-/* line 41, ../scss/login.scss */
 .login h1 a {
   background: url("../images/login-logo.png") no-repeat top center;
   /* make sure to replace this! */
@@ -36,10 +38,8 @@ with the width and height.
   text-indent: -9999px;
   overflow: hidden;
   padding-bottom: 0;
-  display: block;
-}
+  display: block; }
 
-/* line 51, ../scss/login.scss */
 form {
   margin-left: 8px;
   padding: 26px 24px 46px;
@@ -47,10 +47,8 @@ form {
   background: white;
   border: 1px solid #E5E5E5;
   border-radius: 3px;
-  box-shadow: none;
-}
+  box-shadow: none; }
 
-/* line 61, ../scss/login.scss */
 body form .input {
   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
   font-weight: 200;
@@ -63,36 +61,25 @@ body form .input {
   border: 1px solid #E5E5E5;
   background: #FBFBFB;
   outline: none;
-  box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2);
-}
+  box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2); }
 
-/* line 76, ../scss/login.scss */
 .login #nav, .login #backtoblog {
-  text-align: center;
-}
-/* line 78, ../scss/login.scss */
-.login #nav a, .login #backtoblog a {
-  color: white;
-}
+  text-align: center; }
+  .login #nav a, .login #backtoblog a {
+    color: white; }
 
-/* line 83, ../scss/login.scss */
 .wp-core-ui .button-primary {
-  background: #3e454c;
+  background: #3E454C;
   border-color: #101214;
-  box-shadow: 0 1px 0 rgba(62, 69, 76, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
-}
-/* line 88, ../scss/login.scss */
-.wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:active {
-  background: #272c30;
-  border-color: black;
-  box-shadow: 0 1px 0 rgba(108, 120, 132, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
-}
-/* line 95, ../scss/login.scss */
-.wp-core-ui .button-primary .active:hover, .wp-core-ui .button-primary .active:focus {
-  background: #555e68;
-  border-color: #86929d;
-  box-shadow: 0 1px 0 rgba(108, 120, 132, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
-}
+  box-shadow: 0 1px 0 rgba(62, 69, 76, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
+  .wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:active {
+    background: #272c30;
+    border-color: black;
+    box-shadow: 0 1px 0 rgba(108, 120, 132, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
+  .wp-core-ui .button-primary .active:hover, .wp-core-ui .button-primary .active:focus {
+    background: #555e68;
+    border-color: #86929d;
+    box-shadow: 0 1px 0 rgba(108, 120, 132, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
 
 /*
 You'll have to override some of the default styles
