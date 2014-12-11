@@ -657,14 +657,21 @@ CLEARFIXIN'
   .clearfix:after {
     clear: both; }
 
+.relative {
+  position: relative; }
+
 .vertical {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%); }
+  .vertical.horizontal {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; }
 
 /* This mixin will help you nest mediaqueries easier.
 
@@ -1765,7 +1772,7 @@ NAVIGATION STYLES
   visibility: hidden; }
 
 .nav {
-  text-align: center;
+  text-align: right;
   margin: 16px 0;
   vertical-align: middle;
   /* end .menu ul li */
@@ -1897,8 +1904,7 @@ This is the desklet size. It's larger than tablet, smaller than a large screen..
 
 ******************************************************************/
 .wrap {
-  max-width: 888px;
-  margin: 0 auto; }
+  max-width: 888px; }
 
 /******************************************************************
 Site Name: Meat
@@ -1910,11 +1916,8 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
-.fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 30; }
+.wrap {
+  max-width: 1000px; }
 
 /*
 you can call the larger styles if you want, but there's really no need

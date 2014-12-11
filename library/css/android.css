@@ -671,14 +671,21 @@ CLEARFIXIN'
   .clearfix:after {
     clear: both; }
 
+.relative {
+  position: relative; }
+
 .vertical {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%); }
+  .vertical.horizontal {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; }
 
 /* This mixin will help you nest mediaqueries easier.
 
@@ -1676,6 +1683,51 @@ GENERAL STYLES
   width: NaN%;
   width: calc((99.95% - Infinityrem) / Infinity); }
 
+/* 
+	Experimental feature
+	--------------------
+	
+	Simple Columns. Sassy, sassy resonsive columns.
+	
+*/
+.columns {
+  letter-spacing: -0.31em;
+  /* webkit */
+  letter-spacing: -0.31rem;
+  /* webkit */
+  *letter-spacing: normal;
+  /* reset IE < 8 */
+  word-spacing: -0.43em;
+  /* IE < 8 && gecko */
+  word-spacing: -0.43rem;
+  /* IE < 8 && gecko */ }
+  .columns > * {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    /* IE < 8: fake inline-block */
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top; }
+  .columns [class^="column-"] {
+    padding: 16px; }
+  .columns .column-3 {
+    width: 100%; }
+    @media (min-width: 592px) {
+      .columns .column-3 {
+        width: 50%; } }
+    @media (min-width: 1000px) {
+      .columns .column-3 {
+        width: 33.3%; } }
+  .columns .column-4 {
+    width: 100%; }
+    @media (min-width: 592px) {
+      .columns .column-4 {
+        width: 50%; } }
+    @media (min-width: 1000px) {
+      .columns .column-4 {
+        width: 25%; } }
+
 body {
   background: #fff;
   -webkit-font-smoothing: antialiased; }
@@ -1942,18 +1994,7 @@ MOBILE DROPDOWN NAVIGATION STYLES
 
 .menu-icon {
   margin-top: 0px;
-  padding: 0;
-  /* Uncomment this for menu to be written after the burger style buttons
-  
-  		&:after{
-  			content: "Menu"; // How will you ever translate this?
-  			@include font-size(0.75);
-  			text-transform: uppercase;
-  			font-family: $sans-serif;
-  			display: block;
-  			text-align: center;
-  		}
-  */ }
+  padding: 0; }
   .menu-icon div {
     height: 4px;
     width: 100%;
@@ -2211,6 +2252,10 @@ SIDEBAR STYLES
 /*********************
 FOOTER STYLES
 *********************/
+.footer {
+  background-color: #ff4338;
+  color: #000; }
+
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -2525,7 +2570,7 @@ you can add resource intensive styles.
     visibility: hidden; }
 
   .nav {
-    text-align: center;
+    text-align: right;
     margin: 16px 0;
     vertical-align: middle;
     /* end .menu ul li */
@@ -2665,8 +2710,7 @@ In between desktop and tablet
   
   ******************************************************************/
   .wrap {
-    max-width: 888px;
-    margin: 0 auto; } }
+    max-width: 888px; } }
 /*
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
@@ -2684,11 +2728,8 @@ you can add resource intensive styles.
   be seen on the Desktop. 
   
   ******************************************************************/
-  .fixed {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 30; } }
+  .wrap {
+    max-width: 1000px; } }
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2703,7 +2744,9 @@ This is for the larger monitors and possibly full screen viewers.
   You can add some advanced styles here if you like. This kicks in
   on larger screens.
   
-  ******************************************************************/ }
+  ******************************************************************/
+  .wrap {
+    max-width: 1200px; } }
 /*
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

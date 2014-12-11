@@ -8,8 +8,4 @@ This is the Phablet size. It's larger than phone, smaller than a tablet...
 
 ******************************************************************/
 
-$wrap: $phablet;
-
-.wrap {
-	max-width: $wrap;
-}
+.wrap { max-width: $phablet; }

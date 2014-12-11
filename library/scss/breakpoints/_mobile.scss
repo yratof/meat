@@ -15,12 +15,7 @@ upon your base.scss styles.
 
 ******************************************************************/
 
-$wrap: $mobile;
-
-.wrap {
-	max-width: $wrap;
-}
-
+.wrap { max-width: $mobile; }
 
 
 

@@ -26,11 +26,7 @@ body {
 LAYOUT & GRID STYLES
 *********************/
 
-$wrap: $tablet;
-
-.wrap {
-	max-width: $wrap;
-}
+.wrap { max-width: $tablet; }
 
 
 /*********************
@@ -70,7 +66,7 @@ NAVIGATION STYLES
 
 
 .nav {
-	text-align: center;
+	text-align: right;
 	margin: u(1rem 0);
 	vertical-align: middle;
 

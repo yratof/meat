@@ -8,9 +8,4 @@ This is the desklet size. It's larger than tablet, smaller than a large screen..
 
 ******************************************************************/
 
-$wrap: $desklet;
-
-.wrap {
-	max-width: $wrap;
-	margin: 0 auto;
-}
+.wrap { max-width: $desklet; }

@@ -51,20 +51,25 @@ $gutter: 7px;
 // *********************
 
 @mixin vertical-align {
-	position: absolute; //relative
+	position: absolute;
 	top: 50%;
-		-webkit-transform: translateY(-50%);
-		-moz-transform: translateY(-50%);
-		-o-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		transform: translateY(-50%);
+	@include transform(translateY(-50%));
 }
-// Give it a class
 
+// Make things easily relative for verticalling
+.relative{ position: relative; }
+
+// Make vertical thigns easier
 .vertical { 
 	@include vertical-align;
-}
 
+	// Make things centered when vertical
+	&.horizontal{
+		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
+}
 
 /* This mixin will help you nest mediaqueries easier.
 
