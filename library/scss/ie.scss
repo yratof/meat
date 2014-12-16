@@ -46,12 +46,18 @@ $px-only: true;
 // Import mixins
 @import "partials/mixins";
 
+// Experimental Columns
+@import 'modules/columns';
+
 @import "modules/buttons"; // import buttons
 @import "modules/forms"; // import buttons
 @import "modules/alerts"; // import buttons
 @import "modules/animations"; // import Animations
 
 @import "partials/ie_grid"; // import grid
+
+// This is now an issue with REM's. Need to bring the base back in for the functions to kick in!
+@import "breakpoints/base";
 
 // import everything inside media queries
 @import "breakpoints/mobile";

@@ -837,6 +837,51 @@ We can break them up as much as we want or just keep them all in one.
 I mean, you can do whatever you want. The world is your oyster. Unless
 you hate oysters, then the world is your peanut butter & jelly sandwich.
 *********************/
+/* 
+	Experimental feature
+	--------------------
+	
+	Simple Columns. Sassy, sassy resonsive columns.
+	
+*/
+.columns {
+  letter-spacing: -0.31em;
+  /* webkit */
+  letter-spacing: -0.31rem;
+  /* webkit */
+  *letter-spacing: normal;
+  /* reset IE < 8 */
+  word-spacing: -0.43em;
+  /* IE < 8 && gecko */
+  word-spacing: -0.43rem;
+  /* IE < 8 && gecko */ }
+  .columns > * {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    /* IE < 8: fake inline-block */
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top; }
+  .columns [class^="column-"] {
+    padding: 16px; }
+  .columns .column-3 {
+    width: 100%; }
+    @media (min-width: 592px) {
+      .columns .column-3 {
+        width: 50%; } }
+    @media (min-width: 1000px) {
+      .columns .column-3 {
+        width: 33.3%; } }
+  .columns .column-4 {
+    width: 100%; }
+    @media (min-width: 592px) {
+      .columns .column-4 {
+        width: 50%; } }
+    @media (min-width: 1000px) {
+      .columns .column-4 {
+        width: 25%; } }
+
 /********************************************
 			   A N I M A T I C S
 
@@ -1682,51 +1727,6 @@ GENERAL STYLES
   margin-left: calc((99.95% - 0rem) / 1);
   width: NaN%;
   width: calc((99.95% - Infinityrem) / Infinity); }
-
-/* 
-	Experimental feature
-	--------------------
-	
-	Simple Columns. Sassy, sassy resonsive columns.
-	
-*/
-.columns {
-  letter-spacing: -0.31em;
-  /* webkit */
-  letter-spacing: -0.31rem;
-  /* webkit */
-  *letter-spacing: normal;
-  /* reset IE < 8 */
-  word-spacing: -0.43em;
-  /* IE < 8 && gecko */
-  word-spacing: -0.43rem;
-  /* IE < 8 && gecko */ }
-  .columns > * {
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-    /* IE < 8: fake inline-block */
-    letter-spacing: normal;
-    word-spacing: normal;
-    vertical-align: top; }
-  .columns [class^="column-"] {
-    padding: 16px; }
-  .columns .column-3 {
-    width: 100%; }
-    @media (min-width: 592px) {
-      .columns .column-3 {
-        width: 50%; } }
-    @media (min-width: 1000px) {
-      .columns .column-3 {
-        width: 33.3%; } }
-  .columns .column-4 {
-    width: 100%; }
-    @media (min-width: 592px) {
-      .columns .column-4 {
-        width: 50%; } }
-    @media (min-width: 1000px) {
-      .columns .column-4 {
-        width: 25%; } }
 
 body {
   background: #fff;

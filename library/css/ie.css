@@ -816,6 +816,51 @@ probably best not to use it. I mean, were you going to anyway? */
 /*********************
 Background colour based on brightness
 *********************/
+/* 
+	Experimental feature
+	--------------------
+	
+	Simple Columns. Sassy, sassy resonsive columns.
+	
+*/
+.columns {
+  letter-spacing: -0.31em;
+  /* webkit */
+  letter-spacing: -0.31rem;
+  /* webkit */
+  *letter-spacing: normal;
+  /* reset IE < 8 */
+  word-spacing: -0.43em;
+  /* IE < 8 && gecko */
+  word-spacing: -0.43rem;
+  /* IE < 8 && gecko */ }
+  .columns > * {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    /* IE < 8: fake inline-block */
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top; }
+  .columns [class^="column-"] {
+    padding: 16px; }
+  .columns .column-3 {
+    width: 100%; }
+    @media (min-width: 592px) {
+      .columns .column-3 {
+        width: 50%; } }
+    @media (min-width: 1000px) {
+      .columns .column-3 {
+        width: 33.3%; } }
+  .columns .column-4 {
+    width: 100%; }
+    @media (min-width: 592px) {
+      .columns .column-4 {
+        width: 50%; } }
+    @media (min-width: 1000px) {
+      .columns .column-4 {
+        width: 25%; } }
+
 /******************************************************************
 Site Name: Meat
 Author: AndrewEivin
@@ -1664,6 +1709,637 @@ whatever you use in here.
 
 .half {
   width: 50%; }
+
+/******************************************************************
+Site Name: Meat
+Author: AndrewEivin
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/*************************************************
+	We include the grid for when you're 
+	using the lowest file, you might still
+	want to use this in the base, the 481 etc
+*************************************************/
+/********************************************
+			   G R I D  M A T H
+
+	Math. A bunch of it. This is the math
+	that makes the grid. Math can change
+	in here to completely change the whole
+	layout of your site. 
+			  
+********************************************/
+/* Adding an extra mixin to make widths fallbackabler.*/
+/* Offset class. Experimental, but looks nice */
+.offset-1 {
+  margin-left: 5.7969383057%;
+  margin-left: calc((99.95% - 11rem) / 12);
+  width: 91.3906307551%;
+  width: calc((99.95% - 0.0909090909rem) / 1.0909090909); }
+
+.offset-2 {
+  margin-left: 14.3563075506%;
+  margin-left: calc((99.95% - 5rem) / 6);
+  width: 82.8312615101%;
+  width: calc((99.95% - 0.2rem) / 1.2); }
+
+.offset-3 {
+  margin-left: 22.9156767956%;
+  margin-left: calc((99.95% - 3rem) / 4);
+  width: 74.2718922652%;
+  width: calc((99.95% - 0.3333333333rem) / 1.3333333333); }
+
+.offset-4 {
+  margin-left: 31.4750460405%;
+  margin-left: calc((99.95% - 2rem) / 3);
+  width: 65.7125230203%;
+  width: calc((99.95% - 0.5rem) / 1.5); }
+
+.offset-5 {
+  margin-left: 40.0344152855%;
+  margin-left: calc((99.95% - 1.4rem) / 2.4);
+  width: 57.1531537753%;
+  width: calc((99.95% - 0.7142857143rem) / 1.7142857143); }
+
+.offset-6 {
+  margin-left: 48.5937845304%;
+  margin-left: calc((99.95% - 1rem) / 2);
+  width: 48.5937845304%;
+  width: calc((99.95% - 1rem) / 2); }
+
+.offset-7 {
+  margin-left: 57.1531537753%;
+  margin-left: calc((99.95% - 0.7142857143rem) / 1.7142857143);
+  width: 40.0344152855%;
+  width: calc((99.95% - 1.4rem) / 2.4); }
+
+.offset-8 {
+  margin-left: 65.7125230203%;
+  margin-left: calc((99.95% - 0.5rem) / 1.5);
+  width: 31.4750460405%;
+  width: calc((99.95% - 2rem) / 3); }
+
+.offset-9 {
+  margin-left: 74.2718922652%;
+  margin-left: calc((99.95% - 0.3333333333rem) / 1.3333333333);
+  width: 22.9156767956%;
+  width: calc((99.95% - 3rem) / 4); }
+
+.offset-10 {
+  margin-left: 82.8312615101%;
+  margin-left: calc((99.95% - 0.2rem) / 1.2);
+  width: 14.3563075506%;
+  width: calc((99.95% - 5rem) / 6); }
+
+.offset-11 {
+  margin-left: 91.3906307551%;
+  margin-left: calc((99.95% - 0.0909090909rem) / 1.0909090909);
+  width: 5.7969383057%;
+  width: calc((99.95% - 11rem) / 12); }
+
+.offset-12 {
+  margin-left: 99.95%;
+  margin-left: calc((99.95% - 0rem) / 1);
+  width: NaN%;
+  width: calc((99.95% - Infinityrem) / Infinity); }
+
+body {
+  background: #fff;
+  -webkit-font-smoothing: antialiased; }
+
+.wrap {
+  width: 96%;
+  margin: 0 auto; }
+
+/*********************
+HEADING STYLES - Type
+*********************/
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizelegibility;
+  color: #ff4338;
+  font-weight: 300; }
+
+h1, .h1 {
+  font-size: 23.8537216381px;
+  font-size: 1.4908576024rem; }
+  @media (min-width: 481.008px) {
+    h1, .h1 {
+      font-size: 25.4519209878px;
+      font-size: 1.5907450617rem; } }
+  @media (min-width: 592px) {
+    h1, .h1 {
+      font-size: 27.157199694px;
+      font-size: 1.6973249809rem; } }
+  @media (min-width: 768px) {
+    h1, .h1 {
+      font-size: 28.9767320735px;
+      font-size: 1.8110457546rem; } }
+  @media (min-width: 888px) {
+    h1, .h1 {
+      font-size: 30.9181731224px;
+      font-size: 1.9323858202rem; } }
+  @media (min-width: 1000px) {
+    h1, .h1 {
+      font-size: 32.9896907216px;
+      font-size: 2.0618556701rem; } }
+  @media (min-width: 1200px) {
+    h1, .h1 {
+      font-size: 35.2px;
+      font-size: 2.2rem; } }
+
+h2, .h2 {
+  font-size: 20.3298763961px;
+  font-size: 1.2706172748rem; }
+  @media (min-width: 481.008px) {
+    h2, .h2 {
+      font-size: 21.6919781146px;
+      font-size: 1.3557486322rem; } }
+  @media (min-width: 592px) {
+    h2, .h2 {
+      font-size: 23.1453406483px;
+      font-size: 1.4465837905rem; } }
+  @media (min-width: 768px) {
+    h2, .h2 {
+      font-size: 24.6960784717px;
+      font-size: 1.5435049045rem; } }
+  @media (min-width: 888px) {
+    h2, .h2 {
+      font-size: 26.3507157294px;
+      font-size: 1.6469197331rem; } }
+  @media (min-width: 1000px) {
+    h2, .h2 {
+      font-size: 28.1162136832px;
+      font-size: 1.7572633552rem; } }
+  @media (min-width: 1200px) {
+    h2, .h2 {
+      font-size: 30px;
+      font-size: 1.875rem; } }
+
+h3, .h3 {
+  font-size: 16.2639011169px;
+  font-size: 1.0164938198rem; }
+  @media (min-width: 481.008px) {
+    h3, .h3 {
+      font-size: 17.3535824917px;
+      font-size: 1.0845989057rem; } }
+  @media (min-width: 592px) {
+    h3, .h3 {
+      font-size: 18.5162725187px;
+      font-size: 1.1572670324rem; } }
+  @media (min-width: 768px) {
+    h3, .h3 {
+      font-size: 19.7568627774px;
+      font-size: 1.2348039236rem; } }
+  @media (min-width: 888px) {
+    h3, .h3 {
+      font-size: 21.0805725835px;
+      font-size: 1.3175357865rem; } }
+  @media (min-width: 1000px) {
+    h3, .h3 {
+      font-size: 22.4929709466px;
+      font-size: 1.4058106842rem; } }
+  @media (min-width: 1200px) {
+    h3, .h3 {
+      font-size: 24px;
+      font-size: 1.5rem; } }
+
+h4, .h4 {
+  font-size: 12.1979258377px;
+  font-size: 0.7623703649rem; }
+  @media (min-width: 481.008px) {
+    h4, .h4 {
+      font-size: 13.0151868688px;
+      font-size: 0.8134491793rem; } }
+  @media (min-width: 592px) {
+    h4, .h4 {
+      font-size: 13.887204389px;
+      font-size: 0.8679502743rem; } }
+  @media (min-width: 768px) {
+    h4, .h4 {
+      font-size: 14.817647083px;
+      font-size: 0.9261029427rem; } }
+  @media (min-width: 888px) {
+    h4, .h4 {
+      font-size: 15.8104294376px;
+      font-size: 0.9881518399rem; } }
+  @media (min-width: 1000px) {
+    h4, .h4 {
+      font-size: 16.8697282099px;
+      font-size: 1.0543580131rem; } }
+  @media (min-width: 1200px) {
+    h4, .h4 {
+      font-size: 18px;
+      font-size: 1.125rem; } }
+
+h5, .h5 {
+  font-size: 10.8426007446px;
+  font-size: 0.6776625465rem; }
+  @media (min-width: 481.008px) {
+    h5, .h5 {
+      font-size: 11.5690549945px;
+      font-size: 0.7230659372rem; } }
+  @media (min-width: 592px) {
+    h5, .h5 {
+      font-size: 12.3441816791px;
+      font-size: 0.7715113549rem; } }
+  @media (min-width: 768px) {
+    h5, .h5 {
+      font-size: 13.1712418516px;
+      font-size: 0.8232026157rem; } }
+  @media (min-width: 888px) {
+    h5, .h5 {
+      font-size: 14.0537150557px;
+      font-size: 0.878357191rem; } }
+  @media (min-width: 1000px) {
+    h5, .h5 {
+      font-size: 14.9953139644px;
+      font-size: 0.9372071228rem; } }
+  @media (min-width: 1200px) {
+    h5, .h5 {
+      font-size: 16px;
+      font-size: 1rem; } }
+
+h6, .h6 {
+  font-size: 9.2162106329px;
+  font-size: 0.5760131646rem; }
+  @media (min-width: 481.008px) {
+    h6, .h6 {
+      font-size: 9.8336967453px;
+      font-size: 0.6146060466rem; } }
+  @media (min-width: 592px) {
+    h6, .h6 {
+      font-size: 10.4925544272px;
+      font-size: 0.6557846517rem; } }
+  @media (min-width: 768px) {
+    h6, .h6 {
+      font-size: 11.1955555739px;
+      font-size: 0.6997222234rem; } }
+  @media (min-width: 888px) {
+    h6, .h6 {
+      font-size: 11.9456577973px;
+      font-size: 0.7466036123rem; } }
+  @media (min-width: 1000px) {
+    h6, .h6 {
+      font-size: 12.7460168697px;
+      font-size: 0.7966260544rem; } }
+  @media (min-width: 1200px) {
+    h6, .h6 {
+      font-size: 13.6px;
+      font-size: 0.85rem; } }
+
+/*********************
+TEXT BODY STYLES
+*********************/
+body {
+  font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 90%;
+  line-height: 1.4;
+  color: #555;
+  font-weight: 400; }
+
+b, strong {
+  font-weight: 500; }
+
+/*********************
+SEPARATION STYLES
+*********************/
+hr {
+  margin: 5.5248618785% 0;
+  border: 0;
+  border-bottom: 1px solid #000; }
+
+/*********************
+LINK STYLES
+*********************/
+a, a:visited {
+  color: #ff4338;
+  text-decoration: none;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */ }
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+    color: #ff180a; }
+  a:link, a:visited:link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+
+/*********************
+IMG STYLES
+*********************/
+.img {
+  vertical-align: bottom; }
+
+/*********************
+LOGO STYLES
+*********************/
+#logo {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 24px 0;
+  margin: 0; }
+  #logo a {
+    border-bottom: 0; }
+  #logo img {
+    max-width: 240px;
+    height: auto;
+    margin: 0 auto; }
+
+/*********************
+NAVIGATION AND MENUS
+*********************/
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+/*********************
+MOBILE DROPDOWN NAVIGATION STYLES
+*********************/
+.clickable {
+  margin: 0;
+  color: #555;
+  cursor: pointer;
+  padding: 0;
+  width: 45px;
+  position: absolute;
+  top: 20px;
+  right: 20px; }
+
+.menu-icon {
+  margin-top: 0px;
+  padding: 0; }
+  .menu-icon div {
+    height: 4px;
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 1px;
+    background: #555; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav {
+  margin: 0;
+  font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* end .menu li */ }
+  @media only screen and (max-width: 768px) {
+    .js .nav {
+      overflow: hidden;
+      max-height: 0;
+      -webkit-transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+      -transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+      transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1); }
+      .js .nav.show {
+        max-height: 8000px; } }
+  .js .nav {
+    border-top: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 5; }
+    .js .nav li a {
+      width: 100%; }
+  .nav li a {
+    display: inline-block;
+    text-decoration: none; }
+  @media only screen and (max-width: 768px) {
+    .js .nav li ul.sub-menu, .js
+    .nav li ul.children {
+      overflow: hidden;
+      max-height: 0;
+      -webkit-transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+      -transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+      transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1); }
+      .js .nav li ul.sub-menu.show, .js
+      .nav li ul.children.show {
+        max-height: 8000px; } }
+  .nav li ul.sub-menu li a,
+  .nav li ul.children li a {
+    padding-left: 5.5248618785%; }
+
+/* end .nav */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+img {
+  margin: 0;
+  max-width: 100%;
+  height: auto; }
+
+/* post meta */
+.byline {
+  color: #999; }
+
+blockquote {
+  background: #ececec;
+  border-left: 10px solid;
+  margin: 0;
+  padding: 1em 2em; }
+
+.page-title {
+  /* Removing the */
+  margin: 0; }
+
+.entry-content {
+  /*
+  image alignment on a screen this size may be
+  a bit difficult. It's set to start aligning
+  and floating images at the next breakpoint,
+  but it's up to you. Feel free to change it up.
+  */ }
+  .entry-content ul {
+    list-style: disc;
+    margin-left: 8.2872928177%; }
+  .entry-content dd {
+    margin-left: 0;
+    color: #787878; }
+  .entry-content video, .entry-content object {
+    max-width: 100%;
+    height: auto; }
+  .entry-content pre {
+    background: #eee;
+    border: 1px solid #cecece;
+    padding: 10px; }
+
+/* end .entry-content */
+.wp-caption {
+  max-width: 100%;
+  background: #eee;
+  padding: 5px; }
+  .wp-caption p.wp-caption-text {
+    font-size: 0.85em;
+    margin: 4px 0 7px;
+    text-align: center; }
+
+/* end .wp-caption */
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+.page-navigation,
+.wp-prev-next {
+  margin: 1.1em 0 2.2em; }
+
+.meat_page_navi {
+  /* current page link */
+  /* end .meat_page_navi .bpn-current */
+  /* common styles for page-navi links */
+  /* remove the bg on end links */ }
+  .meat_page_navi li {
+    float: left;
+    margin-left: 10px; }
+    .meat_page_navi li a {
+      padding: 3px 6px;
+      display: block;
+      text-decoration: none;
+      position: relative; }
+      .meat_page_navi li a:hover, .meat_page_navi li a:focus {
+        color: #f01d4f;
+        text-decoration: underline; }
+  .meat_page_navi li.bpn-current {
+    padding: 3px 6px;
+    border-bottom: 2px solid #f01d4f;
+    position: relative; }
+  .meat_page_navi li.bpn-prev-link,
+  .meat_page_navi li.bpn-next-link {
+    font-weight: 700; }
+    .meat_page_navi li.bpn-prev-link a,
+    .meat_page_navi li.bpn-next-link a {
+      padding: 0; }
+  .meat_page_navi li.bpn-prev-link a:hover,
+  .meat_page_navi li.bpn-next-link a:hover,
+  .meat_page_navi li.bpn-first-page-link a:hover,
+  .meat_page_navi li.bpn-last-page-link a:hover {
+    background: none; }
+
+/* end .meat_page_navi */
+/* fallback previous & next links */
+.wp-prev-next .prev-link {
+  float: left; }
+.wp-prev-next .next-link {
+  float: right; }
+
+/* end .wp-prev-next */
+.pagination .page-numbers {
+  width: 100%;
+  display: inline-block;
+  text-align: center; }
+  .pagination .page-numbers li {
+    display: inline-block;
+    padding: 4px; }
+    .pagination .page-numbers li a, .pagination .page-numbers li .span {
+      background: #ff4338;
+      color: #fff;
+      border-radius: 2px;
+      display: block;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      vertical-align: middle; }
+
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+.commentlist {
+  /* general comment classes */
+  /* vcard */
+  /* end .commentlist .vcard */
+  /* comment content */
+  /* end .commentlist .comment_content */
+  /* comment reply link */
+  /* end .commentlist .comment-reply-link */ }
+  .commentlist li {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    list-style-type: none;
+    margin-bottom: 24px;
+    padding: 11.736px 10px;
+    /* end .commentlist li ul.children */ }
+    .commentlist li:last-child {
+      margin-bottom: 0; }
+    .commentlist li ul.children {
+      margin: 0; }
+  .commentlist li[class*=depth-] {
+    margin-top: 17.6px; }
+  .commentlist li.depth-1 {
+    margin-left: 0;
+    margin-top: 0; }
+  .commentlist li:not(.depth-1) {
+    margin-right: -10px;
+    margin-left: -10px;
+    margin-top: 0;
+    padding-bottom: 0; }
+  .commentlist .odd {
+    background: #aaa; }
+  .commentlist .even {
+    background: #ececec; }
+  .commentlist .vcard {
+    margin-left: 50px; }
+    .commentlist .vcard cite.fn {
+      font-weight: 700;
+      font-style: normal; }
+    .commentlist .vcard time {
+      float: right; }
+      .commentlist .vcard time a {
+        color: #999;
+        text-decoration: none; }
+        .commentlist .vcard time a:hover {
+          text-decoration: underline; }
+    .commentlist .vcard img.avatar {
+      position: absolute;
+      left: 10px;
+      padding: 2px;
+      border: 1px solid #cecece;
+      background: #fff; }
+  .commentlist .comment_content {
+    margin-left: 50px; }
+    .commentlist .comment_content p {
+      margin: 0.7335em 8px 1.5em;
+      font-size: 1em;
+      line-height: 1.5em; }
+  .commentlist .comment-reply-link {
+    text-decoration: none;
+    float: right;
+    background: #4598bb;
+    padding: 3px 5px;
+    color: #fff;
+    opacity: 0.65;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 0.9em; }
+    .commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
+      opacity: 1; }
+
+/* end .commentlist */
+/*********************
+SIDEBAR STYLES
+*********************/
+.sidebar ul {
+  margin: 0; }
+.sidebar li a {
+  display: block; }
+
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
+  background-color: #ff4338;
+  color: #000; }
 
 /******************************************************************
 Site Name: Meat
