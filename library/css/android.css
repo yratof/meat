@@ -1979,6 +1979,16 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+@media only screen and (max-width: 768px) {
+  .cssremunit .nav {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+    -transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
+    transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1); }
+    .cssremunit .show.nav {
+      max-height: 8000px; } }
+
 /*********************
 MOBILE DROPDOWN NAVIGATION STYLES
 *********************/
@@ -2009,15 +2019,6 @@ NAVIGATION STYLES
   margin: 0;
   font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* end .menu li */ }
-  @media only screen and (max-width: 768px) {
-    .js .nav {
-      overflow: hidden;
-      max-height: 0;
-      -webkit-transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
-      -transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1);
-      transition: 0.4s all cubic-bezier(0.77, 0, 0.175, 1); }
-      .js .nav.show {
-        max-height: 8000px; } }
   .js .nav {
     border-top: 0;
     left: 0;

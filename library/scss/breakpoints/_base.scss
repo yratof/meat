@@ -152,17 +152,12 @@ and more scalable.
 */
 
 %togglable {
-
-	@media only screen and (max-width: $tablet) {		
-
-		.js & {
+	@media only screen and (max-width: $tablet) {	
+		.cssremunit & { // Replaces .js &
 			overflow: hidden;
 			max-height: 0;
 			@include transition(0.4s all $ease-in-out-quart);
-	
-			&.show {
-				max-height: u(500rem);
-			}
+			&.show { max-height: u(500rem); }
 		}
 	}
 }
@@ -206,15 +201,8 @@ NAVIGATION STYLES
 	margin: 0;
 	font-family: $sans-serif;
 
-	@media only screen and (max-width: $tablet) {	
-		.js & {
-			overflow: hidden;
-			max-height: 0;
-			@include transition(0.4s all $ease-in-out-quart);
-			&.show { max-height: u(500rem); }
-		}
-	}
-	
+	// Dropdown List for mobile phones that support REM
+	@extend %togglable;
 	
 	.js & {
 		border-top: 0;
