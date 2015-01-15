@@ -46,6 +46,9 @@ $px-only: true;
 // Import mixins
 @import "partials/mixins";
 
+// Import Photoshop Styles
+@import 'global';
+
 // Experimental Columns
 @import 'modules/columns';
 

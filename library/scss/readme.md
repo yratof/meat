@@ -1,34 +1,18 @@
-# HOW TO GRID THIS SHIT
+![image](http://www.sciencemediacentre.co.nz/wp-content/upload/2011/02/steak.jpg)
 
-> We use two files for the grid.
+# Meat
 
-`_gridmath.scss` and `_grid.scss`
 
----
+A skeleton theme that has some meat. Basically, it's not barebones, because most of the time, i'm not starting from nothing, I'm starting from something.
 
-## Gridmath
+### Photoshop + SCSS
 
-This is where you can set up the grid. and by setup, i mean change upto 2 whole options!
+If you have a photoshop document, find `library/scss/global.scss` and change the gutter from the grid in here. At the moment, this just allows you to have the `$gutter_rem` variable that falls back to `px` when on a shit browser.
 
----
+### Think Modular
 
-`$gutter_em: 1rem !global;`
+Build elements with the intention of reusing them. This is why we've got the `modules` folder. In here, you've got yourself files that have a hyphenated title. This is so we can pull them in like this:
 
-The `$gutter_em` is set to `1rem` which is the base font size (which is a good thing). 
-It's also `rem` because the math gets fucked up using `em`.
+`<?php get_template_part('modules/half', 'half')?>`
 
----
-
-`$divisor: 12 / $n;`
-
-This one is how you split your grid. I use `12` because it's fucking perfect. You can change it to `16` or something, but you'd be a right arsehole.
-
----
-
-## Grid
-
-This is where we keep the classes. Though nowadays, I find it easier to do this:
-
-`@include width(6);` which will give you 6 columns. Then you can give it some extra shit like `& + .sameClass { margin-left: $gutter_em }` which will add the gutter on all items after your first class.
-
-Fucking simple.
+Then you can just reuse that little bit throughout the site. You know, like wordpress used to do.

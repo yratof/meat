@@ -119,13 +119,11 @@ $gutter: 7px;
 			&-top {
 				padding-top: $px-padding;
 				padding-top: #{$padding}rem;
-				padding-bottom: 0;
 			}
 	
 			&-bottom{
 				padding-bottom: $px-padding;
 				padding-bottom: #{$padding}rem;
-				padding-top: 0;
 			}
 	    }
 	}
