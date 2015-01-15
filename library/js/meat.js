@@ -105,9 +105,9 @@ jQuery(document).ready(function($) {
   var menu_button = $('<p>').addClass('clickable animated mobile-only'); //.text(window.main_nav_name || ''); <-- This adds the name of the navigation to the nav on mobile
   var menu_icon = '<div class="menu-icon"><div></div><div></div><div></div></div>';
   menu_button.append(menu_icon);
-  $('.nav').before(menu_button);
+  $('.top-nav').before(menu_button);
 
-  $('.clickable, .nav a').click(function(event) {
+  $('.clickable, .top-nav a').click(function(event) {
     if (min_width(768)) { return; }
     var sub = $(this).next();
     if (event.which === 1 && sub.length && sub[0].nodeName.toLowerCase() == 'ul') {

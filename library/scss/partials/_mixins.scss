@@ -211,6 +211,19 @@ Simply use this in a class somewhere to add placeholder styles.
 }
 
 
+/* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
+
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
 
 /*********************
 TOOLS
@@ -285,15 +298,15 @@ $double-octave:    4;
 // This is quite an experiment with font sizes. 
 // Basically, i'm using a modualr scale for the type.
 
-@mixin modular($largest){
+@mixin modular($largest, $rem: false){
 	$ratio: $minor-second;
-									@include font-size(modular-scale($largest,  -6, $ratio));
-	@media(min-width: $mobile){ 	@include font-size(modular-scale($largest,  -5, $ratio)); }
-	@media(min-width: $phablet){ 	@include font-size(modular-scale($largest,  -4, $ratio)); }
-	@media(min-width: $tablet){ 	@include font-size(modular-scale($largest,  -3, $ratio)); }
-	@media(min-width: $desklet){ 	@include font-size(modular-scale($largest,  -2, $ratio)); }
-	@media(min-width: $desktop){ 	@include font-size(modular-scale($largest,  -1, $ratio)); }
-	@media(min-width: $cinema){ 	@include font-size($largest); }
+									@include font-size(modular-scale($largest,  -6, $ratio), $rem);
+	@media(min-width: $mobile){ 	@include font-size(modular-scale($largest,  -5, $ratio), $rem); }
+	@media(min-width: $phablet){ 	@include font-size(modular-scale($largest,  -4, $ratio), $rem); }
+	@media(min-width: $tablet){ 	@include font-size(modular-scale($largest,  -3, $ratio), $rem); }
+	@media(min-width: $desklet){ 	@include font-size(modular-scale($largest,  -2, $ratio), $rem); }
+	@media(min-width: $desktop){ 	@include font-size(modular-scale($largest,  -1, $ratio), $rem); }
+	@media(min-width: $cinema){ 	@include font-size($largest, $rem); }
 }
 
 

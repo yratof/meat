@@ -266,6 +266,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/library\/js\/libs\/min\/modernizr.custom.min-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/js\/libs\/min\/modernizr.custom.min-min.js",
+		"outputAbbreviatedPath": "\/library\/js\/libs\/min\/min\/modernizr.custom.min-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/library\/js\/libs\/modernizr.custom.min.js": {
 		"fileType": 64,
 		"ignore": 0,

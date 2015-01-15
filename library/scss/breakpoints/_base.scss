@@ -409,7 +409,7 @@ PAGE NAVI STYLES
 	} /* end .wp-prev-next */
 
 
-	.pagination{
+	.single-pagination{
 	
 		.page-numbers{
 	
@@ -432,9 +432,7 @@ PAGE NAVI STYLES
 					vertical-align: middle;
 				}
 			}
-					
 		}
-	
 	}
 
 /******************************************************************
@@ -578,5 +576,5 @@ FOOTER STYLES
 
 .footer{
 	background-color: $brand-colour;
-	color: $black;
+	color: $white;
 }
