@@ -10,6 +10,8 @@ slow the page load.
 
 */
 
+/* global min_width, is_external  */
+
 /************************
 Create all ie elements.
 *************************/
@@ -102,18 +104,20 @@ jQuery(document).ready(function($) {
 
   // Menu (button) script:
   $('body').addClass('js');
-  var menu_button = $('<p>').addClass('clickable animated mobile-only'); //.text(window.main_nav_name || ''); <-- This adds the name of the navigation to the nav on mobile
+  var menu_button = $('<a>').addClass('clickable animated mobile-only'); //.text(window.main_nav_name || ''); <-- This adds the name of the navigation to the nav on mobile
   var menu_icon = '<div class="menu-icon"><div></div><div></div><div></div></div>';
   menu_button.append(menu_icon);
   $('.top-nav').before(menu_button);
 
-  $('.clickable, .top-nav a').click(function(event) {
-    if (min_width(768)) { return; }
+  
+  $('a.clickable, .top-nav a').click(function(event) {
+    // Android devices consider themselves to be every width. This min_width function doesn't work for them yet. Remove it.
+    //if (min_width(1200)) {  alert('I think i\'m a huge desktop...'); return; }
     var sub = $(this).next();
     if (event.which === 1 && sub.length && sub[0].nodeName.toLowerCase() == 'ul') {
-      if (this.nodeName.toLowerCase() == 'p' || !sub.hasClass('show')) {
+      if (this.nodeName.toLowerCase() == 'a' || !sub.hasClass('show')) {
         sub.toggleClass('show');
-        $('.clickable.animated').toggleClass('close');
+        $('a.clickable.animated').toggleClass('close');
         return false;
       }
     }
