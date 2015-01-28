@@ -74,28 +74,40 @@ $gutter: 7px;
 /* This mixin will help you nest mediaqueries easier.
 
 @Usage:
-	.font-size{
-		// Root font size
-		@include font-size(1);
-		// All sizes going up.
-		@include media(mobile){ @include font-size(1.1); }
-		@include media(tablet){ @include font-size(1.2); }
-		@include media(desktop){@include font-size(1.4); }
-		@include media(cinema){ @include font-size(1.6); }
-	}
-*/
-@mixin media($point) { 
-	$media-mobile:  '(min-width: #{$mobile})';
-	$media-tablet:  '(min-width: #{$tablet})';
-	$media-desktop: '(min-width: #{$desktop})';
-	$media-cinema: '(min-width: #{$cinema})';
-	// Start detecting the mediaquery
-	@if $point == cinema { @media #{$media-cinema} { @content; } }
-	@else if $point == desktop { @media #{$media-desktop} { @content; } }
-	@else if $point == tablet { @media #{$media-tablet} { @content; } } 
-	@else if $point == mobile { @media #{$media-mobile}  { @content; } }
-}
 
+	@include wider-than(mobile) {
+		width: 55%;
+	}
+	
+	@include wider-than(phablet) {
+		width: 65%;
+	}
+	
+	@include wider-than(tablet) {
+		width: 75%;
+	}
+
+*/
+
+$breakpoints: (
+	mobile:		$mobile,
+	phablet:	$phablet,
+	tablet:		$tablet,
+	desklet:	$desklet,
+	desktop:	$desktop,  
+	cinema:		$cinema
+);
+
+@mixin wider-than($screen-size) {
+    @if map-has-key($breakpoints, $screen-size) {
+        @media (min-width: map-get($breakpoints, $screen-size)) {
+            @content;
+        }
+    } @else {
+        // Debugging
+        @warn "'#{$screen-size}' has not been declared as a breakpoint."
+    }
+}
 
 
 	// Padding in rems.
@@ -293,17 +305,17 @@ $major-eleventh:   2.667;
 $major-twelfth:    3;
 $double-octave:    4;
 
-// This is quite an experiment with font sizes. 
-// Basically, i'm using a modualr scale for the type.
+/* This is quite an experiment with font sizes. 
+ Basically, i'm using a modualr scale for the type. */
 
 @mixin modular($largest, $rem: false){
 	$ratio: $minor-second;
-									@include font-size(modular-scale($largest,  -6, $ratio), $rem);
-	@media(min-width: $mobile){ 	@include font-size(modular-scale($largest,  -5, $ratio), $rem); }
-	@media(min-width: $phablet){ 	@include font-size(modular-scale($largest,  -4, $ratio), $rem); }
-	@media(min-width: $tablet){ 	@include font-size(modular-scale($largest,  -3, $ratio), $rem); }
-	@media(min-width: $desklet){ 	@include font-size(modular-scale($largest,  -2, $ratio), $rem); }
-	@media(min-width: $desktop){ 	@include font-size(modular-scale($largest,  -1, $ratio), $rem); }
+									@include font-size(modular-scale(-4, $largest, $ratio), $rem);
+//	@media(min-width: $mobile){ 	@include font-size(modular-scale(-5, $largest, $ratio), $rem); }
+	@media(min-width: $phablet){ 	@include font-size(modular-scale(-4, $largest, $ratio), $rem); }
+	@media(min-width: $tablet){ 	@include font-size(modular-scale(-3, $largest, $ratio), $rem); }
+	@media(min-width: $desklet){ 	@include font-size(modular-scale(-2, $largest, $ratio), $rem); }
+	@media(min-width: $desktop){ 	@include font-size(modular-scale(-1, $largest, $ratio), $rem); }
 	@media(min-width: $cinema){ 	@include font-size($largest, $rem); }
 }
 

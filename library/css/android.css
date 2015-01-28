@@ -690,15 +690,19 @@ CLEARFIXIN'
 /* This mixin will help you nest mediaqueries easier.
 
 @Usage:
-	.font-size{
-		// Root font size
-		@include font-size(1);
-		// All sizes going up.
-		@include media(mobile){ @include font-size(1.1); }
-		@include media(tablet){ @include font-size(1.2); }
-		@include media(desktop){@include font-size(1.4); }
-		@include media(cinema){ @include font-size(1.6); }
+
+	@include wider-than(mobile) {
+		width: 55%;
 	}
+	
+	@include wider-than(phablet) {
+		width: 65%;
+	}
+	
+	@include wider-than(tablet) {
+		width: 75%;
+	}
+
 */
 /* this is the padding */
 .padding-1 {
@@ -708,12 +712,10 @@ CLEARFIXIN'
   padding-bottom: 1rem; }
   .padding-1-top {
     padding-top: 16px;
-    padding-top: 1rem;
-    padding-bottom: 0; }
+    padding-top: 1rem; }
   .padding-1-bottom {
     padding-bottom: 16px;
-    padding-bottom: 1rem;
-    padding-top: 0; }
+    padding-bottom: 1rem; }
 
 .padding-2 {
   padding-top: 32px;
@@ -722,12 +724,10 @@ CLEARFIXIN'
   padding-bottom: 2rem; }
   .padding-2-top {
     padding-top: 32px;
-    padding-top: 2rem;
-    padding-bottom: 0; }
+    padding-top: 2rem; }
   .padding-2-bottom {
     padding-bottom: 32px;
-    padding-bottom: 2rem;
-    padding-top: 0; }
+    padding-bottom: 2rem; }
 
 .padding-3 {
   padding-top: 48px;
@@ -736,12 +736,10 @@ CLEARFIXIN'
   padding-bottom: 3rem; }
   .padding-3-top {
     padding-top: 48px;
-    padding-top: 3rem;
-    padding-bottom: 0; }
+    padding-top: 3rem; }
   .padding-3-bottom {
     padding-bottom: 48px;
-    padding-bottom: 3rem;
-    padding-top: 0; }
+    padding-bottom: 3rem; }
 
 .padding-4 {
   padding-top: 64px;
@@ -750,12 +748,10 @@ CLEARFIXIN'
   padding-bottom: 4rem; }
   .padding-4-top {
     padding-top: 64px;
-    padding-top: 4rem;
-    padding-bottom: 0; }
+    padding-top: 4rem; }
   .padding-4-bottom {
     padding-bottom: 64px;
-    padding-bottom: 4rem;
-    padding-top: 0; }
+    padding-bottom: 4rem; }
 
 .no-margin-top {
   margin-top: 0; }
@@ -787,6 +783,7 @@ Simply use this in a class somewhere to add placeholder styles.
 	}
 
 *********************/
+/* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
 /*********************
 TOOLS
 *********************/
@@ -806,6 +803,8 @@ TOOLS
 
 @usage: @include ib();
 ************************/
+/* This is quite an experiment with font sizes. 
+ Basically, i'm using a modualr scale for the type. */
 /*********************
 TRANSITION
 *********************/
@@ -830,6 +829,17 @@ probably best not to use it. I mean, were you going to anyway? */
 /*********************
 Background colour based on brightness
 *********************/
+/*
+	Global things
+	-------------
+	We're going to set a few things in here
+	that we can use throughout the site to make
+	it a little more uniform. Gutters are the
+	big thing. The vertical spacing between
+	elements is often thrown off
+*/
+/* Gutters set from Photoshop Document - Without Pixel */
+/* Gutters set from Photoshop Document */
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -1745,12 +1755,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300; }
 
 h1, .h1 {
-  font-size: 23.8537216381px;
-  font-size: 1.4908576024rem; }
-  @media (min-width: 481.008px) {
-    h1, .h1 {
-      font-size: 25.4519209878px;
-      font-size: 1.5907450617rem; } }
+  font-size: 27.157199694px;
+  font-size: 1.6973249809rem; }
   @media (min-width: 592px) {
     h1, .h1 {
       font-size: 27.157199694px;
@@ -1773,12 +1779,8 @@ h1, .h1 {
       font-size: 2.2rem; } }
 
 h2, .h2 {
-  font-size: 20.3298763961px;
-  font-size: 1.2706172748rem; }
-  @media (min-width: 481.008px) {
-    h2, .h2 {
-      font-size: 21.6919781146px;
-      font-size: 1.3557486322rem; } }
+  font-size: 23.1453406483px;
+  font-size: 1.4465837905rem; }
   @media (min-width: 592px) {
     h2, .h2 {
       font-size: 23.1453406483px;
@@ -1801,12 +1803,8 @@ h2, .h2 {
       font-size: 1.875rem; } }
 
 h3, .h3 {
-  font-size: 16.2639011169px;
-  font-size: 1.0164938198rem; }
-  @media (min-width: 481.008px) {
-    h3, .h3 {
-      font-size: 17.3535824917px;
-      font-size: 1.0845989057rem; } }
+  font-size: 18.5162725187px;
+  font-size: 1.1572670324rem; }
   @media (min-width: 592px) {
     h3, .h3 {
       font-size: 18.5162725187px;
@@ -1829,12 +1827,8 @@ h3, .h3 {
       font-size: 1.5rem; } }
 
 h4, .h4 {
-  font-size: 12.1979258377px;
-  font-size: 0.7623703649rem; }
-  @media (min-width: 481.008px) {
-    h4, .h4 {
-      font-size: 13.0151868688px;
-      font-size: 0.8134491793rem; } }
+  font-size: 13.887204389px;
+  font-size: 0.8679502743rem; }
   @media (min-width: 592px) {
     h4, .h4 {
       font-size: 13.887204389px;
@@ -1857,12 +1851,8 @@ h4, .h4 {
       font-size: 1.125rem; } }
 
 h5, .h5 {
-  font-size: 10.8426007446px;
-  font-size: 0.6776625465rem; }
-  @media (min-width: 481.008px) {
-    h5, .h5 {
-      font-size: 11.5690549945px;
-      font-size: 0.7230659372rem; } }
+  font-size: 12.3441816791px;
+  font-size: 0.7715113549rem; }
   @media (min-width: 592px) {
     h5, .h5 {
       font-size: 12.3441816791px;
@@ -1885,12 +1875,8 @@ h5, .h5 {
       font-size: 1rem; } }
 
 h6, .h6 {
-  font-size: 9.2162106329px;
-  font-size: 0.5760131646rem; }
-  @media (min-width: 481.008px) {
-    h6, .h6 {
-      font-size: 9.8336967453px;
-      font-size: 0.6146060466rem; } }
+  font-size: 10.4925544272px;
+  font-size: 0.6557846517rem; }
   @media (min-width: 592px) {
     h6, .h6 {
       font-size: 10.4925544272px;
@@ -2150,14 +2136,14 @@ PAGE NAVI STYLES
   float: right; }
 
 /* end .wp-prev-next */
-.pagination .page-numbers {
+.single-pagination .page-numbers {
   width: 100%;
   display: inline-block;
   text-align: center; }
-  .pagination .page-numbers li {
+  .single-pagination .page-numbers li {
     display: inline-block;
     padding: 4px; }
-    .pagination .page-numbers li a, .pagination .page-numbers li .span {
+    .single-pagination .page-numbers li a, .single-pagination .page-numbers li .span {
       background: #ff4338;
       color: #fff;
       border-radius: 2px;
