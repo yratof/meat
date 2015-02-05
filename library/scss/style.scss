@@ -32,6 +32,7 @@ of the styles inside media queries.
 
 // THIS CONVERTS ALL REMS TO PX
 $px-only: false;
+$ie: false;
 
 /*********************
 IMPORTING PARTIALS
@@ -83,6 +84,19 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 
 // forms (inputs & labels)
 @import "modules/forms";
+
+
+/* Grid Math */
+@import 'partials/gridmath';
+
+/*	Elemental
+	----------
+	This is where all the elements of the website are brought together.
+	Each element contains its own mediaqueries and does not depend on anything else. */
+@import "elements/*";
+
+
+
 
 
 

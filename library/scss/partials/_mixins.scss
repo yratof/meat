@@ -38,8 +38,16 @@ CLEARFIXIN'
 }
 
 
+
+
+
+
 // Base measurement
 $gutter: 7px;
+
+
+
+
 
 
 // *********************
@@ -71,74 +79,85 @@ $gutter: 7px;
 	}
 }
 
-/* This mixin will help you nest mediaqueries easier.
 
-@Usage:
 
-	@include wider-than(mobile) {
-		width: 55%;
-	}
-	
-	@include wider-than(phablet) {
-		width: 65%;
-	}
-	
-	@include wider-than(tablet) {
-		width: 75%;
-	}
 
+
+
+/* 	This mixin will help you nest mediaqueries easier.
+	@Usage:
+		@include wider-than(mobile) 	{ width: 55%; 	}
+		@include wider-than(phablet) 	{ width: 65%; 	}
+		@include wider-than(tablet) 	{ width: 75%;	}
+
+	Uses the breakpoint map defined inside _breakpoints.scss
 */
 
-$breakpoints: (
-	mobile:		$mobile,
-	phablet:	$phablet,
-	tablet:		$tablet,
-	desklet:	$desklet,
-	desktop:	$desktop,  
-	cinema:		$cinema
-);
-
+// min-width mediaquery
 @mixin wider-than($screen-size) {
-    @if map-has-key($breakpoints, $screen-size) {
-        @media (min-width: map-get($breakpoints, $screen-size)) {
-            @content;
-        }
+	@if ($ie == false){
+	    @if map-has-key($breakpoints, $screen-size) {
+	        @media (min-width: map-get($breakpoints, $screen-size)) {
+	            @content;
+	        }
+	    } @else {
+	        // Debugging
+	        @warn "'#{$screen-size}' has not been declared as a breakpoint."
+	    }
     } @else {
-        // Debugging
-        @warn "'#{$screen-size}' has not been declared as a breakpoint."
+	    @content;
     }
 }
 
-
-	// Padding in rems.
-	// padding-1, padding-4 etc is 1 rem or 4rem
-	
-	/* this is the padding */
-	
-	$paddings: 1, 2, 3, 4;
-	@each $padding in $paddings {
-		
-		$value: number(#{$padding});
-		$px-padding: $value * 16px;
-		
-	    .padding-#{$padding}{
-			padding-top: $px-padding;
-			padding-bottom: $px-padding;
-	
-			padding-top: #{$padding}rem;
-			padding-bottom: #{$padding}rem;
-	
-			&-top {
-				padding-top: $px-padding;
-				padding-top: #{$padding}rem;
-			}
-	
-			&-bottom{
-				padding-bottom: $px-padding;
-				padding-bottom: #{$padding}rem;
-			}
-	    }
+// max-width mediaquery
+@mixin not-wider-than($screen-size) {
+	@if ($ie == false){
+	    @if map-has-key($breakpoints, $screen-size) {
+	        @media (max-width: map-get($breakpoints, $screen-size)) {
+	            @content;
+	        }
+	    } @else {
+	        // Debugging
+	        @warn "'#{$screen-size}' has not been declared as a breakpoint."
+	    } 
+	} @else {
+	    @content;
 	}
+}
+
+
+
+
+
+
+// Padding in rems.
+// padding-1, padding-4 etc is 1 rem or 4rem
+/* this is the padding */
+
+$paddings: 1, 2, 3, 4;
+@each $padding in $paddings {
+	
+	$value: number(#{$padding});
+	$px-padding: $value * 16px;
+	
+    .padding-#{$padding}{
+		padding-top: $px-padding;
+		padding-bottom: $px-padding;
+
+		padding-top: #{$padding}rem;
+		padding-bottom: #{$padding}rem;
+
+		&-top {
+			padding-top: $px-padding;
+			padding-top: #{$padding}rem;
+		}
+
+		&-bottom{
+			padding-bottom: $px-padding;
+			padding-bottom: #{$padding}rem;
+		}
+    }
+}
 
 // What about the times when you need to remove margins from things
 
@@ -151,13 +170,13 @@ $margins: top, bottom, left, right;
 
 
 
+
+
+
 /*********************
-
 C O N T E N T   C H O R E O G R A P H Y
-
 Something that will reorder your content if used correctly.
 And on the right browser, of course.
-
 **********************/
 
 // This is a mixin for making the PARENT box ready.
@@ -186,15 +205,16 @@ And on the right browser, of course.
 
 
 
+
+
+
+
 /*********************
 Placeholder Mixin
-
 Simply use this in a class somewhere to add placeholder styles.
-
 	@include placeholder {
 		colour: $brand-colour;
 	}
-
 *********************/
 
 @mixin placeholder {
@@ -221,6 +241,11 @@ Simply use this in a class somewhere to add placeholder styles.
 }
 
 
+
+
+
+
+
 /* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
 
 @mixin font-smoothing($value: on) {
@@ -233,6 +258,10 @@ Simply use this in a class somewhere to add placeholder styles.
         -moz-osx-font-smoothing: auto;
     }
 }
+
+
+
+
 
 
 /*********************
@@ -251,6 +280,19 @@ TOOLS
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+
+// Screen Reader Hiding of Text
+@mixin visuallyhidden() {
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
 }
 
 
@@ -279,6 +321,10 @@ TOOLS
 	    vertical-align: top;
 	}	
 }
+
+
+
+
 
 
 
@@ -320,6 +366,11 @@ $double-octave:    4;
 }
 
 
+
+
+
+
+
 /*********************
 TRANSITION
 *********************/
@@ -341,6 +392,12 @@ USAGE: @include transition(all 0.2s ease-in-out);
   transition: $transition;
 }
 
+
+
+
+
+
+
 /*********************
 CSS3 GRADIENTS
 Be careful with these since they can
@@ -357,6 +414,12 @@ really slow down your CSS. Don't overdo it.
 	background-image: linear-gradient(to bottom, $from, $to);
 }
 
+
+
+
+
+
+
 /*********************
 BOX SIZING
 *********************/
@@ -370,6 +433,11 @@ probably best not to use it. I mean, were you going to anyway? */
 	-ms-box-sizing:     $type;
 	box-sizing:         $type;
 }
+
+
+
+
+
 
 /*********************
 Background colour based on brightness

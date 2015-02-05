@@ -1,10 +1,7 @@
 /*
-	These are the breakpoints for your website.
-	These can be customised to your design. The 
-	more that I think about it, the more I'm 
-	starting to realise that these breakpoints 
-	need to change for the design, and not for 
-	the sizes they are. They're just a guide. 
+	These are the breakpoints for your website. These can be customised to your design. The 
+	more that I think about it, the more I'm starting to realise that these breakpoints 
+	need to change for the design, and not for the sizes they are. They're just a guide. 
 	In fact, I insist, you MUST change these.
 */
 
@@ -19,12 +16,8 @@
 	$thin: 		42.500rem;
 
 /* 
-	This is for something special. 
-	If px-only is defined in the rem
-	side of things, then the whole world
-	starts clapping. But this hasn't been
-	fuly implemented yet, so it's here
-	for when I start to develop it.
+	This is for something special. If px-only is defined in the u() function, 
+	then all rems are replaced with these breakpoints instead.
 */
 
 @if ($px-only){
@@ -37,3 +30,17 @@
 	$cinema: 	75 * 16px;
 	$thin: 		42.500 * 16px;
 }
+
+/*
+	This is a breakpoint map. It allows us to use a loop of the breakpoints throughout
+	the site inside other loops and @each's. Mostly in _mixins.scss and _wrap.scss
+*/
+
+$breakpoints: (
+	mobile:		$mobile,
+	phablet:	$phablet,
+	tablet:		$tablet,
+	desklet:	$desklet,
+	desktop:	$desktop,  
+	cinema:		$cinema
+);

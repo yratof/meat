@@ -39,6 +39,7 @@ of the styles inside media queries.
 */
 
 $px-only: true;
+$ie: false;
 
 /*********************
 IMPORTING PARTIALS
@@ -92,6 +93,14 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 @import "modules/forms";
 
 
+/* Grid Math */
+@import 'partials/gridmath';
+
+/*	Elemental
+	----------
+	This is where all the elements of the website are brought together.
+	Each element contains its own mediaqueries and does not depend on anything else. */
+@import "elements/*";
 
 /*
 BASE (MOBILE) SIZE

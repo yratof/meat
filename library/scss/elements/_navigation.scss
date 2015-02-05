@@ -1,0 +1,243 @@
+/*
+	Navigation
+	----------
+	This is the navigation, leading all the 
+	way from the smallest to the largest of screens */
+
+
+/* Dropdown mixin, because you can't 
+extend over mediaqueries, we're going 
+to use a simple mixin that we can reuse 
+throughout the mobile stylesheet */
+
+@mixin dropdown() {
+	overflow: hidden;
+	max-height: 0;
+	margin: 0;
+	opacity: 0;
+	@include transition(0.4s opacity $ease-in-out-quart);
+	&.show { max-height: u(500rem); opacity: 1;}
+}
+
+/***********************
+Mobile Icon for Dropdown
+***********************/
+
+	// This is the icon we use on mobile devices. Looks like a sandwich.
+	.clickable {
+		// Sizing
+		margin: 0;
+		padding: u(1rem 0.5rem 0rem);
+		width: u(3rem);
+		height: u(3rem);
+		
+		// Positioning
+		position: fixed;
+		bottom: u(2.5rem);
+		right: u(1rem);
+		z-index: 100;
+		
+		// Styling
+		cursor: pointer;
+		background-color: $white;
+	}
+
+		// These are the icons bars, we can style them, size them etc
+		.menu-icon {
+			margin-top: 0px;
+			padding: 0;
+		
+			div {
+				height: 4px;
+				width: 100%;
+				margin-bottom: 5px;
+				border-radius: 1px;
+				background: $text-colour;
+			}
+		}
+
+/*********************
+Navigation Styles
+*********************/
+
+.top-nav {
+
+	// When should the mobile navigation stop?
+	$end-of-mobile:	tablet;
+
+	// Hide navigation, turn it into a dropdown list that reveals
+	@include not-wider-than($end-of-mobile) {	
+		@include dropdown();
+	}
+	z-index: 50;
+	
+	li {
+		display: block;
+		position: relative;
+		background-color: $brand-colour;
+		text-align: center;
+		
+		a {
+			display: block;
+			text-decoration: none;
+			font-size: u(1rem);
+			padding: u(0.45rem 0);
+			color: $white;
+		}
+		
+		&.menu-item-has-children{
+			&.is-active{
+				position: relative;
+				> a{
+					&:before{
+						content: "Back";
+						position: absolute;
+						left: 0;
+						top: 0;
+						line-height: 2;
+					}
+				}
+			}
+		}
+		
+		// Sub Navigation
+		ul.sub-menu,
+		ul.children {
+			// This won't work past $tablet. 
+			// It's to hide the sub-navigation
+			@include not-wider-than($end-of-mobile) {	
+				@include dropdown();
+			}
+			
+			li{
+				background-color: $white;
+				a{
+					color: $text-colour;
+				}
+			}
+		}
+	} /* end .menu li */
+
+	// Lock this navigation to the bottom of the screen
+	
+    position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	
+	&.show{
+	    background-color: tint($brand-colour, 50%);
+	    bottom: 0;
+	    left: 0;
+	    width: 100%;
+	}
+	
+
+
+		/*****************************************
+			Post - Mobile styles
+			--------------------
+			Larger than the mobile styles, 
+			we're going for around tablets here. */
+			
+		@include wider-than($end-of-mobile){
+			text-align: right;
+			margin: u(1rem 0);
+			vertical-align: middle;	
+			
+			li {
+				display: inline-block;
+				background-color: transparent;
+
+				&:hover, &:focus {
+					a{
+						color: $brand-colour;					
+					}
+				}
+					
+				a {
+					border-bottom: 0;
+					color: $text-colour;
+					@include font-size(1);
+					padding: u(0.5rem 1rem);
+					font-weight: 400;
+				}
+				
+				// Small triangle after <li> with child
+				&.menu-item-has-children {					
+					&:after{
+						content: "\25BC";
+						font-size: 80%;
+						line-height: 3;
+					    position: absolute;
+					    right: 0;
+					    top: 0;
+					    vertical-align: middle;
+					}
+					
+					&:hover{
+						color: $brand-colour;
+					}
+				}
+				// Hover submenus. This is position absolute.
+				ul.sub-menu,
+				ul.children {
+					margin-top: 0;
+					border-top: 0;
+					position: absolute;
+					display: none;
+					z-index: 15;
+					text-align: left;
+					background: $brand-colour;
+		
+					li {
+						a {
+							display: block;
+
+								width: u(18rem);
+								// Fit to max-width
+								width: -moz-max-content;
+								width: -webkit-max-content;
+								width: max-content;
+							color: $white;
+						}
+					}
+				}
+		
+				/* showing sub-menus */
+				&:hover ul {
+					display: block;
+				}
+		
+			} /* end .menu ul li */
+		
+			/* highlight current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current-page-ancestor {
+				a {
+					text-decoration: underline;
+				}
+			}  /* end current highlighters */
+		} /* end tablets */
+
+
+} /* end .nav */
+
+
+/* Mobile navigation has a bitch of a class system now*/
+.is-active{
+	
+}
+
+.is-inactive{
+	font-size: 	0;
+	line-height:0;
+	height: 	0;
+	width: 		0;
+	padding: 	0;
+	margin: 	0;
+	border: 	0;
+}
+
+

@@ -1,0 +1,30 @@
+/*	Logo Styles
+	-----------
+	In this theme, your logo is left aligned
+	in the header, then when you're on a smaller
+	device, things go centered.
+*/
+
+#logo {
+	display: block;
+	text-align: center;
+	width: 100%;
+	max-width: u(15rem);
+	padding: u(1.5rem 0);
+	margin: 0 auto;
+    position: relative;
+    z-index: 20;
+
+		// After mobile, we float the logo 
+		// to the left of the navigation.
+		@include wider-than(tablet){
+			@include width(2.5);
+			text-align: left;
+			float: left;
+		}
+	
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
