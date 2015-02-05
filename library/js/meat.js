@@ -105,8 +105,8 @@ jQuery(document)
         $('.top-nav')
             .before(menu_button);
 
-
-        $('a.clickable, .top-nav a')
+		// Sub navigation
+        $('.top-nav a')
             .click(function (event) {
                 // Android devices consider themselves to be every width. This min_width function doesn't work for them yet. Remove it.
                 //if (min_width(1200)) {  alert('I think i\'m a huge desktop...'); return; }
@@ -115,6 +115,16 @@ jQuery(document)
                 if (event.which === 1 && sub.length && sub[0].nodeName.toLowerCase() === 'ul') {
                     if (this.nodeName.toLowerCase() === 'a' || !sub.hasClass('show')) {
                         sub.toggleClass('show');
+                        
+                        // Toggle .is-active to current submenu
+                        sub.parent()
+                        	.toggleClass('is-active');
+                       
+                        // Toggle .is-inactive to current submenu
+                        sub.parent()
+                        	.siblings()
+                        		.toggleClass('is-inactive');
+                        
                         return false;
                     }
                 }
@@ -123,8 +133,18 @@ jQuery(document)
         // Remove the X animation from clickable when it's open
         $('a.clickable')
             .click(function () {
+				$(this)
+                    .next()
+						.toggleClass('show');
+	            
                 $('a.clickable.animated')
                     .toggleClass('close');
+				// Remove active / non-active classes
+                $('.top-nav li')
+                	.removeClass('is-inactive is-active');
+                // Close all sub-menus
+                $('.sub-menu')
+                	.removeClass('show');
             });
 
 
