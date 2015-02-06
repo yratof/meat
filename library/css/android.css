@@ -525,21 +525,18 @@ both compile to:
 width: 65%;
 *********************/
 /*
-	These are the breakpoints for your website.
-	These can be customised to your design. The 
-	more that I think about it, the more I'm 
-	starting to realise that these breakpoints 
-	need to change for the design, and not for 
-	the sizes they are. They're just a guide. 
+	These are the breakpoints for your website. These can be customised to your design. The 
+	more that I think about it, the more I'm starting to realise that these breakpoints 
+	need to change for the design, and not for the sizes they are. They're just a guide. 
 	In fact, I insist, you MUST change these.
 */
 /* 
-	This is for something special. 
-	If px-only is defined in the rem
-	side of things, then the whole world
-	starts clapping. But this hasn't been
-	fuly implemented yet, so it's here
-	for when I start to develop it.
+	This is for something special. If px-only is defined in the u() function, 
+	then all rems are replaced with these breakpoints instead.
+*/
+/*
+	This is a breakpoint map. It allows us to use a loop of the breakpoints throughout
+	the site inside other loops and @each's. Mostly in _mixins.scss and _wrap.scss
 */
 /******************************************************************
 Site Name:
@@ -687,22 +684,13 @@ CLEARFIXIN'
     text-align: center;
     margin: 0 auto; }
 
-/* This mixin will help you nest mediaqueries easier.
+/* 	This mixin will help you nest mediaqueries easier.
+	@Usage:
+		@include wider-than(mobile) 	{ width: 55%; 	}
+		@include wider-than(phablet) 	{ width: 65%; 	}
+		@include wider-than(tablet) 	{ width: 75%;	}
 
-@Usage:
-
-	@include wider-than(mobile) {
-		width: 55%;
-	}
-	
-	@include wider-than(phablet) {
-		width: 65%;
-	}
-	
-	@include wider-than(tablet) {
-		width: 75%;
-	}
-
+	Uses the breakpoint map defined inside _breakpoints.scss
 */
 /* this is the padding */
 .padding-1 {
@@ -766,22 +754,16 @@ CLEARFIXIN'
   margin-right: 0; }
 
 /*********************
-
 C O N T E N T   C H O R E O G R A P H Y
-
 Something that will reorder your content if used correctly.
 And on the right browser, of course.
-
 **********************/
 /*********************
 Placeholder Mixin
-
 Simply use this in a class somewhere to add placeholder styles.
-
 	@include placeholder {
 		colour: $brand-colour;
 	}
-
 *********************/
 /* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
 /*********************
@@ -910,100 +892,86 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 	
 	You can turn this off in the meat.js file
 */
-.animated.clickable {
-  margin: 0;
-  color: #555;
-  cursor: pointer;
+.animated.clickable .menu-icon {
+  margin-top: 0px;
   padding: 0;
-  width: 32px;
-  position: absolute;
-  top: 32px;
-  right: 4%;
-  z-index: 100; }
-  .animated.clickable .menu-icon {
+  -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+  -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+  transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .animated.clickable .menu-icon > div {
     margin-top: 0px;
-    padding: 0;
-    -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-    -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-    transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background: #000;
+    -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+    -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+    transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg); }
-    .animated.clickable .menu-icon > div {
-      height: 4px;
-      width: 100%;
-      margin-top: 0px;
-      margin-bottom: 5px;
-      border-radius: 5px;
-      background: #000;
-      -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-      -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-      transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+    .animated.clickable .menu-icon > div + div {
+      opacity: 1;
+      -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+      -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+      transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
       -o-transform: rotate(0deg);
       transform: rotate(0deg); }
-      .animated.clickable .menu-icon > div + div {
+      .animated.clickable .menu-icon > div + div + div {
+        -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+        -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+        transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         opacity: 1;
-        -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-        -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-        transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg); }
-        .animated.clickable .menu-icon > div + div + div {
-          -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-          -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-          transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
+        position: relative; }
+.animated.clickable.close {
+  position: fixed;
+  z-index: 150; }
+  .animated.clickable.close .menu-icon {
+    -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+    -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+    transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    position: relative;
+    z-index: 150; }
+    .animated.clickable.close .menu-icon > div {
+      -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+      -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+      transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      margin: -4px 11px; }
+      .animated.clickable.close .menu-icon > div + div {
+        opacity: 0;
+        -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+        -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+        transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+        -webkit-transform: rotate(-225deg);
+        -moz-transform: rotate(-225deg);
+        -ms-transform: rotate(-225deg);
+        -o-transform: rotate(-225deg);
+        transform: rotate(-225deg); }
+        .animated.clickable.close .menu-icon > div + div + div {
+          -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+          -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+          transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           opacity: 1;
           position: relative; }
-  .animated.clickable.close {
-    position: fixed;
-    z-index: 150;
-    width: 32px;
-    height: 32px; }
-    .animated.clickable.close .menu-icon {
-      -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-      -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-      transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-      -webkit-transform: rotate(90deg);
-      -moz-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      -o-transform: rotate(90deg);
-      transform: rotate(90deg);
-      position: relative;
-      z-index: 150; }
-      .animated.clickable.close .menu-icon > div {
-        -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-        -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-        transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-        margin: -4px 11px; }
-        .animated.clickable.close .menu-icon > div + div {
-          opacity: 0;
-          -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-          -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-          transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-          -webkit-transform: rotate(-45deg);
-          -moz-transform: rotate(-45deg);
-          -ms-transform: rotate(-45deg);
-          -o-transform: rotate(-45deg);
-          transform: rotate(-45deg); }
-          .animated.clickable.close .menu-icon > div + div + div {
-            -webkit-transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-            -transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-            transition: 0.5s all cubic-bezier(0.77, 0, 0.175, 1);
-            opacity: 1;
-            position: relative; }
 
 /******************************************************************
 Site Name:
@@ -1628,6 +1596,536 @@ input[type="search"] {
 .search-form .button {
   float: right;
   width: 35%; }
+
+/* Grid Math */
+/********************************************
+			   G R I D  M A T H
+
+	Math. A bunch of it. This is the math
+	that makes the grid. Math can change
+	in here to completely change the whole
+	layout of your site. 
+			  
+********************************************/
+/* Adding an extra mixin to make widths fallbackabler.*/
+/* Offset class. Experimental, but looks nice */
+.offset-1 {
+  margin-left: 5.7969383057%;
+  margin-left: calc((99.95% - 11rem) / 12);
+  width: 91.3906307551%;
+  width: calc((99.95% - 0.0909090909rem) / 1.0909090909); }
+
+.offset-2 {
+  margin-left: 14.3563075506%;
+  margin-left: calc((99.95% - 5rem) / 6);
+  width: 82.8312615101%;
+  width: calc((99.95% - 0.2rem) / 1.2); }
+
+.offset-3 {
+  margin-left: 22.9156767956%;
+  margin-left: calc((99.95% - 3rem) / 4);
+  width: 74.2718922652%;
+  width: calc((99.95% - 0.3333333333rem) / 1.3333333333); }
+
+.offset-4 {
+  margin-left: 31.4750460405%;
+  margin-left: calc((99.95% - 2rem) / 3);
+  width: 65.7125230203%;
+  width: calc((99.95% - 0.5rem) / 1.5); }
+
+.offset-5 {
+  margin-left: 40.0344152855%;
+  margin-left: calc((99.95% - 1.4rem) / 2.4);
+  width: 57.1531537753%;
+  width: calc((99.95% - 0.7142857143rem) / 1.7142857143); }
+
+.offset-6 {
+  margin-left: 48.5937845304%;
+  margin-left: calc((99.95% - 1rem) / 2);
+  width: 48.5937845304%;
+  width: calc((99.95% - 1rem) / 2); }
+
+.offset-7 {
+  margin-left: 57.1531537753%;
+  margin-left: calc((99.95% - 0.7142857143rem) / 1.7142857143);
+  width: 40.0344152855%;
+  width: calc((99.95% - 1.4rem) / 2.4); }
+
+.offset-8 {
+  margin-left: 65.7125230203%;
+  margin-left: calc((99.95% - 0.5rem) / 1.5);
+  width: 31.4750460405%;
+  width: calc((99.95% - 2rem) / 3); }
+
+.offset-9 {
+  margin-left: 74.2718922652%;
+  margin-left: calc((99.95% - 0.3333333333rem) / 1.3333333333);
+  width: 22.9156767956%;
+  width: calc((99.95% - 3rem) / 4); }
+
+.offset-10 {
+  margin-left: 82.8312615101%;
+  margin-left: calc((99.95% - 0.2rem) / 1.2);
+  width: 14.3563075506%;
+  width: calc((99.95% - 5rem) / 6); }
+
+.offset-11 {
+  margin-left: 91.3906307551%;
+  margin-left: calc((99.95% - 0.0909090909rem) / 1.0909090909);
+  width: 5.7969383057%;
+  width: calc((99.95% - 11rem) / 12); }
+
+.offset-12 {
+  margin-left: 99.95%;
+  margin-left: calc((99.95% - 0rem) / 1);
+  width: NaN%;
+  width: calc((99.95% - Infinityrem) / Infinity); }
+
+/*	Elemental
+	----------
+	This is where all the elements of the website are brought together.
+	Each element contains its own mediaqueries and does not depend on anything else. */
+/*	Headings
+	--------
+	Heading tags, h1 - h6.
+	There are two methods of working here.
+	We can either use the modular route
+	that automatically sizes the fonts down
+	in accordance to a specific mathmatic
+	algorithm, or we can define them manually.
+	
+	I'll put both in the code so you can switch betwen them. 
+	
+*/
+h1, h2, h3, h4, h5, h6
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  text-rendering: optimizelegibility;
+  font-weight: 300; }
+  h1.hero, h2.hero, h3.hero, h4.hero, h5.hero, h6
+  .h1.hero, .h2.hero, .h3.hero, .h4.hero, .h5.hero, .h6.hero {
+    font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* 	If you want to size things automatically,
+	turn automaticsizing to true and change
+	the maximum sizes here in rem. */
+/* 	You'll notice how much nicer this part is.
+	Everything is taken care of inside a loop
+	somewhere else on the site: _mixins.scss
+*/
+h1, .h1 {
+  font-size: 37.0325450373px;
+  font-size: 2.3145340648rem; }
+  @media (min-width: 592px) {
+    h1, .h1 {
+      font-size: 37.0325450373px;
+      font-size: 2.3145340648rem; } }
+  @media (min-width: 768px) {
+    h1, .h1 {
+      font-size: 39.5137255548px;
+      font-size: 2.4696078472rem; } }
+  @media (min-width: 888px) {
+    h1, .h1 {
+      font-size: 42.161145167px;
+      font-size: 2.6350715729rem; } }
+  @media (min-width: 1000px) {
+    h1, .h1 {
+      font-size: 44.9859418932px;
+      font-size: 2.8116213683rem; } }
+  @media (min-width: 1200px) {
+    h1, .h1 {
+      font-size: 48px;
+      font-size: 3rem; } }
+
+h2, .h2 {
+  font-size: 23.1453406483px;
+  font-size: 1.4465837905rem; }
+  @media (min-width: 592px) {
+    h2, .h2 {
+      font-size: 23.1453406483px;
+      font-size: 1.4465837905rem; } }
+  @media (min-width: 768px) {
+    h2, .h2 {
+      font-size: 24.6960784717px;
+      font-size: 1.5435049045rem; } }
+  @media (min-width: 888px) {
+    h2, .h2 {
+      font-size: 26.3507157294px;
+      font-size: 1.6469197331rem; } }
+  @media (min-width: 1000px) {
+    h2, .h2 {
+      font-size: 28.1162136832px;
+      font-size: 1.7572633552rem; } }
+  @media (min-width: 1200px) {
+    h2, .h2 {
+      font-size: 30px;
+      font-size: 1.875rem; } }
+  h2.hero, .h2.hero {
+    font-size: 77.1511354944px;
+    font-size: 4.8219459684rem; }
+    @media (min-width: 592px) {
+      h2.hero, .h2.hero {
+        font-size: 77.1511354944px;
+        font-size: 4.8219459684rem; } }
+    @media (min-width: 768px) {
+      h2.hero, .h2.hero {
+        font-size: 82.3202615725px;
+        font-size: 5.1450163483rem; } }
+    @media (min-width: 888px) {
+      h2.hero, .h2.hero {
+        font-size: 87.8357190979px;
+        font-size: 5.4897324436rem; } }
+    @media (min-width: 1000px) {
+      h2.hero, .h2.hero {
+        font-size: 93.7207122774px;
+        font-size: 5.8575445173rem; } }
+    @media (min-width: 1200px) {
+      h2.hero, .h2.hero {
+        font-size: 100px;
+        font-size: 6.25rem; } }
+
+h3, .h3 {
+  font-size: 18.5162725187px;
+  font-size: 1.1572670324rem; }
+  @media (min-width: 592px) {
+    h3, .h3 {
+      font-size: 18.5162725187px;
+      font-size: 1.1572670324rem; } }
+  @media (min-width: 768px) {
+    h3, .h3 {
+      font-size: 19.7568627774px;
+      font-size: 1.2348039236rem; } }
+  @media (min-width: 888px) {
+    h3, .h3 {
+      font-size: 21.0805725835px;
+      font-size: 1.3175357865rem; } }
+  @media (min-width: 1000px) {
+    h3, .h3 {
+      font-size: 22.4929709466px;
+      font-size: 1.4058106842rem; } }
+  @media (min-width: 1200px) {
+    h3, .h3 {
+      font-size: 24px;
+      font-size: 1.5rem; } }
+
+h4, .h4 {
+  font-size: 13.887204389px;
+  font-size: 0.8679502743rem; }
+  @media (min-width: 592px) {
+    h4, .h4 {
+      font-size: 13.887204389px;
+      font-size: 0.8679502743rem; } }
+  @media (min-width: 768px) {
+    h4, .h4 {
+      font-size: 14.817647083px;
+      font-size: 0.9261029427rem; } }
+  @media (min-width: 888px) {
+    h4, .h4 {
+      font-size: 15.8104294376px;
+      font-size: 0.9881518399rem; } }
+  @media (min-width: 1000px) {
+    h4, .h4 {
+      font-size: 16.8697282099px;
+      font-size: 1.0543580131rem; } }
+  @media (min-width: 1200px) {
+    h4, .h4 {
+      font-size: 18px;
+      font-size: 1.125rem; } }
+
+h5, .h5 {
+  font-size: 12.3441816791px;
+  font-size: 0.7715113549rem; }
+  @media (min-width: 592px) {
+    h5, .h5 {
+      font-size: 12.3441816791px;
+      font-size: 0.7715113549rem; } }
+  @media (min-width: 768px) {
+    h5, .h5 {
+      font-size: 13.1712418516px;
+      font-size: 0.8232026157rem; } }
+  @media (min-width: 888px) {
+    h5, .h5 {
+      font-size: 14.0537150557px;
+      font-size: 0.878357191rem; } }
+  @media (min-width: 1000px) {
+    h5, .h5 {
+      font-size: 14.9953139644px;
+      font-size: 0.9372071228rem; } }
+  @media (min-width: 1200px) {
+    h5, .h5 {
+      font-size: 16px;
+      font-size: 1rem; } }
+
+h6, .h6 {
+  font-size: 10.4925544272px;
+  font-size: 0.6557846517rem; }
+  @media (min-width: 592px) {
+    h6, .h6 {
+      font-size: 10.4925544272px;
+      font-size: 0.6557846517rem; } }
+  @media (min-width: 768px) {
+    h6, .h6 {
+      font-size: 11.1955555739px;
+      font-size: 0.6997222234rem; } }
+  @media (min-width: 888px) {
+    h6, .h6 {
+      font-size: 11.9456577973px;
+      font-size: 0.7466036123rem; } }
+  @media (min-width: 1000px) {
+    h6, .h6 {
+      font-size: 12.7460168697px;
+      font-size: 0.7966260544rem; } }
+  @media (min-width: 1200px) {
+    h6, .h6 {
+      font-size: 13.6px;
+      font-size: 0.85rem; } }
+
+/*	Logo Styles
+	-----------
+	In this theme, your logo is left aligned
+	in the header, then when you're on a smaller
+	device, things go centered.
+*/
+#logo {
+  display: block;
+  text-align: center;
+  width: 100%;
+  max-width: 240px;
+  padding: 24px 0;
+  margin: 0 auto;
+  position: relative;
+  z-index: 20; }
+  @media (min-width: 768px) {
+    #logo {
+      width: 18.6359921731%;
+      width: calc((99.95% - 3.8rem) / 4.8);
+      text-align: left;
+      float: left; } }
+  #logo img {
+    width: 100%;
+    height: auto; }
+
+/*
+	Navigation
+	----------
+	This is the navigation, leading all the 
+	way from the smallest to the largest of screens */
+/* Dropdown mixin, because you can't 
+extend over mediaqueries, we're going 
+to use a simple mixin that we can reuse 
+throughout the mobile stylesheet */
+/***********************
+Mobile Icon for Dropdown
+***********************/
+.clickable {
+  margin: 0;
+  padding: 16px 8px 0rem;
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  bottom: 40px;
+  right: 16px;
+  z-index: 100;
+  cursor: pointer;
+  background-color: #fff; }
+
+.menu-icon {
+  margin-top: 0px;
+  padding: 0; }
+  .menu-icon div {
+    height: 4px;
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 1px;
+    background: #555; }
+
+/*********************
+Navigation Styles
+*********************/
+.top-nav {
+  z-index: 50;
+  /* end .menu li */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /*****************************************
+  	Post - Mobile styles
+  	--------------------
+  	Larger than the mobile styles, 
+  	we're going for around tablets here. */
+  /* end tablets */ }
+  @media (max-width: 768px) {
+    .top-nav {
+      overflow: hidden;
+      max-height: 0;
+      margin: 0;
+      opacity: 0;
+      -webkit-transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
+      -transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
+      transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1); }
+      .top-nav.show {
+        max-height: 8000px;
+        opacity: 1; } }
+  .top-nav li {
+    display: block;
+    position: relative;
+    background-color: #ff4338;
+    text-align: center; }
+    .top-nav li a {
+      display: block;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 7.2px 0;
+      color: #fff; }
+    .top-nav li.menu-item-has-children.is-active {
+      position: relative; }
+      .top-nav li.menu-item-has-children.is-active > a:before {
+        content: "Back";
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: 2; }
+    @media (max-width: 768px) {
+      .top-nav li ul.sub-menu,
+      .top-nav li ul.children {
+        overflow: hidden;
+        max-height: 0;
+        margin: 0;
+        opacity: 0;
+        -webkit-transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
+        -transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
+        transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1); }
+        .top-nav li ul.sub-menu.show,
+        .top-nav li ul.children.show {
+          max-height: 8000px;
+          opacity: 1; } }
+    .top-nav li ul.sub-menu li,
+    .top-nav li ul.children li {
+      background-color: #fff; }
+      .top-nav li ul.sub-menu li a,
+      .top-nav li ul.children li a {
+        color: #555; }
+  .top-nav.show {
+    background-color: #ffa19b;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
+  @media (min-width: 768px) {
+    .top-nav {
+      text-align: right;
+      margin: 16px 0;
+      vertical-align: middle;
+      /* end .menu ul li */
+      /* highlight current page */
+      /* end current highlighters */ }
+      .top-nav li {
+        display: inline-block;
+        background-color: transparent;
+        /* showing sub-menus */ }
+        .top-nav li:hover a, .top-nav li:focus a {
+          color: #ff4338; }
+        .top-nav li a {
+          border-bottom: 0;
+          color: #555;
+          font-size: 16px;
+          font-size: 1rem;
+          padding: 8px 16px;
+          font-weight: 400; }
+        .top-nav li.menu-item-has-children:after {
+          content: "\25BC";
+          font-size: 80%;
+          line-height: 3;
+          position: absolute;
+          right: 0;
+          top: 0;
+          vertical-align: middle; }
+        .top-nav li.menu-item-has-children:hover {
+          color: #ff4338; }
+        .top-nav li ul.sub-menu,
+        .top-nav li ul.children {
+          margin-top: 0;
+          border-top: 0;
+          position: absolute;
+          display: none;
+          z-index: 15;
+          text-align: left;
+          background: #ff4338; }
+          .top-nav li ul.sub-menu li a,
+          .top-nav li ul.children li a {
+            display: block;
+            width: 288px;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+            color: #fff; }
+        .top-nav li:hover ul {
+          display: block; }
+      .top-nav li.current-menu-item a,
+      .top-nav li.current_page_item a,
+      .top-nav li.current-page-ancestor a {
+        text-decoration: underline; } }
+
+/* end .nav */
+/* Mobile navigation has a bitch of a class system now*/
+.is-inactive {
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+/*	Page Styles
+	-----------
+	Used for elements like body and html
+	
+*/
+body {
+  background-color: #cbcbcb;
+  font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 90%;
+  line-height: 1.4;
+  color: #555;
+  font-weight: 400; }
+  @media (min-width: 768px) {
+    body {
+      background-color: #fff; } }
+  @media (min-width: 768px) {
+    body {
+      font-size: 100%;
+      line-height: 1.5; } }
+
+/*
+	Wrapping the entire site
+	------------------------
+	We use a .wrap class on areas that we want
+	to restrict the width of. So this loop
+	goes through our breakpoints located in
+	_breakpoints.scss
+*/
+.wrap {
+  width: 96%;
+  margin: 0 auto;
+  /* For each breakpoint listed here, make a mediaquiery and a max-width of that breakpoint. */ }
+  @media (min-width: 481.008px) {
+    .wrap {
+      max-width: 481.008px; } }
+  @media (min-width: 592px) {
+    .wrap {
+      max-width: 592px; } }
+  @media (min-width: 768px) {
+    .wrap {
+      max-width: 768px; } }
+  @media (min-width: 888px) {
+    .wrap {
+      max-width: 888px; } }
+  @media (min-width: 1000px) {
+    .wrap {
+      max-width: 1000px; } }
+  @media (min-width: 1200px) {
+    .wrap {
+      max-width: 1200px; } }
 
 /*
 BASE (MOBILE) SIZE

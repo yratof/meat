@@ -106,7 +106,7 @@ $gutter: 7px;
 	    }
     } @else {
 	    @content;
-    }
+	}
 }
 
 // max-width mediaquery
@@ -121,10 +121,14 @@ $gutter: 7px;
 	        @warn "'#{$screen-size}' has not been declared as a breakpoint."
 	    } 
 	} @else {
-	    @content;
+		// We're not going to use things less than tablet or desktop for IE
+		@if ($screen-size == mobile or $screen-size == phablet or $screen-size == tablet or $screen-size == desktop){
+			/* No mobile styles for you mate. */
+		} @else {
+		    @content;
+	    }
 	}
 }
-
 
 
 
