@@ -668,6 +668,13 @@ CLEARFIXIN'
   .clearfix:after {
     clear: both; }
 
+/*
+	Grid Mixin
+	----------
+	
+	We use these for making grids work easier.
+	@include GridAssets(2, first); = Two columns, and it's the first column
+*/
 .relative {
   position: relative; }
 

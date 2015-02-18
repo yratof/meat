@@ -235,6 +235,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/noimg.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5125,
+		"inputAbbreviatedPath": "\/library\/images\/noimg.png",
+		"outputAbbreviatedPath": "\/library\/images\/noimg.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/win8-tile-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
