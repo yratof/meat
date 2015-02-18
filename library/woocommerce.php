@@ -31,3 +31,18 @@ require_once( 'woocommerce_extras/clean-tabs.php' ); 	// Removes Tabs on product
 	This will create a purchase trap that stops the user from getting distracted and leaving the site. It's the same practise that amazon have taken up. 
 	
 */
+
+
+/* Replace the default thumbnail with our own */
+add_action( 'init', 'custom_fix_thumbnail' );
+ 
+function custom_fix_thumbnail() {
+  add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
+   
+	function custom_woocommerce_placeholder_img_src( $src ) {
+	$uploads = get_bloginfo('template_url');
+	$src = $uploads . '/library/images/noimg.png';
+
+	return $src;
+	}
+}

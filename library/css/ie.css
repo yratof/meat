@@ -752,6 +752,15 @@ Simply use this in a class somewhere to add placeholder styles.
 	}
 *********************/
 /* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
+/* 
+	Blend Modes
+	===========
+	http://caniuse.com/#feat=css-backgroundblendmode
+	@usage:  
+		@include blended("url", $colour);
+		@include blended("url", $grad: $love);
+
+*/
 /*********************
 TOOLS
 *********************/
