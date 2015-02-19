@@ -98,12 +98,6 @@ jQuery(document)
         // Menu (button) script:
         $('body')
             .addClass('js');
-        var menu_button = $('<a>')
-            .addClass('clickable animated mobile-only'); //.text(window.main_nav_name || ''); <-- This adds the name of the navigation to the nav on mobile
-        var menu_icon = '<div class="menu-icon"><div></div><div></div><div></div></div>';
-        menu_button.append(menu_icon);
-        $('.top-nav')
-            .before(menu_button);
 
 		// Sub navigation
         $('.top-nav a')

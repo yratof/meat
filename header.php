@@ -69,6 +69,15 @@
           </p>
 
           <nav role="navigation">
+
+			<a class="clickable animated mobile-only">
+				<div class="menu-icon">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</a>
+
             <?php bones_main_nav(); ?>
           </nav>
 
