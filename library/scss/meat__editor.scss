@@ -1,0 +1,88 @@
+/*! Made with Meat: http://forsvunnet.github.io/meat/  */
+
+/* Ownership of the stylesheets is global. */
+
+$site-name: Meat !global;
+$author:	Andrew + Eivin !global;
+
+/******************************************************************
+Site Name: #{$site-name}
+Author: #{$author}
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+
+
+/********************************************
+				B O U R B O N
+
+	Note: If you don't know what you
+	do and don't want, just uncomment
+	bourbon below and just enjoy life
+	with a glass of bourbon.
+
+********************************************/
+
+@import 'bourbon/bourbon';
+
+// THIS CONVERTS ALL REMS TO PX
+$px-only: false;
+$ie: false;
+/*********************
+IMPORTING PARTIALS
+These files are needed at the beginning so that we establish all
+our mixins, functions, and variables that we'll be using across
+the whole project.
+*********************/
+
+// Sass variables
+@import "partials/variables";
+
+// Sass functions
+@import "partials/functions";
+
+// Breakpoints
+@import "breakpoints"; // These are the sizes for the responsive design
+
+// Typography
+@import "partials/typography";
+
+// Import mixins
+@import "partials/mixins";
+
+// All photoshop translated things
+@import 'global';
+
+
+/*********************
+IMPORTING MODULES
+Modules are reusable blocks or elements we use throughout the project.
+We can break them up as much as we want or just keep them all in one.
+I mean, you can do whatever you want. The world is your oyster. Unless
+you hate oysters, then the world is your peanut butter & jelly sandwich.
+*********************/
+
+@import "partials/gridmath";
+
+// Experimental Columns
+@import 'modules/columns';
+
+// Animations
+@import "modules/animations";
+
+// alert boxes
+@import "modules/alerts";
+
+// buttons
+@import "modules/buttons";
+
+// forms (inputs & labels)
+@import "modules/forms";
+
+// Import elements. We might need these.
+@import "elements/*";

@@ -52,8 +52,6 @@ function bones_ahoy() {
     // cleaning up excerpt
     add_filter( 'excerpt_more', 'bones_excerpt_more' );
 
-    // Nicer css for the mce in admin
-    add_action( 'init', 'meat_mce_css' );
 
 } /* end bones ahoy */
 
@@ -544,13 +542,5 @@ function meat_auto_email($text) {
 		}
 	}
 	return $text;
-}
-
-
-/*********************************
-Admin Styles
-**********************************/
-function meat_mce_css( $mce_css ) {
-  add_editor_style('library/css/style.css');
 }
 ?>

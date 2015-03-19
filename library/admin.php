@@ -87,4 +87,13 @@ function bones_custom_admin_footer() {
 // adding it to the admin area
 add_filter( 'admin_footer_text', 'bones_custom_admin_footer' );
 
+
+/*********************************
+Admin Styles
+// Nicer css for the mce in admin
+**********************************/
+add_action( 'admin_init', 'meat_mce_css' );
+function meat_mce_css() {
+	add_editor_style('library/css/meat__editor.css');
+}
 ?>

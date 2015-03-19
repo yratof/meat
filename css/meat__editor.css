@@ -1,25 +1,25 @@
 /*
-Error: File to import not found or unreadable: global.
+Error: File to import not found or unreadable: partials/variables.
        Load paths:
-         /Users/fullphatdesign/Desktop/meat/library/scss
+         /Users/fullphatdesign/Desktop/meat/library
          /Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets
          Sass::Globbing::Importer
-        on line 51 of /Users/fullphatdesign/Desktop/meat/library/scss/ie.scss
+        on line 44 of /Users/fullphatdesign/Desktop/meat/library/meat__editor.scss
 
-46: 
-47: // Import mixins
-48: @import "partials/mixins";
-49: 
-50: // Import Photoshop Styles
-51: @import 'global';
-52: 
-53: // Experimental Columns
-54: @import 'modules/columns';
-55: 
-56: @import "modules/animations"; 	// import Animations
+39: our mixins, functions, and variables that we'll be using across
+40: the whole project.
+41: *********************\/
+42: 
+43: // Sass variables
+44: @import "partials/variables";
+45: 
+46: // Sass functions
+47: @import "partials/functions";
+48: 
+49: // Breakpoints
 
 Backtrace:
-/Users/fullphatdesign/Desktop/meat/library/scss/ie.scss:51
+/Users/fullphatdesign/Desktop/meat/library/meat__editor.scss:44
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:66:in `rescue in import'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:45:in `import'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -54,4 +54,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: global.\A        Load paths:\A          /Users/fullphatdesign/Desktop/meat/library/scss\A          /Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets\A          Sass::Globbing::Importer\A         on line 51 of /Users/fullphatdesign/Desktop/meat/library/scss/ie.scss\A \A 46: \A 47: // Import mixins\A 48: @import \"partials/mixins\";\A 49: \A 50: // Import Photoshop Styles\A 51: @import 'global';\A 52: \A 53: // Experimental Columns\A 54: @import 'modules/columns';\A 55: \A 56: @import \"modules/animations\"; 	// import Animations"; }
+  content: "Error: File to import not found or unreadable: partials/variables.\A        Load paths:\A          /Users/fullphatdesign/Desktop/meat/library\A          /Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets\A          Sass::Globbing::Importer\A         on line 44 of /Users/fullphatdesign/Desktop/meat/library/meat__editor.scss\A \A 39: our mixins, functions, and variables that we'll be using across\A 40: the whole project.\A 41: *********************/\A 42: \A 43: // Sass variables\A 44: @import \"partials/variables\";\A 45: \A 46: // Sass functions\A 47: @import \"partials/functions\";\A 48: \A 49: // Breakpoints"; }

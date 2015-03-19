@@ -67,6 +67,13 @@ $ie: true;
 @import "elements/*";
 
 
+/*	Page by page
+	----------
+	This is where all the elements of the website are brought together.
+	Each element contains its own mediaqueries and does not depend on anything else. */
+@import "pages/*";
+
+
 // This is now an issue with REM's. Need to bring the base back in for the functions to kick in!
 @import "breakpoints/base";
 

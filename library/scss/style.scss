@@ -96,6 +96,13 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 @import "elements/*";
 
 
+/*	Page by page
+	----------
+	This is where all the elements of the website are brought together.
+	Each element contains its own mediaqueries and does not depend on anything else. */
+@import "pages/*";
+
+
 
 
 

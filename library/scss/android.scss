@@ -102,6 +102,14 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 	Each element contains its own mediaqueries and does not depend on anything else. */
 @import "elements/*";
 
+
+/*	Page by page
+	----------
+	This is where all the elements of the website are brought together.
+	Each element contains its own mediaqueries and does not depend on anything else. */
+@import "pages/*";
+
+
 /*
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
