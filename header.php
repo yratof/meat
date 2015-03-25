@@ -7,7 +7,11 @@
 
   <head>
     <meta charset="utf-8">
-
+    
+																						    <!-- BLOCK THE SITE FROM GOOGGLE!-->
+																							<meta name="robots" content="noindex, nofollow">
+																						    <!-- BLOCK THE SITE FROM GOOGGLE!-->
+																						    
     <!-- Google Chrome Frame for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
