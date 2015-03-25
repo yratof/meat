@@ -380,6 +380,26 @@ TOOLS
 ************************/
 /* This is quite an experiment with font sizes. 
  Basically, i'm using a modualr scale for the type. */
+/* 
+	Counting Elements can be fun.
+	http://www.sitepoint.com/using-sass-quantity-queries/
+
+	// If there are exactly 5 elements:
+	@include count-is(5){
+		// Say something beautiful
+	}
+	
+	// If there are less than 3 elements:
+	@include count-is-less-than(3){
+		// Say something beautiful
+	}
+
+	// If there are 3 or more elements:
+	@include count-is-more-than(3){
+		// Say something beautiful
+	}
+
+*/
 /*********************
 TRANSITION
 *********************/
@@ -572,6 +592,7 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
   margin-top: 0px;
   padding: 0;
   -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+  -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
   -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
   transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
   -webkit-transform: rotate(0deg);
@@ -585,6 +606,7 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
     border-radius: 5px;
     background: #000;
     -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+    -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -webkit-transform: rotate(0deg);
@@ -595,6 +617,7 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
     .animated.clickable .menu-icon > div + div {
       opacity: 1;
       -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+      -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -webkit-transform: rotate(0deg);
@@ -604,6 +627,7 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
       transform: rotate(0deg); }
       .animated.clickable .menu-icon > div + div + div {
         -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+        -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         opacity: 1;
@@ -613,6 +637,7 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
   z-index: 150; }
   .animated.clickable.close .menu-icon {
     -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+    -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -webkit-transform: rotate(90deg);
@@ -624,6 +649,7 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
     z-index: 150; }
     .animated.clickable.close .menu-icon > div {
       -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+      -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -webkit-transform: rotate(45deg);
@@ -635,6 +661,7 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
       .animated.clickable.close .menu-icon > div + div {
         opacity: 0;
         -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+        -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         -webkit-transform: rotate(-225deg);
@@ -644,6 +671,7 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
         transform: rotate(-225deg); }
         .animated.clickable.close .menu-icon > div + div + div {
           -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
+          -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           opacity: 1;
@@ -981,6 +1009,7 @@ textarea,
   font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #ededed;
   -webkit-transition: background-color 0.24s ease-in-out;
+  -moz-transition: background-color 0.24s ease-in-out;
   -transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
   input[type="text"]:focus, input[type="text"]:active,
@@ -1549,6 +1578,7 @@ Navigation Styles
       margin: 0;
       opacity: 0;
       -webkit-transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
+      -moz-transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
       -transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
       transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1); }
       .top-nav.show {
@@ -1581,6 +1611,7 @@ Navigation Styles
         margin: 0;
         opacity: 0;
         -webkit-transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
         -transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1);
         transition: 0.4s opacity cubic-bezier(0.77, 0, 0.175, 1); }
         .top-nav li ul.sub-menu.show,
