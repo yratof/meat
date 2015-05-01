@@ -382,6 +382,7 @@ TOOLS
 	> header,
 	> hgroup,
 	> hr,
+	> li,
 	> main,
 	> nav,
 	> noscript,
@@ -397,7 +398,8 @@ TOOLS
 	{
 	// Apply normals to all direct child elements
 	    display: inline-block;
-	    zoom: 1; *display: inline; /* IE < 8: fake inline-block */
+	    zoom: 1; 
+	    *display: inline; /* IE < 8: fake inline-block */
 	    letter-spacing: normal;
 	    word-spacing: normal;
 	    vertical-align: top;
