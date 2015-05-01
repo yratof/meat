@@ -358,14 +358,20 @@ TOOLS
     word-spacing: -0.43em; /* IE < 8 && gecko */
     word-spacing: -0.43rem; /* IE < 8 && gecko */
 
-	> * {
+	> div, 
+	> a,
+	> span,
+	> article,
+	> section,
+	> footer,
+	> p {
 	// Apply normals to all direct child elements
 	    display: inline-block;
 	    zoom: 1; *display: inline; /* IE < 8: fake inline-block */
 	    letter-spacing: normal;
 	    word-spacing: normal;
 	    vertical-align: top;
-	}	
+	}
 }
 
 
