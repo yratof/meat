@@ -1,11 +1,8 @@
-<?php
-/*
-Author: Eddie Machado
-URL: htp://themble.com/bones/
+<?php /*
 
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, ect.
+Author: Andrew Lazarus
+URL: htp://yratof.github.io/meat
+Based on Bones by Eddie Machado
 */
 
 /************* INCLUDE NEEDED FILES ***************/
@@ -24,6 +21,7 @@ sidebars, comments, ect.
 	- adding custom fields to user profiles
 */
 require_once( 'library/bones.php' ); // if you remove this, bones will break
+
 /*
 2. library/custom-post-type.php
 	- an example custom post type
@@ -54,6 +52,8 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 // Custom Theme Builder
 // require_once('library/skin.php');
 
+
+require_once( 'library/welcome.php' ); // WELCOME TO THE ACTIVATION
 
 
 /************* THUMBNAIL SIZE OPTIONS *************/
