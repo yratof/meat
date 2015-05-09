@@ -1745,171 +1745,129 @@ h1, h2, h3, h4, h5, h6
 	somewhere else on the site: _mixins.scss
 */
 h1, .h1 {
-  font-size: 37.0325450373px;
-  font-size: 2.3145340648rem; }
+  font-size: 37.0325450373px; }
   @media (min-width: 592px) {
     h1, .h1 {
-      font-size: 37.0325450373px;
-      font-size: 2.3145340648rem; } }
+      font-size: 37.0325450373px; } }
   @media (min-width: 768px) {
     h1, .h1 {
-      font-size: 39.5137255548px;
-      font-size: 2.4696078472rem; } }
+      font-size: 39.5137255548px; } }
   @media (min-width: 888px) {
     h1, .h1 {
-      font-size: 42.161145167px;
-      font-size: 2.6350715729rem; } }
+      font-size: 42.161145167px; } }
   @media (min-width: 1000px) {
     h1, .h1 {
-      font-size: 44.9859418932px;
-      font-size: 2.8116213683rem; } }
+      font-size: 44.9859418932px; } }
   @media (min-width: 1200px) {
     h1, .h1 {
-      font-size: 48px;
-      font-size: 3rem; } }
+      font-size: 48px; } }
 
 h2, .h2 {
-  font-size: 23.1453406483px;
-  font-size: 1.4465837905rem; }
+  font-size: 23.1453406483px; }
   @media (min-width: 592px) {
     h2, .h2 {
-      font-size: 23.1453406483px;
-      font-size: 1.4465837905rem; } }
+      font-size: 23.1453406483px; } }
   @media (min-width: 768px) {
     h2, .h2 {
-      font-size: 24.6960784717px;
-      font-size: 1.5435049045rem; } }
+      font-size: 24.6960784717px; } }
   @media (min-width: 888px) {
     h2, .h2 {
-      font-size: 26.3507157294px;
-      font-size: 1.6469197331rem; } }
+      font-size: 26.3507157294px; } }
   @media (min-width: 1000px) {
     h2, .h2 {
-      font-size: 28.1162136832px;
-      font-size: 1.7572633552rem; } }
+      font-size: 28.1162136832px; } }
   @media (min-width: 1200px) {
     h2, .h2 {
-      font-size: 30px;
-      font-size: 1.875rem; } }
+      font-size: 30px; } }
   h2.hero, .h2.hero {
-    font-size: 77.1511354944px;
-    font-size: 4.8219459684rem; }
+    font-size: 77.1511354944px; }
     @media (min-width: 592px) {
       h2.hero, .h2.hero {
-        font-size: 77.1511354944px;
-        font-size: 4.8219459684rem; } }
+        font-size: 77.1511354944px; } }
     @media (min-width: 768px) {
       h2.hero, .h2.hero {
-        font-size: 82.3202615725px;
-        font-size: 5.1450163483rem; } }
+        font-size: 82.3202615725px; } }
     @media (min-width: 888px) {
       h2.hero, .h2.hero {
-        font-size: 87.8357190979px;
-        font-size: 5.4897324436rem; } }
+        font-size: 87.8357190979px; } }
     @media (min-width: 1000px) {
       h2.hero, .h2.hero {
-        font-size: 93.7207122774px;
-        font-size: 5.8575445173rem; } }
+        font-size: 93.7207122774px; } }
     @media (min-width: 1200px) {
       h2.hero, .h2.hero {
-        font-size: 100px;
-        font-size: 6.25rem; } }
+        font-size: 100px; } }
 
 h3, .h3 {
-  font-size: 18.5162725187px;
-  font-size: 1.1572670324rem; }
+  font-size: 18.5162725187px; }
   @media (min-width: 592px) {
     h3, .h3 {
-      font-size: 18.5162725187px;
-      font-size: 1.1572670324rem; } }
+      font-size: 18.5162725187px; } }
   @media (min-width: 768px) {
     h3, .h3 {
-      font-size: 19.7568627774px;
-      font-size: 1.2348039236rem; } }
+      font-size: 19.7568627774px; } }
   @media (min-width: 888px) {
     h3, .h3 {
-      font-size: 21.0805725835px;
-      font-size: 1.3175357865rem; } }
+      font-size: 21.0805725835px; } }
   @media (min-width: 1000px) {
     h3, .h3 {
-      font-size: 22.4929709466px;
-      font-size: 1.4058106842rem; } }
+      font-size: 22.4929709466px; } }
   @media (min-width: 1200px) {
     h3, .h3 {
-      font-size: 24px;
-      font-size: 1.5rem; } }
+      font-size: 24px; } }
 
 h4, .h4 {
-  font-size: 13.887204389px;
-  font-size: 0.8679502743rem; }
+  font-size: 13.887204389px; }
   @media (min-width: 592px) {
     h4, .h4 {
-      font-size: 13.887204389px;
-      font-size: 0.8679502743rem; } }
+      font-size: 13.887204389px; } }
   @media (min-width: 768px) {
     h4, .h4 {
-      font-size: 14.817647083px;
-      font-size: 0.9261029427rem; } }
+      font-size: 14.817647083px; } }
   @media (min-width: 888px) {
     h4, .h4 {
-      font-size: 15.8104294376px;
-      font-size: 0.9881518399rem; } }
+      font-size: 15.8104294376px; } }
   @media (min-width: 1000px) {
     h4, .h4 {
-      font-size: 16.8697282099px;
-      font-size: 1.0543580131rem; } }
+      font-size: 16.8697282099px; } }
   @media (min-width: 1200px) {
     h4, .h4 {
-      font-size: 18px;
-      font-size: 1.125rem; } }
+      font-size: 18px; } }
 
 h5, .h5 {
-  font-size: 12.3441816791px;
-  font-size: 0.7715113549rem; }
+  font-size: 12.3441816791px; }
   @media (min-width: 592px) {
     h5, .h5 {
-      font-size: 12.3441816791px;
-      font-size: 0.7715113549rem; } }
+      font-size: 12.3441816791px; } }
   @media (min-width: 768px) {
     h5, .h5 {
-      font-size: 13.1712418516px;
-      font-size: 0.8232026157rem; } }
+      font-size: 13.1712418516px; } }
   @media (min-width: 888px) {
     h5, .h5 {
-      font-size: 14.0537150557px;
-      font-size: 0.878357191rem; } }
+      font-size: 14.0537150557px; } }
   @media (min-width: 1000px) {
     h5, .h5 {
-      font-size: 14.9953139644px;
-      font-size: 0.9372071228rem; } }
+      font-size: 14.9953139644px; } }
   @media (min-width: 1200px) {
     h5, .h5 {
-      font-size: 16px;
-      font-size: 1rem; } }
+      font-size: 16px; } }
 
 h6, .h6 {
-  font-size: 10.4925544272px;
-  font-size: 0.6557846517rem; }
+  font-size: 10.4925544272px; }
   @media (min-width: 592px) {
     h6, .h6 {
-      font-size: 10.4925544272px;
-      font-size: 0.6557846517rem; } }
+      font-size: 10.4925544272px; } }
   @media (min-width: 768px) {
     h6, .h6 {
-      font-size: 11.1955555739px;
-      font-size: 0.6997222234rem; } }
+      font-size: 11.1955555739px; } }
   @media (min-width: 888px) {
     h6, .h6 {
-      font-size: 11.9456577973px;
-      font-size: 0.7466036123rem; } }
+      font-size: 11.9456577973px; } }
   @media (min-width: 1000px) {
     h6, .h6 {
-      font-size: 12.7460168697px;
-      font-size: 0.7966260544rem; } }
+      font-size: 12.7460168697px; } }
   @media (min-width: 1200px) {
     h6, .h6 {
-      font-size: 13.6px;
-      font-size: 0.85rem; } }
+      font-size: 13.6px; } }
 
 /*	Logo Styles
 	-----------
@@ -2222,148 +2180,112 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300; }
 
 h1, .h1 {
-  font-size: 27.157199694px;
-  font-size: 1.6973249809rem; }
+  font-size: 27.157199694px; }
   @media (min-width: 592px) {
     h1, .h1 {
-      font-size: 27.157199694px;
-      font-size: 1.6973249809rem; } }
+      font-size: 27.157199694px; } }
   @media (min-width: 768px) {
     h1, .h1 {
-      font-size: 28.9767320735px;
-      font-size: 1.8110457546rem; } }
+      font-size: 28.9767320735px; } }
   @media (min-width: 888px) {
     h1, .h1 {
-      font-size: 30.9181731224px;
-      font-size: 1.9323858202rem; } }
+      font-size: 30.9181731224px; } }
   @media (min-width: 1000px) {
     h1, .h1 {
-      font-size: 32.9896907216px;
-      font-size: 2.0618556701rem; } }
+      font-size: 32.9896907216px; } }
   @media (min-width: 1200px) {
     h1, .h1 {
-      font-size: 35.2px;
-      font-size: 2.2rem; } }
+      font-size: 35.2px; } }
 
 h2, .h2 {
-  font-size: 23.1453406483px;
-  font-size: 1.4465837905rem; }
+  font-size: 23.1453406483px; }
   @media (min-width: 592px) {
     h2, .h2 {
-      font-size: 23.1453406483px;
-      font-size: 1.4465837905rem; } }
+      font-size: 23.1453406483px; } }
   @media (min-width: 768px) {
     h2, .h2 {
-      font-size: 24.6960784717px;
-      font-size: 1.5435049045rem; } }
+      font-size: 24.6960784717px; } }
   @media (min-width: 888px) {
     h2, .h2 {
-      font-size: 26.3507157294px;
-      font-size: 1.6469197331rem; } }
+      font-size: 26.3507157294px; } }
   @media (min-width: 1000px) {
     h2, .h2 {
-      font-size: 28.1162136832px;
-      font-size: 1.7572633552rem; } }
+      font-size: 28.1162136832px; } }
   @media (min-width: 1200px) {
     h2, .h2 {
-      font-size: 30px;
-      font-size: 1.875rem; } }
+      font-size: 30px; } }
 
 h3, .h3 {
-  font-size: 18.5162725187px;
-  font-size: 1.1572670324rem; }
+  font-size: 18.5162725187px; }
   @media (min-width: 592px) {
     h3, .h3 {
-      font-size: 18.5162725187px;
-      font-size: 1.1572670324rem; } }
+      font-size: 18.5162725187px; } }
   @media (min-width: 768px) {
     h3, .h3 {
-      font-size: 19.7568627774px;
-      font-size: 1.2348039236rem; } }
+      font-size: 19.7568627774px; } }
   @media (min-width: 888px) {
     h3, .h3 {
-      font-size: 21.0805725835px;
-      font-size: 1.3175357865rem; } }
+      font-size: 21.0805725835px; } }
   @media (min-width: 1000px) {
     h3, .h3 {
-      font-size: 22.4929709466px;
-      font-size: 1.4058106842rem; } }
+      font-size: 22.4929709466px; } }
   @media (min-width: 1200px) {
     h3, .h3 {
-      font-size: 24px;
-      font-size: 1.5rem; } }
+      font-size: 24px; } }
 
 h4, .h4 {
-  font-size: 13.887204389px;
-  font-size: 0.8679502743rem; }
+  font-size: 13.887204389px; }
   @media (min-width: 592px) {
     h4, .h4 {
-      font-size: 13.887204389px;
-      font-size: 0.8679502743rem; } }
+      font-size: 13.887204389px; } }
   @media (min-width: 768px) {
     h4, .h4 {
-      font-size: 14.817647083px;
-      font-size: 0.9261029427rem; } }
+      font-size: 14.817647083px; } }
   @media (min-width: 888px) {
     h4, .h4 {
-      font-size: 15.8104294376px;
-      font-size: 0.9881518399rem; } }
+      font-size: 15.8104294376px; } }
   @media (min-width: 1000px) {
     h4, .h4 {
-      font-size: 16.8697282099px;
-      font-size: 1.0543580131rem; } }
+      font-size: 16.8697282099px; } }
   @media (min-width: 1200px) {
     h4, .h4 {
-      font-size: 18px;
-      font-size: 1.125rem; } }
+      font-size: 18px; } }
 
 h5, .h5 {
-  font-size: 12.3441816791px;
-  font-size: 0.7715113549rem; }
+  font-size: 12.3441816791px; }
   @media (min-width: 592px) {
     h5, .h5 {
-      font-size: 12.3441816791px;
-      font-size: 0.7715113549rem; } }
+      font-size: 12.3441816791px; } }
   @media (min-width: 768px) {
     h5, .h5 {
-      font-size: 13.1712418516px;
-      font-size: 0.8232026157rem; } }
+      font-size: 13.1712418516px; } }
   @media (min-width: 888px) {
     h5, .h5 {
-      font-size: 14.0537150557px;
-      font-size: 0.878357191rem; } }
+      font-size: 14.0537150557px; } }
   @media (min-width: 1000px) {
     h5, .h5 {
-      font-size: 14.9953139644px;
-      font-size: 0.9372071228rem; } }
+      font-size: 14.9953139644px; } }
   @media (min-width: 1200px) {
     h5, .h5 {
-      font-size: 16px;
-      font-size: 1rem; } }
+      font-size: 16px; } }
 
 h6, .h6 {
-  font-size: 10.4925544272px;
-  font-size: 0.6557846517rem; }
+  font-size: 10.4925544272px; }
   @media (min-width: 592px) {
     h6, .h6 {
-      font-size: 10.4925544272px;
-      font-size: 0.6557846517rem; } }
+      font-size: 10.4925544272px; } }
   @media (min-width: 768px) {
     h6, .h6 {
-      font-size: 11.1955555739px;
-      font-size: 0.6997222234rem; } }
+      font-size: 11.1955555739px; } }
   @media (min-width: 888px) {
     h6, .h6 {
-      font-size: 11.9456577973px;
-      font-size: 0.7466036123rem; } }
+      font-size: 11.9456577973px; } }
   @media (min-width: 1000px) {
     h6, .h6 {
-      font-size: 12.7460168697px;
-      font-size: 0.7966260544rem; } }
+      font-size: 12.7460168697px; } }
   @media (min-width: 1200px) {
     h6, .h6 {
-      font-size: 13.6px;
-      font-size: 0.85rem; } }
+      font-size: 13.6px; } }
 
 /*********************
 TEXT BODY STYLES

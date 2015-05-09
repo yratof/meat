@@ -440,13 +440,13 @@ $double-octave:    4;
 
 @mixin modular($largest, $rem: false){
 	$ratio: $minor-second;
-									@include font-size(modular-scale(-4, $largest, $ratio), $rem);
-//	@media(min-width: $mobile){ 	@include font-size(modular-scale(-5, $largest, $ratio), $rem); }
-	@media(min-width: $phablet){ 	@include font-size(modular-scale(-4, $largest, $ratio), $rem); }
-	@media(min-width: $tablet){ 	@include font-size(modular-scale(-3, $largest, $ratio), $rem); }
-	@media(min-width: $desklet){ 	@include font-size(modular-scale(-2, $largest, $ratio), $rem); }
-	@media(min-width: $desktop){ 	@include font-size(modular-scale(-1, $largest, $ratio), $rem); }
-	@media(min-width: $cinema){ 	@include font-size($largest, $rem); }
+	
+								 font-size: u(modular-scale(-4, $largest, $ratio));
+	@media(min-width: $phablet){ font-size: u(modular-scale(-4, $largest, $ratio)); }
+	@media(min-width: $tablet){  font-size: u(modular-scale(-3, $largest, $ratio)); }
+	@media(min-width: $desklet){ font-size: u(modular-scale(-2, $largest, $ratio)); }
+	@media(min-width: $desktop){ font-size: u(modular-scale(-1, $largest, $ratio)); }
+	@media(min-width: $cinema){  font-size: u(($largest)); }
 }
 
 

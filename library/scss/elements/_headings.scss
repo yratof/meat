@@ -35,15 +35,15 @@ $automaticSizing:	true;
 		somewhere else on the site: _mixins.scss
 	*/
 	
-	h1, .h1 {	@include modular(3);		}
-	h2, .h2 {	@include modular(1.875);	
+	h1, .h1 {	@include modular(3rem);		}
+	h2, .h2 {	@include modular(1.875rem);	
 		// We've got a hero version of <h2> tags
-		&.hero {  @include modular(6.25); }
+		&.hero {  @include modular(6.25rem); }
 	} 
-	h3, .h3 {	@include modular(1.5);		} 
-	h4, .h4 {	@include modular(1.125);	} 
-	h5, .h5 {	@include modular(1);		} 
-	h6, .h6 {	@include modular(0.85);		} 
+	h3, .h3 {	@include modular(1.5rem);		} 
+	h4, .h4 {	@include modular(1.125rem);	} 
+	h5, .h5 {	@include modular(1rem);		} 
+	h6, .h6 {	@include modular(0.85rem);		} 
 
 } @else { 
 	

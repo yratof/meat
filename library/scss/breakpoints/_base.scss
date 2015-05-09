@@ -45,12 +45,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 300;
 }
 
-h1, .h1 {	@include modular(2.20);		} 
-h2, .h2 {	@include modular(1.875);	} 
-h3, .h3 {	@include modular(1.5);		} 
-h4, .h4 {	@include modular(1.125);	} 
-h5, .h5 {	@include modular(1);		} 
-h6, .h6 {	@include modular(0.85);		} 
+h1, .h1 {	@include modular(2.20rem);		} 
+h2, .h2 {	@include modular(1.875rem);	} 
+h3, .h3 {	@include modular(1.5rem);		} 
+h4, .h4 {	@include modular(1.125rem);	} 
+h5, .h5 {	@include modular(1rem);		} 
+h6, .h6 {	@include modular(0.85rem);		} 
 
 /*********************
 TEXT BODY STYLES
