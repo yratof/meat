@@ -1253,6 +1253,9 @@ select {
   @media (max-width: 480px) {
     select {
       font-size: 1rem; } }
+  .textshadow select:-moz-focusring {
+    text-shadow: 0 0 0 #555;
+    color: transparent; }
 
 /******************************************************************
 COMMENT FORM STYLES
