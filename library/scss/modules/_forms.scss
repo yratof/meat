@@ -114,6 +114,14 @@ select {
 	@media (max-width: 480px ){
 		font-size: 1rem;
 	}
+
+	// If we have text-shadows, we can remove the outline	
+	.textshadow &{
+		&:-moz-focusring{
+			text-shadow: 0 0 0 $text-colour;
+			color: transparent;
+		}
+	}
 }
 
 
