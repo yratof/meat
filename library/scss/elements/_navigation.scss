@@ -158,7 +158,7 @@ Navigation Styles
 				a {
 					border-bottom: 0;
 					color: $text-colour;
-					@include font-size(1);
+					font-size: u(1rem);
 					padding: u(0.5rem 1rem);
 					font-weight: 400;
 				}

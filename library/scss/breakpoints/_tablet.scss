@@ -98,7 +98,7 @@ NAVIGATION STYLES
 		a {
 			border-bottom: 0;
 			color: $text-colour;
-			@include font-size(1);
+			font-size: u(1rem);
 			padding: u(0.5rem 1rem);
 			font-weight: 400;
 
@@ -137,7 +137,7 @@ NAVIGATION STYLES
 				}
 				
 				a {
-					@include font-size(0.85);
+					font-size: u(0.85rem);
 					border-right: 0;
 					display: block;
 					width: u(18rem);

@@ -38,21 +38,14 @@ input[type="color"],
 select,
 textarea,
 .field {
-  display: block;
-  height: 40px;
-  line-height: 40px;
   padding: 10px 12px;
-  margin-bottom: 14px;
   font-size: 1em;
   color: $text-colour;
-  border-radius: 3px;
-  vertical-align: middle;
+  vertical-align: top;
   box-shadow: none;
   border: 0;
-  width: 100%;
-  max-width: 400px;
   font-family: $sans-serif;
-  background-color: lighten($black, 93%);
+  background-color: white;
   @include transition(background-color 0.24s ease-in-out);
 
   // a focused input (or hovered on)
@@ -122,6 +115,7 @@ select {
 		font-size: 1rem;
 	}
 }
+
 
 
 /******************************************************************
@@ -204,19 +198,3 @@ COMMENT FORM STYLES
 .nocomments {
 	//margin: 0 20px 1.1em;
 }
-
-
-
-// Search Form
-
-input[type="search"]{
-	width: 61%;
-	float: left;
-	padding: 2% 1%;
-}
-
-.search-form .button{
-	float: right;
-	width: 35%;
-}
-

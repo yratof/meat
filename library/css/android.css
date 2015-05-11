@@ -504,65 +504,9 @@ I've edited it a bit, but it's a nice starting point.
 	and you want to use them, plop them in here.
 
 *********************************************/
-/*
-some nice typographical defaults
-more here: http://www.newnet-soft.com/blog/csstypography
-*/
-p {
-  -ms-word-break: break-all;
-  -ms-word-wrap: break-all;
-  word-break: break-word;
-  word-break: break-word;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  hyphens: none;
-  -webkit-hyphenate-before: 2;
-  -webkit-hyphenate-after: 3;
-  hyphenate-lines: 3;
-  -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga", "dlig";
-  -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig"; }
-
-/*
-	# Typekit and FOUT.
-
-	FOUT means "Flash of Unstyled Text"
-	and that happens when the site loads before the 
-	javascript can get the fonts needed for the 
-	page to be styled.
-	
-	Typekit have suggested "how about you hide 
-	everything until they load?" and have provided 
-	a javascript way of getting the fonts to load. 
-	
-	Which might work, but if the javascript doesn't 
-	load, we're still going to have a flash of 
-	text right?
-
-*/
-body {
-  -webkit-transition: opacity 0.3s ease-out;
-  -moz-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out; }
-
-.wf-loading body {
-  opacity: 0; }
-
-.wf-active body {
-  opacity: 1; }
-
 /*********************
 Text Overflow
 *********************/
-/********************************* 
-
-// This is for website rem to PX
-// so you can use @include font-size(2);
-// which outputs font-size: 24px; font-size:2rem;
-
-*********************************/
 /*********************************
 	Text alignment in classes	
 *********************************/
@@ -578,6 +522,40 @@ Text Overflow
 .marginauto {
   margin: 0 auto !important;
   float: none !important; }
+
+/*********************************
+	Hyphenation	
+*********************************/
+p {
+  -ms-word-break: normal;
+  -ms-word-wrap: normal;
+  word-break: normal;
+  word-break: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig"; }
+
+/*********************************
+	Typekit and FOUT	
+*********************************/
+body {
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out; }
+
+.wf-loading body {
+  opacity: 0; }
+
+.wf-active body {
+  opacity: 1; }
 
 /******************************************************************
 Site Name: Meat
@@ -1306,21 +1284,14 @@ input[type="color"],
 select,
 textarea,
 .field {
-  display: block;
-  height: 40px;
-  line-height: 40px;
   padding: 10px 12px;
-  margin-bottom: 14px;
   font-size: 1em;
   color: #555;
-  border-radius: 3px;
-  vertical-align: middle;
+  vertical-align: top;
   box-shadow: none;
   border: 0;
-  width: 100%;
-  max-width: 400px;
   font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #ededed;
+  background-color: white;
   -webkit-transition: background-color 0.24s ease-in-out;
   -moz-transition: background-color 0.24s ease-in-out;
   -transition: background-color 0.24s ease-in-out;
@@ -1613,15 +1584,6 @@ COMMENT FORM STYLES
 
 /* allowed tags */
 /* no comments */
-input[type="search"] {
-  width: 61%;
-  float: left;
-  padding: 2% 1%; }
-
-.search-form .button {
-  float: right;
-  width: 35%; }
-
 /* Grid Math */
 /********************************************
 			   G R I D  M A T H
@@ -2013,7 +1975,6 @@ Navigation Styles
           border-bottom: 0;
           color: #555;
           font-size: 16px;
-          font-size: 1rem;
           padding: 8px 16px;
           font-weight: 400; }
         .top-nav li.menu-item-has-children:after {
@@ -2085,6 +2046,7 @@ body {
 	----------
 	This is where all the elements of the website are brought together.
 	Each element contains its own mediaqueries and does not depend on anything else. */
+/* No files to import found in pages/* */
 /*
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -3011,7 +2973,6 @@ you can add resource intensive styles.
         border-bottom: 0;
         color: #555;
         font-size: 16px;
-        font-size: 1rem;
         padding: 8px 16px;
         font-weight: 400; }
         .nav li a:hover, .nav li a:focus {
@@ -3048,7 +3009,6 @@ you can add resource intensive styles.
           .nav li ul.sub-menu li a,
           .nav li ul.children li a {
             font-size: 13.6px;
-            font-size: 0.85rem;
             border-right: 0;
             display: block;
             width: 288px;

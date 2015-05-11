@@ -40,15 +40,44 @@ $sans-serif:        "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif
 
 
 
-/*
-some nice typographical defaults
-more here: http://www.newnet-soft.com/blog/csstypography
-*/
+/*********************
+Text Overflow
+*********************/
+
+@mixin text-overflow( ) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+/*********************************
+	Text alignment in classes	
+*********************************/
+
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+// This forces divs to be center aligned
+
+.marginauto { 
+	margin: 0 auto !important; 
+	float: none !important; 
+}
+
+
+
+/*********************************
+	Hyphenation	
+*********************************/
+
 p {
-  -ms-word-break: break-all;
-  -ms-word-wrap: break-all;
-      word-break: break-word;
-     word-break: break-word;
+  -ms-word-break: normal;
+  -ms-word-wrap: normal;
+      word-break: normal;
+     word-break: normal;
   // cleaning up the ragged lines and breaks
   -webkit-hyphens: none;
      -moz-hyphens: none;
@@ -66,25 +95,10 @@ p {
 }
 
 
-/*
-	# Typekit and FOUT.
 
-	FOUT means "Flash of Unstyled Text"
-	and that happens when the site loads before the 
-	javascript can get the fonts needed for the 
-	page to be styled.
-	
-	Typekit have suggested "how about you hide 
-	everything until they load?" and have provided 
-	a javascript way of getting the fonts to load. 
-	
-	Which might work, but if the javascript doesn't 
-	load, we're still going to have a flash of 
-	text right?
-
-*/
-
-// Give the body a transition for opacity.
+/*********************************
+	Typekit and FOUT	
+*********************************/
 
 body { @include transition(opacity 0.3s ease-out); }
 
@@ -97,55 +111,4 @@ body { @include transition(opacity 0.3s ease-out); }
 .wf-active {
 	body { opacity: 1; }
 
-}
-
-
-
-
-/*********************
-Text Overflow
-*********************/
-
-@mixin text-overflow( ) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/********************************* 
-
-// This is for website rem to PX
-// so you can use @include font-size(2);
-// which outputs font-size: 24px; font-size:2rem;
-
-*********************************/
-
-
-@mixin font-size($sizeValue: 1.6, $px: false) {
-
-	@if $px == false{ 
-	  font-size: ($sizeValue * 16) + px;
-	  font-size: $sizeValue + rem;
-	}
-
-	@else {
-	  font-size: $sizeValue + px;
-	  font-size: ($sizeValue / 16) + rem;
-	}
-  
-}
-
-/*********************************
-	Text alignment in classes	
-*********************************/
-
-.text-left   { text-align: left; }
-.text-center { text-align: center; }
-.text-right  { text-align: right; }
-
-// This forces divs to be center aligned
-
-.marginauto { 
-	margin: 0 auto !important; 
-	float: none !important; 
 }
