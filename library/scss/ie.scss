@@ -30,59 +30,21 @@ import the mixins file so SASS can understand the variables.
 $px-only: true;
 $ie: true;
 
-// Normalize: http://necolas.github.io/normalize.css/
 @import "partials/normalize";
+@import "partials/functions"; // Functions u() etc
+@import "partials/breakpoints"; // Breakpoints
+@import "partials/mixins"; // Mixins
+@import 'partials/global'; // Photoshop variables
+@import 'partials/columns'; // Columns
 
-// Sass variables
-@import "partials/variables";
-
-@import "breakpoints"; // These are the sizes for the responsive design
-
-// Typography
-@import "partials/typography";
-
-// Sass functions
-@import "partials/functions";
-
-// Import mixins
-@import "partials/mixins";
-
-// Import Photoshop Styles
-@import 'global';
-
-// Experimental Columns
-@import 'modules/columns';
-
-@import "modules/animations"; 	// import Animations
-@import "modules/alerts"; 		// import alerts
-@import "modules/buttons"; 		// import buttons
-@import "modules/forms"; 		// import forms
+@import 'partials/gridmath'; /* Grid Math */
 
 @import "partials/ie_grid"; // import grid
 
-/*	Elemental
-	----------
-	This is where all the elements of the website are brought together.
-	Each element contains its own mediaqueries and does not depend on anything else. */
-@import "elements/*";
+/* All Elements */ 
+@import "components/*";
 
-
-/*	Page by page
-	----------
-	This is where all the elements of the website are brought together.
-	Each element contains its own mediaqueries and does not depend on anything else. */
-@import "pages/*";
-
-
-// This is now an issue with REM's. Need to bring the base back in for the functions to kick in!
-@import "breakpoints/base";
-
-// import everything inside media queries
-@import "breakpoints/mobile";
-@import "breakpoints/phablet";
-@import "breakpoints/tablet";
-@import "breakpoints/desklet";
-@import "breakpoints/desktop";
-@import "breakpoints/cinema";
-
-/* you can call the larger styles if you want, but there's really no need */
+@import "partials/animations";	// Animations
+@import "partials/alerts"; // Alerts
+@import "partials/buttons"; // buttons
+@import "partials/forms"; // forms (inputs & labels)

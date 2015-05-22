@@ -115,4 +115,4 @@ for free. Go on. Have them
 .button.highlight { 	@include button($brand-highlight, true); 	}
 .button.white {			@include button($white, true); 				}
 .button.black {			@include button($black, true);				}
-.button.compliment {	@include button($brand-compliment, true);	}
+.button.accent {		@include button($brand-accent, true);	}
