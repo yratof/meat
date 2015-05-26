@@ -1341,7 +1341,7 @@ h1, .h1 {
   @media (min-width: 37rem) {
     h1, .h1 {
       font-size: 2.3145340648rem; } }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     h1, .h1 {
       font-size: 2.4696078472rem; } }
   @media (min-width: 55.5rem) {
@@ -1359,7 +1359,7 @@ h2, .h2 {
   @media (min-width: 37rem) {
     h2, .h2 {
       font-size: 1.4465837905rem; } }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     h2, .h2 {
       font-size: 1.5435049045rem; } }
   @media (min-width: 55.5rem) {
@@ -1376,7 +1376,7 @@ h2, .h2 {
     @media (min-width: 37rem) {
       h2.hero, .h2.hero {
         font-size: 4.8219459684rem; } }
-    @media (min-width: 48rem) {
+    @media (min-width: 47.9rem) {
       h2.hero, .h2.hero {
         font-size: 5.1450163483rem; } }
     @media (min-width: 55.5rem) {
@@ -1394,7 +1394,7 @@ h3, .h3 {
   @media (min-width: 37rem) {
     h3, .h3 {
       font-size: 1.1572670324rem; } }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     h3, .h3 {
       font-size: 1.2348039236rem; } }
   @media (min-width: 55.5rem) {
@@ -1412,7 +1412,7 @@ h4, .h4 {
   @media (min-width: 37rem) {
     h4, .h4 {
       font-size: 0.8679502743rem; } }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     h4, .h4 {
       font-size: 0.9261029427rem; } }
   @media (min-width: 55.5rem) {
@@ -1430,7 +1430,7 @@ h5, .h5 {
   @media (min-width: 37rem) {
     h5, .h5 {
       font-size: 0.7715113549rem; } }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     h5, .h5 {
       font-size: 0.8232026157rem; } }
   @media (min-width: 55.5rem) {
@@ -1448,7 +1448,7 @@ h6, .h6 {
   @media (min-width: 37rem) {
     h6, .h6 {
       font-size: 0.6557846517rem; } }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     h6, .h6 {
       font-size: 0.6997222234rem; } }
   @media (min-width: 55.5rem) {
@@ -1476,7 +1476,7 @@ h6, .h6 {
   margin: 0 auto;
   position: relative;
   z-index: 20; }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     #logo {
       width: 18.6359921731%;
       width: calc((99.95% - 3.8rem) / 4.8);
@@ -1536,7 +1536,7 @@ Navigation Styles
   	Larger than the mobile styles, 
   	we're going for around tablets here. */
   /* end tablets */ }
-  @media (max-width: 48rem) {
+  @media (max-width: 47.9rem) {
     .top-nav {
       overflow: hidden;
       max-height: 0;
@@ -1568,7 +1568,7 @@ Navigation Styles
         left: 0;
         top: 0;
         line-height: 2; }
-    @media (max-width: 48rem) {
+    @media (max-width: 47.9rem) {
       .top-nav li ul.sub-menu,
       .top-nav li ul.children {
         overflow: hidden;
@@ -1594,7 +1594,7 @@ Navigation Styles
     bottom: 0;
     left: 0;
     width: 100%; }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     .top-nav {
       text-align: right;
       margin: 1rem 0;
@@ -1671,10 +1671,10 @@ body {
   line-height: 1.4;
   color: #555;
   font-weight: 400; }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     body {
       background-color: #fff; } }
-  @media (min-width: 48rem) {
+  @media (min-width: 47.9rem) {
     body {
       font-size: 100%;
       line-height: 1.5; } }

@@ -1707,7 +1707,7 @@ h1, .h1 {
   @media (min-width: 592px) {
     h1, .h1 {
       font-size: 37.0325450373px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h1, .h1 {
       font-size: 39.5137255548px; } }
   @media (min-width: 888px) {
@@ -1725,7 +1725,7 @@ h2, .h2 {
   @media (min-width: 592px) {
     h2, .h2 {
       font-size: 23.1453406483px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h2, .h2 {
       font-size: 24.6960784717px; } }
   @media (min-width: 888px) {
@@ -1742,7 +1742,7 @@ h2, .h2 {
     @media (min-width: 592px) {
       h2.hero, .h2.hero {
         font-size: 77.1511354944px; } }
-    @media (min-width: 768px) {
+    @media (min-width: 766.4px) {
       h2.hero, .h2.hero {
         font-size: 82.3202615725px; } }
     @media (min-width: 888px) {
@@ -1760,7 +1760,7 @@ h3, .h3 {
   @media (min-width: 592px) {
     h3, .h3 {
       font-size: 18.5162725187px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h3, .h3 {
       font-size: 19.7568627774px; } }
   @media (min-width: 888px) {
@@ -1778,7 +1778,7 @@ h4, .h4 {
   @media (min-width: 592px) {
     h4, .h4 {
       font-size: 13.887204389px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h4, .h4 {
       font-size: 14.817647083px; } }
   @media (min-width: 888px) {
@@ -1796,7 +1796,7 @@ h5, .h5 {
   @media (min-width: 592px) {
     h5, .h5 {
       font-size: 12.3441816791px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h5, .h5 {
       font-size: 13.1712418516px; } }
   @media (min-width: 888px) {
@@ -1814,7 +1814,7 @@ h6, .h6 {
   @media (min-width: 592px) {
     h6, .h6 {
       font-size: 10.4925544272px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h6, .h6 {
       font-size: 11.1955555739px; } }
   @media (min-width: 888px) {
@@ -1842,7 +1842,7 @@ h6, .h6 {
   margin: 0 auto;
   position: relative;
   z-index: 20; }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     #logo {
       width: 18.6359921731%;
       width: calc((99.95% - 3.8rem) / 4.8);
@@ -1902,7 +1902,7 @@ Navigation Styles
   	Larger than the mobile styles, 
   	we're going for around tablets here. */
   /* end tablets */ }
-  @media (max-width: 768px) {
+  @media (max-width: 766.4px) {
     .top-nav {
       overflow: hidden;
       max-height: 0;
@@ -1934,7 +1934,7 @@ Navigation Styles
         left: 0;
         top: 0;
         line-height: 2; }
-    @media (max-width: 768px) {
+    @media (max-width: 766.4px) {
       .top-nav li ul.sub-menu,
       .top-nav li ul.children {
         overflow: hidden;
@@ -1960,7 +1960,7 @@ Navigation Styles
     bottom: 0;
     left: 0;
     width: 100%; }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     .top-nav {
       text-align: right;
       margin: 16px 0;
@@ -2037,10 +2037,10 @@ body {
   line-height: 1.4;
   color: #555;
   font-weight: 400; }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     body {
       background-color: #fff; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     body {
       font-size: 100%;
       line-height: 1.5; } }
@@ -2180,7 +2180,7 @@ h1, .h1 {
   @media (min-width: 592px) {
     h1, .h1 {
       font-size: 27.157199694px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h1, .h1 {
       font-size: 28.9767320735px; } }
   @media (min-width: 888px) {
@@ -2198,7 +2198,7 @@ h2, .h2 {
   @media (min-width: 592px) {
     h2, .h2 {
       font-size: 23.1453406483px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h2, .h2 {
       font-size: 24.6960784717px; } }
   @media (min-width: 888px) {
@@ -2216,7 +2216,7 @@ h3, .h3 {
   @media (min-width: 592px) {
     h3, .h3 {
       font-size: 18.5162725187px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h3, .h3 {
       font-size: 19.7568627774px; } }
   @media (min-width: 888px) {
@@ -2234,7 +2234,7 @@ h4, .h4 {
   @media (min-width: 592px) {
     h4, .h4 {
       font-size: 13.887204389px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h4, .h4 {
       font-size: 14.817647083px; } }
   @media (min-width: 888px) {
@@ -2252,7 +2252,7 @@ h5, .h5 {
   @media (min-width: 592px) {
     h5, .h5 {
       font-size: 12.3441816791px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h5, .h5 {
       font-size: 13.1712418516px; } }
   @media (min-width: 888px) {
@@ -2270,7 +2270,7 @@ h6, .h6 {
   @media (min-width: 592px) {
     h6, .h6 {
       font-size: 10.4925544272px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h6, .h6 {
       font-size: 11.1955555739px; } }
   @media (min-width: 888px) {
@@ -2350,7 +2350,7 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 766.4px) {
   .cssremunit .nav {
     overflow: hidden;
     max-height: 0;
@@ -2405,7 +2405,7 @@ NAVIGATION STYLES
   .nav li a {
     display: inline-block;
     text-decoration: none; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 766.4px) {
     .js .nav li ul.sub-menu, .js
     .nav li ul.children {
       overflow: hidden;
@@ -2702,7 +2702,7 @@ This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 766.4px) {
   /******************************************************************
   Site Name: Meat
   Author: AndrewEivin
@@ -2916,7 +2916,7 @@ you can add resource intensive styles.
   LAYOUT & GRID STYLES
   *********************/
   .wrap {
-    max-width: 768px; }
+    max-width: 766.4px; }
 
   /*********************
   HEADER STYLES

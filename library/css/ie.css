@@ -1714,7 +1714,7 @@ h1, .h1 {
   @media (min-width: 592px) {
     h1, .h1 {
       font-size: 37.0325450373px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h1, .h1 {
       font-size: 39.5137255548px; } }
   @media (min-width: 888px) {
@@ -1732,7 +1732,7 @@ h2, .h2 {
   @media (min-width: 592px) {
     h2, .h2 {
       font-size: 23.1453406483px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h2, .h2 {
       font-size: 24.6960784717px; } }
   @media (min-width: 888px) {
@@ -1749,7 +1749,7 @@ h2, .h2 {
     @media (min-width: 592px) {
       h2.hero, .h2.hero {
         font-size: 77.1511354944px; } }
-    @media (min-width: 768px) {
+    @media (min-width: 766.4px) {
       h2.hero, .h2.hero {
         font-size: 82.3202615725px; } }
     @media (min-width: 888px) {
@@ -1767,7 +1767,7 @@ h3, .h3 {
   @media (min-width: 592px) {
     h3, .h3 {
       font-size: 18.5162725187px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h3, .h3 {
       font-size: 19.7568627774px; } }
   @media (min-width: 888px) {
@@ -1785,7 +1785,7 @@ h4, .h4 {
   @media (min-width: 592px) {
     h4, .h4 {
       font-size: 13.887204389px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h4, .h4 {
       font-size: 14.817647083px; } }
   @media (min-width: 888px) {
@@ -1803,7 +1803,7 @@ h5, .h5 {
   @media (min-width: 592px) {
     h5, .h5 {
       font-size: 12.3441816791px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h5, .h5 {
       font-size: 13.1712418516px; } }
   @media (min-width: 888px) {
@@ -1821,7 +1821,7 @@ h6, .h6 {
   @media (min-width: 592px) {
     h6, .h6 {
       font-size: 10.4925544272px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h6, .h6 {
       font-size: 11.1955555739px; } }
   @media (min-width: 888px) {
@@ -2149,7 +2149,7 @@ h1, .h1 {
   @media (min-width: 592px) {
     h1, .h1 {
       font-size: 27.157199694px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h1, .h1 {
       font-size: 28.9767320735px; } }
   @media (min-width: 888px) {
@@ -2167,7 +2167,7 @@ h2, .h2 {
   @media (min-width: 592px) {
     h2, .h2 {
       font-size: 23.1453406483px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h2, .h2 {
       font-size: 24.6960784717px; } }
   @media (min-width: 888px) {
@@ -2185,7 +2185,7 @@ h3, .h3 {
   @media (min-width: 592px) {
     h3, .h3 {
       font-size: 18.5162725187px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h3, .h3 {
       font-size: 19.7568627774px; } }
   @media (min-width: 888px) {
@@ -2203,7 +2203,7 @@ h4, .h4 {
   @media (min-width: 592px) {
     h4, .h4 {
       font-size: 13.887204389px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h4, .h4 {
       font-size: 14.817647083px; } }
   @media (min-width: 888px) {
@@ -2221,7 +2221,7 @@ h5, .h5 {
   @media (min-width: 592px) {
     h5, .h5 {
       font-size: 12.3441816791px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h5, .h5 {
       font-size: 13.1712418516px; } }
   @media (min-width: 888px) {
@@ -2239,7 +2239,7 @@ h6, .h6 {
   @media (min-width: 592px) {
     h6, .h6 {
       font-size: 10.4925544272px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 766.4px) {
     h6, .h6 {
       font-size: 11.1955555739px; } }
   @media (min-width: 888px) {
@@ -2319,7 +2319,7 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 766.4px) {
   .cssremunit .nav {
     overflow: hidden;
     max-height: 0;
@@ -2374,7 +2374,7 @@ NAVIGATION STYLES
   .nav li a {
     display: inline-block;
     text-decoration: none; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 766.4px) {
     .js .nav li ul.sub-menu, .js
     .nav li ul.children {
       overflow: hidden;
@@ -2678,7 +2678,7 @@ body {
 LAYOUT & GRID STYLES
 *********************/
 .wrap {
-  max-width: 768px; }
+  max-width: 766.4px; }
 
 /*********************
 HEADER STYLES
