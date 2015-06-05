@@ -26,3 +26,83 @@ body{
 		-ms-transform: translateY(-50%);
 		transform: translateY(-50%);
 }
+
+
+////===================================
+
+/*************************************/
+@mixin button($colour, $style: false){
+
+	@if ($style) {
+		// Standard styles
+		border: none;
+		text-indent:0;
+		display: inline-block;
+		font-weight: normal;
+		font-style: normal;
+		text-decoration: none;
+		text-align: center;
+		cursor: pointer;
+		padding: 10px;
+		font-weight: 600;
+		outline: none; 
+		-webkit-font-smoothing: antialiased;
+		appearance: none;
+		border-radius: 0;
+	}
+	
+	/**********************************
+	 This determines the background colour
+	 in a greyscale manner, if it's lighter
+	 than 40% lightness, the text colour
+	 becomes dark to compensate.
+	**********************************/
+
+	color: white;
+	background: $colour;
+
+	$brightness: lightness($colour);
+	@if ($brightness < 70%) {
+		color: white;
+		&:hover, &:focus, &:active { color: white; }
+	} @else {
+		color: #fff;
+		&:hover, &:focus, &:active { color: #fff; }
+	}
+
+	$brightness: lightness($colour);
+	@if ($brightness > 99%) {
+		color: #555;
+		border: 1px solid;
+		&:hover, &:focus, &:active { color: #555; }
+	}
+	
+	
+	/**********************************
+	 This is the style for the hovers,
+	 the actives and the visited.
+	**********************************/
+
+	&:hover{
+		background: lighten($colour, 5%);
+	}
+	
+	&:active{ 
+		background: darken($colour, 10%); 
+
+		@if ($style) {
+			box-shadow: inset 0px 10px 5px -7px darken($colour, 20%);
+			position: relative;
+		    top: 2px;
+
+		}
+	}
+
+	&:visited{
+		background: $colour;
+		border-bottom-color: darken($colour, 20%);
+	}
+}
+
+
+.button {	@include button(#e6baaa, true);		}

@@ -22,3 +22,45 @@ body {
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
+
+/*************************************/
+.button {
+  border: none;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: 600;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  border-radius: 0;
+  /**********************************
+   This determines the background colour
+   in a greyscale manner, if it's lighter
+   than 40% lightness, the text colour
+   becomes dark to compensate.
+  **********************************/
+  color: white;
+  background: #e6baaa;
+  color: #fff;
+  /**********************************
+   This is the style for the hovers,
+   the actives and the visited.
+  **********************************/ }
+  .button:hover, .button:focus, .button:active {
+    color: #fff; }
+  .button:hover {
+    background: #eccabe; }
+  .button:active {
+    background: #da9a83;
+    box-shadow: inset 0px 10px 5px -7px #cf7a5b;
+    position: relative;
+    top: 2px; }
+  .button:visited {
+    background: #e6baaa;
+    border-bottom-color: #cf7a5b; }
