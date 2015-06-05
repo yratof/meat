@@ -1,4 +1,4 @@
-/*! Made with Meat: http://forsvunnet.github.io/meat/  */
+/*! Made with Meat: http://yratof.github.io/meat/  */
 
 /* Ownership of the stylesheets is global. */
 
@@ -17,72 +17,28 @@ and is called at the beginning, after that we call the rest
 of the styles inside media queries.
 ******************************************************************/
 
-
-/********************************************
-				B O U R B O N
-
-	Note: If you don't know what you
-	do and don't want, just uncomment
-	bourbon below and just enjoy life
-	with a glass of bourbon.
-
-********************************************/
-
 @import 'bourbon/bourbon';
 
 // THIS CONVERTS ALL REMS TO PX
 $px-only: false;
 $ie: false;
-/*********************
-IMPORTING PARTIALS
-These files are needed at the beginning so that we establish all
-our mixins, functions, and variables that we'll be using across
-the whole project.
-*********************/
 
-// Sass variables
-@import "partials/variables";
+@import "partials/normalize";
+@import "partials/functions"; // Functions u() etc
+@import "partials/breakpoints"; // Breakpoints
+@import "partials/mixins"; // Mixins
+@import 'partials/global'; // Photoshop variables
+@import 'partials/columns'; // Columns
+@import 'partials/gridmath'; /* Grid Math */
 
-// Sass functions
-@import "partials/functions";
+/* All Elements */ 
+@import "components/*";
 
-// Breakpoints
-@import "breakpoints"; // These are the sizes for the responsive design
+// Extra fancy shit.
+@import "partials/animations";	// Animations
+@import "partials/alerts"; // Alerts
+@import "partials/forms"; // forms (inputs & labels)
 
-// Typography
-@import "partials/typography";
-
-// Import mixins
-@import "partials/mixins";
-
-// All photoshop translated things
-@import 'global';
-
-
-/*********************
-IMPORTING MODULES
-Modules are reusable blocks or elements we use throughout the project.
-We can break them up as much as we want or just keep them all in one.
-I mean, you can do whatever you want. The world is your oyster. Unless
-you hate oysters, then the world is your peanut butter & jelly sandwich.
-*********************/
-
-@import "partials/gridmath";
-
-// Experimental Columns
-@import 'modules/columns';
-
-// Animations
-@import "modules/animations";
-
-// alert boxes
-@import "modules/alerts";
-
-// buttons
-@import "modules/buttons";
-
-// forms (inputs & labels)
-@import "modules/forms";
-
-// Import elements. We might need these.
-@import "elements/*";
+body{
+  background-color: white;
+}
