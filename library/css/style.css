@@ -24,7 +24,7 @@ body {
   transform: translateY(-50%); }
 
 /*************************************/
-.button {
+.button, a {
   border: none;
   text-indent: 0;
   display: inline-block;
@@ -52,15 +52,15 @@ body {
    This is the style for the hovers,
    the actives and the visited.
   **********************************/ }
-  .button:hover, .button:focus, .button:active {
+  .button:hover, .button:focus, .button:active, a:hover, a:focus, a:active {
     color: #fff; }
-  .button:hover {
+  .button:hover, a:hover {
     background: #eccabe; }
-  .button:active {
+  .button:active, a:active {
     background: #da9a83;
     box-shadow: inset 0px 10px 5px -7px #cf7a5b;
     position: relative;
     top: 2px; }
-  .button:visited {
+  .button:visited, a:visited {
     background: #e6baaa;
     border-bottom-color: #cf7a5b; }

@@ -105,4 +105,4 @@ body{
 }
 
 
-.button {	@include button(#e6baaa, true);		}
+.button, a {	@include button(#e6baaa, true);		}
