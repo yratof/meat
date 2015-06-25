@@ -72,12 +72,12 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 16299,
+		"initialSize": 16166,
 		"inputAbbreviatedPath": "\/favicon.png",
 		"outputAbbreviatedPath": "\/favicon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 1
+		"processed": 0
 		},
 	"\/footer.php": {
 		"fileType": 8192,
@@ -814,7 +814,7 @@
 		"outputAbbreviatedPath": "\/library\/css\/style.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 3,
+		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
@@ -1048,12 +1048,12 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 68193,
+		"initialSize": 52247,
 		"inputAbbreviatedPath": "\/screenshot.png",
 		"outputAbbreviatedPath": "\/screenshot.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 1
+		"processed": 0
 		},
 	"\/search.php": {
 		"fileType": 8192,
@@ -1146,7 +1146,7 @@
 	"bowerAbbreviatedPath": "",
 	"displayValue": "yratof Meat",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "meme-ariel"
+	"iconImageName": "globe_gray"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,
