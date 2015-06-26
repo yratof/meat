@@ -468,17 +468,11 @@ Site Name: Meat
 Author: AndrewEivin
 
 Stylesheet: Mixins & Constants Stylesheet
-
-This is where you can take advantage of Sass' great features:
-Mixins & Constants. I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
-
 ******************************************************************/
+* {
+  box-sizing: border-box; }
+
+/* This mixins file was starting to get way too big. So I've cut it down into fragments. */
 /*********************
 CLEARFIXIN'
 *********************/
@@ -490,13 +484,33 @@ CLEARFIXIN'
   .clearfix:after {
     clear: both; }
 
-/*
-	Grid Mixin
-	----------
-	
-	We use these for making grids work easier.
-	@include GridAssets(2, first); = Two columns, and it's the first column
+/* 
+	Blend Modes
+	===========
+	http://caniuse.com/#feat=css-backgroundblendmode
+	@usage:  
+		@include blended("url", $colour);
+		@include blended("url", $grad: $love);
+
 */
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+Placeholder Mixin
+Simply use this in a class somewhere to add placeholder styles.
+	@include placeholder {
+		colour: $brand-colour;
+	}
+*********************/
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
 .relative {
   position: relative; }
 
@@ -513,14 +527,6 @@ CLEARFIXIN'
     text-align: center;
     margin: 0 auto; }
 
-/* 	This mixin will help you nest mediaqueries easier.
-	@Usage:
-		@include wider-than(mobile) 	{ width: 55%; 	}
-		@include wider-than(phablet) 	{ width: 65%; 	}
-		@include wider-than(tablet) 	{ width: 75%;	}
-
-	Uses the breakpoint map defined inside _breakpoints.scss
-*/
 /* this is the padding */
 .padding-1 {
   padding-top: 16px;
@@ -582,49 +588,13 @@ CLEARFIXIN'
 .no-margin-right {
   margin-right: 0; }
 
-/*********************
-C O N T E N T   C H O R E O G R A P H Y
-Something that will reorder your content if used correctly.
-And on the right browser, of course.
-**********************/
-/*********************
-Placeholder Mixin
-Simply use this in a class somewhere to add placeholder styles.
-	@include placeholder {
-		colour: $brand-colour;
-	}
-*********************/
-/* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
-/* 
-	Blend Modes
-	===========
-	http://caniuse.com/#feat=css-backgroundblendmode
-	@usage:  
-		@include blended("url", $colour);
-		@include blended("url", $grad: $love);
-
-*/
-/*********************
-TOOLS
-*********************/
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.image-replacement {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden; }
-
-/************************
- I N L I N E - B L O C K
-~ Gap Removal Technique ~
-
-@usage: @include ib();
-************************/
-/* This is quite an experiment with font sizes. 
- Basically, i'm using a modualr scale for the type. */
+/************************************
+		B U T T O N   C O L O U R S
+	This mixin gives you a button in any
+	colour that you want. It then decides
+	if the background is dark or light and
+	gives you white or dark grey text colour.
+*************************************/
 /* 
 	Counting Elements can be fun.
 	http://www.sitepoint.com/using-sass-quantity-queries/
@@ -645,27 +615,35 @@ TOOLS
 	}
 
 */
-/*********************
-TRANSITION
-*********************/
 /*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
+	Grid Mixin
+	----------
+	
+	We use these for making grids work easier.
+	@include GridAssets(2, first); = Two columns, and it's the first column
 */
+/************************
+ I N L I N E - B L O C K
+~ Gap Removal Technique ~
+
+@usage: @include ib();
+************************/
 /*********************
-CSS3 GRADIENTS
-Be careful with these since they can
-really slow down your CSS. Don't overdo it.
-*********************/
-/* @include css-gradient(#dfdfdf,#f8f8f8); */
-/*********************
-BOX SIZING
-*********************/
-/* @include box-sizing(border-box); */
-/* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? */
+C O N T E N T   C H O R E O G R A P H Y
+Something that will reorder your content if used correctly.
+And on the right browser, of course.
+**********************/
+/* This is quite an experiment with font sizes. 
+ Basically, i'm using a modualr scale for the type. */
+/* 	This mixin will help you nest mediaqueries easier.
+	@Usage:
+		@include wider-than(mobile) 	{ width: 55%; 	}
+		@include wider-than(phablet) 	{ width: 65%; 	}
+		@include wider-than(tablet) 	{ width: 75%;	}
+
+	Uses the breakpoint map defined inside _breakpoints.scss
+*/
+/* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
 /*********************
 Background colour based on brightness
 *********************/
@@ -1139,7 +1117,6 @@ img {
   padding: 0;
   -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
   -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-  -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
   transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -1153,7 +1130,6 @@ img {
     background: black;
     -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-    -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -1164,7 +1140,6 @@ img {
       opacity: 1;
       -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-      -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
@@ -1174,7 +1149,6 @@ img {
       .animated.clickable .menu-icon > div + div + div {
         -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-        -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         opacity: 1;
         position: relative; }
@@ -1184,7 +1158,6 @@ img {
   .animated.clickable.close .menu-icon {
     -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-    -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
@@ -1196,7 +1169,6 @@ img {
     .animated.clickable.close .menu-icon > div {
       -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-      -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
@@ -1208,7 +1180,6 @@ img {
         opacity: 0;
         -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-        -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         -webkit-transform: rotate(-225deg);
         -moz-transform: rotate(-225deg);
@@ -1218,7 +1189,6 @@ img {
         .animated.clickable.close .menu-icon > div + div + div {
           -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-          -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           opacity: 1;
           position: relative; }
@@ -1549,7 +1519,6 @@ textarea,
   background-color: white;
   -webkit-transition: background-color 0.24s ease-in-out;
   -moz-transition: background-color 0.24s ease-in-out;
-  -transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
   input[type="text"]:focus, input[type="text"]:active,
   input[type="password"]:focus,

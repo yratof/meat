@@ -373,102 +373,6 @@ td,
 th {
   padding: 0; }
 
-/* Colours */
-/*
-	These are the breakpoints for your website. These can be customised to your design. The 
-	more that I think about it, the more I'm starting to realise that these breakpoints 
-	need to change for the design, and not for the sizes they are. They're just a guide. 
-	In fact, I insist, you MUST change these.
-*/
-/* 
-	This is for something special. If px-only is defined in the u() function, 
-	then all rems are replaced with these breakpoints instead.
-*/
-/*
-	This is a breakpoint map. It allows us to use a loop of the breakpoints throughout
-	the site inside other loops and @each's. Mostly in _mixins.scss and _wrap.scss
-*/
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Typography
-
-Need to import a font or set of icons for your site? Drop them in
-here or just use this to establish your typographical grid. Or not.
-Do whatever you want to...GOSH!
-
-Helpful Articles:
-http://trentwalton.com/2012/06/19/fluid-type/
-http://ia.net/blog/responsive-typography-the-basics/
-http://alistapart.com/column/responsive-typography-is-a-physical-discipline
-
-******************************************************************/
-/*
-The following is based of Typebase:
-https://github.com/devinhunt/typebase.css
-I've edited it a bit, but it's a nice starting point.
-*/
-/*********************************************
-		T y p e k i t   O v e r w r i t e
-		
-	If you've used any fonts from typekit
-	and you want to use them, plop them in here.
-
-*********************************************/
-/*********************
-Text Overflow
-*********************/
-/*********************************
-	Text alignment in classes	
-*********************************/
-.text-left {
-  text-align: left; }
-
-.text-center {
-  text-align: center; }
-
-.text-right {
-  text-align: right; }
-
-.marginauto {
-  margin: 0 auto !important;
-  float: none !important; }
-
-/*********************************
-	Hyphenation	
-*********************************/
-p {
-  -ms-word-break: normal;
-  -ms-word-wrap: normal;
-  word-break: normal;
-  word-break: normal;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  hyphens: none;
-  -webkit-hyphenate-before: 2;
-  -webkit-hyphenate-after: 3;
-  hyphenate-lines: 3;
-  -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga", "dlig";
-  -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig"; }
-
-/*********************************
-	Typekit and FOUT	
-*********************************/
-body {
-  -webkit-transition: opacity 0.3s ease-out;
-  -moz-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out; }
-
-.wf-loading body {
-  opacity: 0; }
-
-.wf-active body {
-  opacity: 1; }
-
 /******************************************************************
 Site Name: Meat
 Author: AndrewEivin
@@ -543,22 +447,30 @@ width: calc-percent(650px, 1000px);
 both compile to:
 width: 65%;
 *********************/
+/*
+	These are the breakpoints for your website. These can be customised to your design. The 
+	more that I think about it, the more I'm starting to realise that these breakpoints 
+	need to change for the design, and not for the sizes they are. They're just a guide. 
+	In fact, I insist, you MUST change these.
+*/
+/* 
+	This is for something special. If px-only is defined in the u() function, 
+	then all rems are replaced with these breakpoints instead.
+*/
+/*
+	This is a breakpoint map. It allows us to use a loop of the breakpoints throughout
+	the site inside other loops and @each's. Mostly in _mixins.scss and _wrap.scss
+*/
 /******************************************************************
 Site Name: Meat
 Author: AndrewEivin
 
 Stylesheet: Mixins & Constants Stylesheet
-
-This is where you can take advantage of Sass' great features:
-Mixins & Constants. I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
-
 ******************************************************************/
+* {
+  box-sizing: border-box; }
+
+/* This mixins file was starting to get way too big. So I've cut it down into fragments. */
 /*********************
 CLEARFIXIN'
 *********************/
@@ -570,13 +482,33 @@ CLEARFIXIN'
   .clearfix:after {
     clear: both; }
 
-/*
-	Grid Mixin
-	----------
-	
-	We use these for making grids work easier.
-	@include GridAssets(2, first); = Two columns, and it's the first column
+/* 
+	Blend Modes
+	===========
+	http://caniuse.com/#feat=css-backgroundblendmode
+	@usage:  
+		@include blended("url", $colour);
+		@include blended("url", $grad: $love);
+
 */
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+Placeholder Mixin
+Simply use this in a class somewhere to add placeholder styles.
+	@include placeholder {
+		colour: $brand-colour;
+	}
+*********************/
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
 .relative {
   position: relative; }
 
@@ -593,14 +525,6 @@ CLEARFIXIN'
     text-align: center;
     margin: 0 auto; }
 
-/* 	This mixin will help you nest mediaqueries easier.
-	@Usage:
-		@include wider-than(mobile) 	{ width: 55%; 	}
-		@include wider-than(phablet) 	{ width: 65%; 	}
-		@include wider-than(tablet) 	{ width: 75%;	}
-
-	Uses the breakpoint map defined inside _breakpoints.scss
-*/
 /* this is the padding */
 .padding-1 {
   padding-top: 16px;
@@ -662,49 +586,13 @@ CLEARFIXIN'
 .no-margin-right {
   margin-right: 0; }
 
-/*********************
-C O N T E N T   C H O R E O G R A P H Y
-Something that will reorder your content if used correctly.
-And on the right browser, of course.
-**********************/
-/*********************
-Placeholder Mixin
-Simply use this in a class somewhere to add placeholder styles.
-	@include placeholder {
-		colour: $brand-colour;
-	}
-*********************/
-/* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
-/* 
-	Blend Modes
-	===========
-	http://caniuse.com/#feat=css-backgroundblendmode
-	@usage:  
-		@include blended("url", $colour);
-		@include blended("url", $grad: $love);
-
-*/
-/*********************
-TOOLS
-*********************/
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.image-replacement {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden; }
-
-/************************
- I N L I N E - B L O C K
-~ Gap Removal Technique ~
-
-@usage: @include ib();
-************************/
-/* This is quite an experiment with font sizes. 
- Basically, i'm using a modualr scale for the type. */
+/************************************
+		B U T T O N   C O L O U R S
+	This mixin gives you a button in any
+	colour that you want. It then decides
+	if the background is dark or light and
+	gives you white or dark grey text colour.
+*************************************/
 /* 
 	Counting Elements can be fun.
 	http://www.sitepoint.com/using-sass-quantity-queries/
@@ -725,27 +613,35 @@ TOOLS
 	}
 
 */
-/*********************
-TRANSITION
-*********************/
 /*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
+	Grid Mixin
+	----------
+	
+	We use these for making grids work easier.
+	@include GridAssets(2, first); = Two columns, and it's the first column
 */
+/************************
+ I N L I N E - B L O C K
+~ Gap Removal Technique ~
+
+@usage: @include ib();
+************************/
 /*********************
-CSS3 GRADIENTS
-Be careful with these since they can
-really slow down your CSS. Don't overdo it.
-*********************/
-/* @include css-gradient(#dfdfdf,#f8f8f8); */
-/*********************
-BOX SIZING
-*********************/
-/* @include box-sizing(border-box); */
-/* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? */
+C O N T E N T   C H O R E O G R A P H Y
+Something that will reorder your content if used correctly.
+And on the right browser, of course.
+**********************/
+/* This is quite an experiment with font sizes. 
+ Basically, i'm using a modualr scale for the type. */
+/* 	This mixin will help you nest mediaqueries easier.
+	@Usage:
+		@include wider-than(mobile) 	{ width: 55%; 	}
+		@include wider-than(phablet) 	{ width: 65%; 	}
+		@include wider-than(tablet) 	{ width: 75%;	}
+
+	Uses the breakpoint map defined inside _breakpoints.scss
+*/
+/* Font Smoothing - http://maximilianhoffmann.com/posts/better-font-rendering-on-osx */
 /*********************
 Background colour based on brightness
 *********************/
@@ -841,6 +737,460 @@ Background colour based on brightness
         width: 25%; } }
 
 /********************************************
+			   G R I D  M A T H
+
+	Math. A bunch of it. This is the math
+	that makes the grid. Math can change
+	in here to completely change the whole
+	layout of your site. 
+			  
+********************************************/
+/* Adding an extra mixin to make widths fallbackabler.*/
+/* Offset class. Experimental, but looks nice */
+.offset-1 {
+  margin-left: 5.7969383057%;
+  margin-left: calc((99.95% - 11rem) / 12);
+  width: 91.3906307551%;
+  width: calc((99.95% - 0.0909090909rem) / 1.0909090909); }
+
+.offset-2 {
+  margin-left: 14.3563075506%;
+  margin-left: calc((99.95% - 5rem) / 6);
+  width: 82.8312615101%;
+  width: calc((99.95% - 0.2rem) / 1.2); }
+
+.offset-3 {
+  margin-left: 22.9156767956%;
+  margin-left: calc((99.95% - 3rem) / 4);
+  width: 74.2718922652%;
+  width: calc((99.95% - 0.3333333333rem) / 1.3333333333); }
+
+.offset-4 {
+  margin-left: 31.4750460405%;
+  margin-left: calc((99.95% - 2rem) / 3);
+  width: 65.7125230203%;
+  width: calc((99.95% - 0.5rem) / 1.5); }
+
+.offset-5 {
+  margin-left: 40.0344152855%;
+  margin-left: calc((99.95% - 1.4rem) / 2.4);
+  width: 57.1531537753%;
+  width: calc((99.95% - 0.7142857143rem) / 1.7142857143); }
+
+.offset-6 {
+  margin-left: 48.5937845304%;
+  margin-left: calc((99.95% - 1rem) / 2);
+  width: 48.5937845304%;
+  width: calc((99.95% - 1rem) / 2); }
+
+.offset-7 {
+  margin-left: 57.1531537753%;
+  margin-left: calc((99.95% - 0.7142857143rem) / 1.7142857143);
+  width: 40.0344152855%;
+  width: calc((99.95% - 1.4rem) / 2.4); }
+
+.offset-8 {
+  margin-left: 65.7125230203%;
+  margin-left: calc((99.95% - 0.5rem) / 1.5);
+  width: 31.4750460405%;
+  width: calc((99.95% - 2rem) / 3); }
+
+.offset-9 {
+  margin-left: 74.2718922652%;
+  margin-left: calc((99.95% - 0.3333333333rem) / 1.3333333333);
+  width: 22.9156767956%;
+  width: calc((99.95% - 3rem) / 4); }
+
+.offset-10 {
+  margin-left: 82.8312615101%;
+  margin-left: calc((99.95% - 0.2rem) / 1.2);
+  width: 14.3563075506%;
+  width: calc((99.95% - 5rem) / 6); }
+
+.offset-11 {
+  margin-left: 91.3906307551%;
+  margin-left: calc((99.95% - 0.0909090909rem) / 1.0909090909);
+  width: 5.7969383057%;
+  width: calc((99.95% - 11rem) / 12); }
+
+.offset-12 {
+  margin-left: 99.95%;
+  margin-left: calc((99.95% - 0rem) / 1);
+  width: NaN%;
+  width: calc((99.95% - Infinityrem) / Infinity); }
+
+/* Grid Math */
+/******************************************************************
+Site Name: Meat
+Author: AndrewEivin
+
+Stylesheet: IE Grid Styles
+
+Since the example grid is based on media queries, so rather than
+setup some js library that would make IE8 and below understand
+media queries, let's just add some styles that serves a fixed grid.
+
+Again, if you want to roll your own, just remove this junk and put
+whatever you use in here.
+
+******************************************************************/
+.onecol {
+  width: 5.7969383057%;
+  width: calc((99.95% - 11rem) / 12); }
+
+.twocol {
+  width: 14.3563075506%;
+  width: calc((99.95% - 5rem) / 6); }
+
+.threecol {
+  width: 22.9156767956%;
+  width: calc((99.95% - 3rem) / 4); }
+
+.fourcol {
+  width: 31.4750460405%;
+  width: calc((99.95% - 2rem) / 3); }
+
+.fivecol {
+  width: 40.0344152855%;
+  width: calc((99.95% - 1.4rem) / 2.4); }
+
+.sixcol {
+  width: 48.5937845304%;
+  width: calc((99.95% - 1rem) / 2); }
+
+.sevencol {
+  width: 57.1531537753%;
+  width: calc((99.95% - 0.7142857143rem) / 1.7142857143); }
+
+.eightcol {
+  width: 65.7125230203%;
+  width: calc((99.95% - 0.5rem) / 1.5); }
+
+.ninecol {
+  width: 74.2718922652%;
+  width: calc((99.95% - 0.3333333333rem) / 1.3333333333); }
+
+.tencol {
+  width: 82.8312615101%;
+  width: calc((99.95% - 0.2rem) / 1.2); }
+
+.elevencol {
+  width: 91.3906307551%;
+  width: calc((99.95% - 0.0909090909rem) / 1.0909090909); }
+
+.twelvecol {
+  width: 99.95%;
+  width: calc((99.95% - 0rem) / 1); }
+
+/*	//This is how i've been using responsive widths, you're able to overwrite these per stylesheet
+
+	article {
+		width: col_width(6);
+		width: col_width(6, true);
+		
+		float: left;
+		margin-left: $gutter;
+		margin-left: calc(1rem * 1);	
+			
+		&.first{ margin-left: 0;}
+		&.last{ float: right;}
+	}
+*/
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol, .fifthcol, .threefifth {
+  position: relative;
+  float: left;
+  margin-left: 2.7624309392%;
+  margin-left: calc(1rem * 1); }
+
+.first {
+  margin-left: 0; }
+
+.last {
+  float: right; }
+
+/* 
+	This is a simpler way of using widths.
+	Adding an extra mixin to make widths fallbackabler.
+*/
+.gutter-top {
+  margin-top: 2.7624309392%;
+  margin-top: calc(1rem * 1); }
+
+.gutter-bottom {
+  margin-bottom: 2.7624309392%;
+  margin-bottom: calc(1rem * 1); }
+
+.third, .quarter, .half {
+  float: left; }
+
+.third {
+  width: 33.33333333333%; }
+
+.quarter {
+  width: 25%; }
+
+.half {
+  width: 50%; }
+
+/* All Elements */
+/*
+	Wrapping the entire site
+	------------------------
+	We use a .wrap class on areas that we want
+	to restrict the width of. So this loop
+	goes through our breakpoints located in
+	_breakpoints.scss
+*/
+.wrap {
+  width: 96%;
+  margin: 0 auto;
+  /* For each breakpoint listed here, make a mediaquiery and a max-width of that breakpoint. */
+  max-width: 481.008px;
+  max-width: 592px;
+  max-width: 766.4px;
+  max-width: 888px;
+  max-width: 1000px;
+  max-width: 1200px;
+  max-width: 1000px; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 300; }
+
+h1, .h1 {
+  font-size: 27.774408778px; }
+  @media (min-width: 592px) {
+    h1, .h1 {
+      font-size: 27.774408778px; } }
+  @media (min-width: 766.4px) {
+    h1, .h1 {
+      font-size: 29.6352941661px; } }
+  @media (min-width: 888px) {
+    h1, .h1 {
+      font-size: 31.6208588752px; } }
+  @media (min-width: 1000px) {
+    h1, .h1 {
+      font-size: 33.7394564199px; } }
+  @media (min-width: 1200px) {
+    h1, .h1 {
+      font-size: 36px; } }
+
+h2, .h2 {
+  font-size: 19.2877838736px; }
+  @media (min-width: 592px) {
+    h2, .h2 {
+      font-size: 19.2877838736px; } }
+  @media (min-width: 766.4px) {
+    h2, .h2 {
+      font-size: 20.5800653931px; } }
+  @media (min-width: 888px) {
+    h2, .h2 {
+      font-size: 21.9589297745px; } }
+  @media (min-width: 1000px) {
+    h2, .h2 {
+      font-size: 23.4301780694px; } }
+  @media (min-width: 1200px) {
+    h2, .h2 {
+      font-size: 25px; } }
+
+h3, .h3 {
+  font-size: 19.2877838736px; }
+  @media (min-width: 592px) {
+    h3, .h3 {
+      font-size: 19.2877838736px; } }
+  @media (min-width: 766.4px) {
+    h3, .h3 {
+      font-size: 20.5800653931px; } }
+  @media (min-width: 888px) {
+    h3, .h3 {
+      font-size: 21.9589297745px; } }
+  @media (min-width: 1000px) {
+    h3, .h3 {
+      font-size: 23.4301780694px; } }
+  @media (min-width: 1200px) {
+    h3, .h3 {
+      font-size: 25px; } }
+
+h4, .h4 {
+  font-size: 15.4302270989px; }
+  @media (min-width: 592px) {
+    h4, .h4 {
+      font-size: 15.4302270989px; } }
+  @media (min-width: 766.4px) {
+    h4, .h4 {
+      font-size: 16.4640523145px; } }
+  @media (min-width: 888px) {
+    h4, .h4 {
+      font-size: 17.5671438196px; } }
+  @media (min-width: 1000px) {
+    h4, .h4 {
+      font-size: 18.7441424555px; } }
+  @media (min-width: 1200px) {
+    h4, .h4 {
+      font-size: 20px; } }
+
+h5, .h5, h6, .h6 {
+  font-size: 13.578599847px; }
+  @media (min-width: 592px) {
+    h5, .h5, h6, .h6 {
+      font-size: 13.578599847px; } }
+  @media (min-width: 766.4px) {
+    h5, .h5, h6, .h6 {
+      font-size: 14.4883660368px; } }
+  @media (min-width: 888px) {
+    h5, .h5, h6, .h6 {
+      font-size: 15.4590865612px; } }
+  @media (min-width: 1000px) {
+    h5, .h5, h6, .h6 {
+      font-size: 16.4948453608px; } }
+  @media (min-width: 1200px) {
+    h5, .h5, h6, .h6 {
+      font-size: 17.6px; } }
+
+.page-title,
+.section-title {
+  display: block;
+  text-align: center;
+  font-size: 27.774408778px;
+  color: #474a56; }
+  @media (min-width: 592px) {
+    .page-title,
+    .section-title {
+      font-size: 27.774408778px; } }
+  @media (min-width: 766.4px) {
+    .page-title,
+    .section-title {
+      font-size: 29.6352941661px; } }
+  @media (min-width: 888px) {
+    .page-title,
+    .section-title {
+      font-size: 31.6208588752px; } }
+  @media (min-width: 1000px) {
+    .page-title,
+    .section-title {
+      font-size: 33.7394564199px; } }
+  @media (min-width: 1200px) {
+    .page-title,
+    .section-title {
+      font-size: 36px; } }
+
+.sub-title {
+  display: block;
+  text-align: center;
+  font-size: 32px;
+  color: #bd1c1c; }
+
+/*********************************
+	Text alignment in classes	
+*********************************/
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.marginauto {
+  margin: 0 auto !important;
+  float: none !important; }
+
+/*
+	# Typekit and FOUT.
+
+	FOUT means "Flash of Unstyled Text"
+	and that happens when the site loads before the 
+	javascript can get the fonts needed for the 
+	page to be styled.
+	
+	Typekit have suggested "how about you hide 
+	everything until they load?" and have provided 
+	a javascript way of getting the fonts to load. 
+	
+	Which might work, but if the javascript doesn't 
+	load, we're still going to have a flash of 
+	text right?
+
+*/
+body {
+  transition: opacity 0.24s ease-out; }
+  .wf-loading body {
+    opacity: 0; }
+  .wf-active body {
+    opacity: 1; }
+
+/*
+	Selections
+	----------
+*/
+h1 ::-moz-selection, h2 ::-moz-selection, h3 ::-moz-selection, h4 ::-moz-selection, h5 ::-moz-selection, h6 ::-moz-selection, p ::-moz-selection, li ::-moz-selection, ul ::-moz-selection, span ::-moz-selection, div ::-moz-selection {
+  background-color: #fff;
+  color: #bd1c1c; }
+h1 ::selection, h2 ::selection, h3 ::selection, h4 ::selection, h5 ::selection, h6 ::selection, p ::selection, li ::selection, ul ::selection, span ::selection, div ::selection {
+  background-color: #fff;
+  color: #bd1c1c; }
+
+a ::-moz-selection, img ::-moz-selection, blockquote ::-moz-selection {
+  background-color: #bd1c1c;
+  color: #fff; }
+a ::selection, img ::selection, blockquote ::selection {
+  background-color: #bd1c1c;
+  color: #fff; }
+
+/*
+	Hyphenation + Selections
+	-----------------------
+*/
+p {
+  -ms-word-break: normal;
+  -ms-word-wrap: normal;
+  word-break: normal;
+  word-break: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig"; }
+
+html {
+  font-size: 16px; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #474a56;
+  font-size: 100%;
+  line-height: 1.4;
+  font-weight: 200; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #bd1c1c; }
+
+p {
+  font-size: 14.4px; }
+
+a {
+  color: #a31818;
+  text-decoration: underline; }
+  a:hover {
+    color: #d62020; }
+  a:active {
+    color: #a31818; }
+  a:focus {
+    outline: 0; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom; }
+
+/********************************************
 			   A N I M A T I C S
 
 	This is where all those lovely things
@@ -863,7 +1213,6 @@ Background colour based on brightness
   padding: 0;
   -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
   -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-  -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
   transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -874,10 +1223,9 @@ Background colour based on brightness
     margin-top: 0px;
     margin-bottom: 5px;
     border-radius: 5px;
-    background: #000;
+    background: black;
     -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-    -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -888,7 +1236,6 @@ Background colour based on brightness
       opacity: 1;
       -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-      -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
@@ -898,7 +1245,6 @@ Background colour based on brightness
       .animated.clickable .menu-icon > div + div + div {
         -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-        -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         opacity: 1;
         position: relative; }
@@ -908,7 +1254,6 @@ Background colour based on brightness
   .animated.clickable.close .menu-icon {
     -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-    -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
@@ -920,7 +1265,6 @@ Background colour based on brightness
     .animated.clickable.close .menu-icon > div {
       -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-      -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
@@ -932,7 +1276,6 @@ Background colour based on brightness
         opacity: 0;
         -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-        -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
         -webkit-transform: rotate(-225deg);
         -moz-transform: rotate(-225deg);
@@ -942,7 +1285,6 @@ Background colour based on brightness
         .animated.clickable.close .menu-icon > div + div + div {
           -webkit-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           -moz-transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
-          -transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           transition: 0.65s all cubic-bezier(0.86, 0, 0.07, 1);
           opacity: 1;
           position: relative; }
@@ -963,8 +1305,8 @@ you can just remove this stylesheet.
   color: #fff; }
 
 .alert-help {
-  border-color: #e8d71c;
-  background: #eadb33; }
+  border-color: #d26608;
+  background: #eb7209; }
 
 .alert-info {
   border-color: #1d8dc0;
@@ -1018,7 +1360,7 @@ for free. Go on. Have them
 ******************************/
 .button.brand {
   border: none;
-  border-bottom: 5px solid #d10c00;
+  border-bottom: 5px solid #640f0f;
   border-radius: 2px;
   text-indent: 0;
   display: inline-block;
@@ -1037,7 +1379,7 @@ for free. Go on. Have them
    becomes dark to compensate.
   **********************************/
   color: #fff;
-  background: #ff4338;
+  background: #bd1c1c;
   color: #fff;
   /**********************************
    This is the style for the hovers,
@@ -1046,21 +1388,21 @@ for free. Go on. Have them
   .button.brand:hover, .button.brand:focus, .button.brand:active {
     color: #fff; }
   .button.brand:hover {
-    background: #ff5b52; }
+    background: #d31f1f; }
   .button.brand:active {
-    background: #ff1305;
-    box-shadow: inset 0px 10px 5px -7px #d10c00;
+    background: #911515;
+    box-shadow: inset 0px 10px 5px -7px #640f0f;
     position: relative;
     top: 4px;
     margin-bottom: 4px;
     border-bottom-width: 1px; }
   .button.brand:visited {
-    background: #ff4338;
-    border-bottom-color: #d10c00; }
+    background: #bd1c1c;
+    border-bottom-color: #640f0f; }
 
 .button.highlight {
   border: none;
-  border-bottom: 5px solid #004b58;
+  border-bottom: 5px solid #7d1313;
   border-radius: 2px;
   text-indent: 0;
   display: inline-block;
@@ -1079,7 +1421,7 @@ for free. Go on. Have them
    becomes dark to compensate.
   **********************************/
   color: #fff;
-  background: #00a1be;
+  background: #d62020;
   color: #fff;
   /**********************************
    This is the style for the hovers,
@@ -1088,17 +1430,17 @@ for free. Go on. Have them
   .button.highlight:hover, .button.highlight:focus, .button.highlight:active {
     color: #fff; }
   .button.highlight:hover {
-    background: #00b7d8; }
+    background: #e03030; }
   .button.highlight:active {
-    background: #00768b;
-    box-shadow: inset 0px 10px 5px -7px #004b58;
+    background: #aa1919;
+    box-shadow: inset 0px 10px 5px -7px #7d1313;
     position: relative;
     top: 4px;
     margin-bottom: 4px;
     border-bottom-width: 1px; }
   .button.highlight:visited {
-    background: #00a1be;
-    border-bottom-color: #004b58; }
+    background: #d62020;
+    border-bottom-color: #7d1313; }
 
 .button.white {
   border: none;
@@ -1122,13 +1464,13 @@ for free. Go on. Have them
   **********************************/
   color: #fff;
   background: #fff;
-  color: #555;
+  color: #474a56;
   /**********************************
    This is the style for the hovers,
    the actives and the visited.
   **********************************/ }
   .button.white:hover, .button.white:focus, .button.white:active {
-    color: #555; }
+    color: #474a56; }
   .button.white:hover {
     background: white; }
   .button.white:active {
@@ -1184,9 +1526,9 @@ for free. Go on. Have them
     background: #000;
     border-bottom-color: black; }
 
-.button.compliment {
+.button.accent {
   border: none;
-  border-bottom: 5px solid #693975;
+  border-bottom: 5px solid #191a1e;
   border-radius: 2px;
   text-indent: 0;
   display: inline-block;
@@ -1205,26 +1547,26 @@ for free. Go on. Have them
    becomes dark to compensate.
   **********************************/
   color: #fff;
-  background: #a261b3;
+  background: #474a56;
   color: #fff;
   /**********************************
    This is the style for the hovers,
    the actives and the visited.
   **********************************/ }
-  .button.compliment:hover, .button.compliment:focus, .button.compliment:active {
+  .button.accent:hover, .button.accent:focus, .button.accent:active {
     color: #fff; }
-  .button.compliment:hover {
-    background: #ac72bb; }
-  .button.compliment:active {
-    background: #884998;
-    box-shadow: inset 0px 10px 5px -7px #693975;
+  .button.accent:hover {
+    background: #535664; }
+  .button.accent:active {
+    background: #30323a;
+    box-shadow: inset 0px 10px 5px -7px #191a1e;
     position: relative;
     top: 4px;
     margin-bottom: 4px;
     border-bottom-width: 1px; }
-  .button.compliment:visited {
-    background: #a261b3;
-    border-bottom-color: #693975; }
+  .button.accent:visited {
+    background: #474a56;
+    border-bottom-color: #191a1e; }
 
 /******************************************************************
 Site Name: MEAT 
@@ -1265,15 +1607,14 @@ textarea,
 .field {
   padding: 10px 12px;
   font-size: 1em;
-  color: #555;
+  color: #474a56;
   vertical-align: top;
   box-shadow: none;
-  border: 0;
-  font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 1px solid;
+  font-family: "Open Sans", sans-serif;
   background-color: white;
   -webkit-transition: background-color 0.24s ease-in-out;
   -moz-transition: background-color 0.24s ease-in-out;
-  -transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
   input[type="text"]:focus, input[type="text"]:active,
   input[type="password"]:focus,
@@ -1423,7 +1764,7 @@ textarea,
   .field[disabled],
   .field.is-disabled {
     cursor: not-allowed;
-    border-color: #cfcfcf;
+    border-color: #ccc;
     opacity: 0.6; }
     input[type="text"][disabled]:focus, input[type="text"][disabled]:active, input[type="text"].is-disabled:focus, input[type="text"].is-disabled:active,
     input[type="password"][disabled]:focus,
@@ -1510,705 +1851,6 @@ select {
   @media (max-width: 480px) {
     select {
       font-size: 1rem; } }
-
-/******************************************************************
-COMMENT FORM STYLES
-******************************************************************/
-.respond-form label {
-  display: block; }
-
-.form li {
-  list-style-type: none;
-  clear: both;
-  margin-bottom: 0.7335em; }
-.form input[type=text],
-.form input[type=email],
-.form input[type=url],
-.form textarea {
-  padding: 3px 7px;
-  background: #efefef;
-  border: 2px solid #cecece;
-  /* form validation */ }
-  .form input[type=text]:focus,
-  .form input[type=email]:focus,
-  .form input[type=url]:focus,
-  .form textarea:focus {
-    background: #fff; }
-  .form input[type=text]:invalid,
-  .form input[type=email]:invalid,
-  .form input[type=url]:invalid,
-  .form textarea:invalid {
-    outline: none;
-    border-color: #962828;
-    background-color: #be3333;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none; }
-.form .email {
-  height: 30px; }
-.form select,
-.form input[type=text],
-.form input[type=email],
-.form input[type=url] {
-  max-width: 100%; }
-.form textarea {
-  resize: none;
-  width: 100%;
-  height: 150px; }
-
-/* comment form title */
-#comment-form-title {
-  margin: 0 0 1.1em; }
-
-/* allowed tags */
-/* no comments */
-/******************************************************************
-Site Name: Meat
-Author: AndrewEivin
-
-Stylesheet: IE Grid Styles
-
-Since the example grid is based on media queries, so rather than
-setup some js library that would make IE8 and below understand
-media queries, let's just add some styles that serves a fixed grid.
-
-Again, if you want to roll your own, just remove this junk and put
-whatever you use in here.
-
-******************************************************************/
-.onecol {
-  width: 5.7969383057%;
-  width: calc((99.95% - 11rem) / 12); }
-
-.twocol {
-  width: 14.3563075506%;
-  width: calc((99.95% - 5rem) / 6); }
-
-.threecol {
-  width: 22.9156767956%;
-  width: calc((99.95% - 3rem) / 4); }
-
-.fourcol {
-  width: 31.4750460405%;
-  width: calc((99.95% - 2rem) / 3); }
-
-.fivecol {
-  width: 40.0344152855%;
-  width: calc((99.95% - 1.4rem) / 2.4); }
-
-.sixcol {
-  width: 48.5937845304%;
-  width: calc((99.95% - 1rem) / 2); }
-
-.sevencol {
-  width: 57.1531537753%;
-  width: calc((99.95% - 0.7142857143rem) / 1.7142857143); }
-
-.eightcol {
-  width: 65.7125230203%;
-  width: calc((99.95% - 0.5rem) / 1.5); }
-
-.ninecol {
-  width: 74.2718922652%;
-  width: calc((99.95% - 0.3333333333rem) / 1.3333333333); }
-
-.tencol {
-  width: 82.8312615101%;
-  width: calc((99.95% - 0.2rem) / 1.2); }
-
-.elevencol {
-  width: 91.3906307551%;
-  width: calc((99.95% - 0.0909090909rem) / 1.0909090909); }
-
-.twelvecol {
-  width: 99.95%;
-  width: calc((99.95% - 0rem) / 1); }
-
-/*	//This is how i've been using responsive widths, you're able to overwrite these per stylesheet
-
-	article {
-		width: col_width(6);
-		width: col_width(6, true);
-		
-		float: left;
-		margin-left: $gutter;
-		margin-left: calc(1rem * 1);	
-			
-		&.first{ margin-left: 0;}
-		&.last{ float: right;}
-	}
-*/
-.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol, .fifthcol, .threefifth {
-  position: relative;
-  float: left;
-  margin-left: 2.7624309392%;
-  margin-left: calc(1rem * 1); }
-
-.first {
-  margin-left: 0; }
-
-.last {
-  float: right; }
-
-/* 
-	This is a simpler way of using widths.
-	Adding an extra mixin to make widths fallbackabler.
-*/
-.gutter-top {
-  margin-top: 2.7624309392%;
-  margin-top: calc(1rem * 1); }
-
-.gutter-bottom {
-  margin-bottom: 2.7624309392%;
-  margin-bottom: calc(1rem * 1); }
-
-.third, .quarter, .half {
-  float: left; }
-
-.third {
-  width: 33.33333333333%; }
-
-.quarter {
-  width: 25%; }
-
-.half {
-  width: 50%; }
-
-/*	Elemental
-	----------
-	This is where all the elements of the website are brought together.
-	Each element contains its own mediaqueries and does not depend on anything else. */
-/*	Headings
-	--------
-	Heading tags, h1 - h6.
-	There are two methods of working here.
-	We can either use the modular route
-	that automatically sizes the fonts down
-	in accordance to a specific mathmatic
-	algorithm, or we can define them manually.
-	
-	I'll put both in the code so you can switch betwen them. 
-	
-*/
-h1, h2, h3, h4, h5, h6
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  text-rendering: optimizelegibility;
-  font-weight: 300; }
-  h1.hero, h2.hero, h3.hero, h4.hero, h5.hero, h6
-  .h1.hero, .h2.hero, .h3.hero, .h4.hero, .h5.hero, .h6.hero {
-    font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-/* 	If you want to size things automatically,
-	turn automaticsizing to true and change
-	the maximum sizes here in rem. */
-/* 	You'll notice how much nicer this part is.
-	Everything is taken care of inside a loop
-	somewhere else on the site: _mixins.scss
-*/
-h1, .h1 {
-  font-size: 37.0325450373px; }
-  @media (min-width: 592px) {
-    h1, .h1 {
-      font-size: 37.0325450373px; } }
-  @media (min-width: 768px) {
-    h1, .h1 {
-      font-size: 39.5137255548px; } }
-  @media (min-width: 888px) {
-    h1, .h1 {
-      font-size: 42.161145167px; } }
-  @media (min-width: 1000px) {
-    h1, .h1 {
-      font-size: 44.9859418932px; } }
-  @media (min-width: 1200px) {
-    h1, .h1 {
-      font-size: 48px; } }
-
-h2, .h2 {
-  font-size: 23.1453406483px; }
-  @media (min-width: 592px) {
-    h2, .h2 {
-      font-size: 23.1453406483px; } }
-  @media (min-width: 768px) {
-    h2, .h2 {
-      font-size: 24.6960784717px; } }
-  @media (min-width: 888px) {
-    h2, .h2 {
-      font-size: 26.3507157294px; } }
-  @media (min-width: 1000px) {
-    h2, .h2 {
-      font-size: 28.1162136832px; } }
-  @media (min-width: 1200px) {
-    h2, .h2 {
-      font-size: 30px; } }
-  h2.hero, .h2.hero {
-    font-size: 77.1511354944px; }
-    @media (min-width: 592px) {
-      h2.hero, .h2.hero {
-        font-size: 77.1511354944px; } }
-    @media (min-width: 768px) {
-      h2.hero, .h2.hero {
-        font-size: 82.3202615725px; } }
-    @media (min-width: 888px) {
-      h2.hero, .h2.hero {
-        font-size: 87.8357190979px; } }
-    @media (min-width: 1000px) {
-      h2.hero, .h2.hero {
-        font-size: 93.7207122774px; } }
-    @media (min-width: 1200px) {
-      h2.hero, .h2.hero {
-        font-size: 100px; } }
-
-h3, .h3 {
-  font-size: 18.5162725187px; }
-  @media (min-width: 592px) {
-    h3, .h3 {
-      font-size: 18.5162725187px; } }
-  @media (min-width: 768px) {
-    h3, .h3 {
-      font-size: 19.7568627774px; } }
-  @media (min-width: 888px) {
-    h3, .h3 {
-      font-size: 21.0805725835px; } }
-  @media (min-width: 1000px) {
-    h3, .h3 {
-      font-size: 22.4929709466px; } }
-  @media (min-width: 1200px) {
-    h3, .h3 {
-      font-size: 24px; } }
-
-h4, .h4 {
-  font-size: 13.887204389px; }
-  @media (min-width: 592px) {
-    h4, .h4 {
-      font-size: 13.887204389px; } }
-  @media (min-width: 768px) {
-    h4, .h4 {
-      font-size: 14.817647083px; } }
-  @media (min-width: 888px) {
-    h4, .h4 {
-      font-size: 15.8104294376px; } }
-  @media (min-width: 1000px) {
-    h4, .h4 {
-      font-size: 16.8697282099px; } }
-  @media (min-width: 1200px) {
-    h4, .h4 {
-      font-size: 18px; } }
-
-h5, .h5 {
-  font-size: 12.3441816791px; }
-  @media (min-width: 592px) {
-    h5, .h5 {
-      font-size: 12.3441816791px; } }
-  @media (min-width: 768px) {
-    h5, .h5 {
-      font-size: 13.1712418516px; } }
-  @media (min-width: 888px) {
-    h5, .h5 {
-      font-size: 14.0537150557px; } }
-  @media (min-width: 1000px) {
-    h5, .h5 {
-      font-size: 14.9953139644px; } }
-  @media (min-width: 1200px) {
-    h5, .h5 {
-      font-size: 16px; } }
-
-h6, .h6 {
-  font-size: 10.4925544272px; }
-  @media (min-width: 592px) {
-    h6, .h6 {
-      font-size: 10.4925544272px; } }
-  @media (min-width: 768px) {
-    h6, .h6 {
-      font-size: 11.1955555739px; } }
-  @media (min-width: 888px) {
-    h6, .h6 {
-      font-size: 11.9456577973px; } }
-  @media (min-width: 1000px) {
-    h6, .h6 {
-      font-size: 12.7460168697px; } }
-  @media (min-width: 1200px) {
-    h6, .h6 {
-      font-size: 13.6px; } }
-
-/*	Logo Styles
-	-----------
-	In this theme, your logo is left aligned
-	in the header, then when you're on a smaller
-	device, things go centered.
-*/
-#logo {
-  display: block;
-  text-align: center;
-  width: 100%;
-  max-width: 240px;
-  padding: 24px 0;
-  margin: 0 auto;
-  position: relative;
-  z-index: 20;
-  width: 18.6359921731%;
-  width: calc((99.95% - 3.8rem) / 4.8);
-  text-align: left;
-  float: left; }
-  #logo img {
-    width: 100%;
-    height: auto; }
-
-/*
-	Navigation
-	----------
-	This is the navigation, leading all the 
-	way from the smallest to the largest of screens */
-/* Dropdown mixin, because you can't 
-extend over mediaqueries, we're going 
-to use a simple mixin that we can reuse 
-throughout the mobile stylesheet */
-/***********************
-Mobile Icon for Dropdown
-***********************/
-.clickable {
-  margin: 0;
-  padding: 16px 8px 0rem;
-  width: 48px;
-  height: 48px;
-  position: fixed;
-  bottom: 40px;
-  right: 16px;
-  z-index: 100;
-  cursor: pointer;
-  background-color: #fff; }
-
-.menu-icon {
-  margin-top: 0px;
-  padding: 0; }
-  .menu-icon div {
-    height: 4px;
-    width: 100%;
-    margin-bottom: 5px;
-    border-radius: 1px;
-    background: #555; }
-
-/*********************
-Navigation Styles
-*********************/
-.top-nav {
-  /* No mobile styles for you mate. */
-  z-index: 50;
-  /* end .menu li */
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  /*****************************************
-  	Post - Mobile styles
-  	--------------------
-  	Larger than the mobile styles, 
-  	we're going for around tablets here. */
-  text-align: right;
-  margin: 16px 0;
-  vertical-align: middle;
-  /* end .menu ul li */
-  /* highlight current page */
-  /* end current highlighters */
-  /* end tablets */ }
-  .top-nav li {
-    display: block;
-    position: relative;
-    background-color: #ff4338;
-    text-align: center; }
-    .top-nav li a {
-      display: block;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 7.2px 0;
-      color: #fff; }
-    .top-nav li.menu-item-has-children.is-active {
-      position: relative; }
-      .top-nav li.menu-item-has-children.is-active > a:before {
-        content: "Back";
-        position: absolute;
-        left: 0;
-        top: 0;
-        line-height: 2; }
-    .top-nav li ul.sub-menu,
-    .top-nav li ul.children {
-      /* No mobile styles for you mate. */ }
-      .top-nav li ul.sub-menu li,
-      .top-nav li ul.children li {
-        background-color: #fff; }
-        .top-nav li ul.sub-menu li a,
-        .top-nav li ul.children li a {
-          color: #555; }
-  .top-nav.show {
-    background-color: #ffa19b;
-    bottom: 0;
-    left: 0;
-    width: 100%; }
-  .top-nav li {
-    display: inline-block;
-    background-color: transparent;
-    /* showing sub-menus */ }
-    .top-nav li:hover a, .top-nav li:focus a {
-      color: #ff4338; }
-    .top-nav li a {
-      border-bottom: 0;
-      color: #555;
-      font-size: 16px;
-      padding: 8px 16px;
-      font-weight: 400; }
-    .top-nav li.menu-item-has-children:after {
-      content: "\25BC";
-      font-size: 80%;
-      line-height: 3;
-      position: absolute;
-      right: 0;
-      top: 0;
-      vertical-align: middle; }
-    .top-nav li.menu-item-has-children:hover {
-      color: #ff4338; }
-    .top-nav li ul.sub-menu,
-    .top-nav li ul.children {
-      margin-top: 0;
-      border-top: 0;
-      position: absolute;
-      display: none;
-      z-index: 15;
-      text-align: left;
-      background: #ff4338; }
-      .top-nav li ul.sub-menu li a,
-      .top-nav li ul.children li a {
-        display: block;
-        width: 288px;
-        width: -moz-max-content;
-        width: -webkit-max-content;
-        width: max-content;
-        color: #fff; }
-    .top-nav li:hover ul {
-      display: block; }
-  .top-nav li.current-menu-item a,
-  .top-nav li.current_page_item a,
-  .top-nav li.current-page-ancestor a {
-    text-decoration: underline; }
-
-/* end .nav */
-/* Mobile navigation has a bitch of a class system now*/
-.is-inactive {
-  font-size: 0;
-  line-height: 0;
-  height: 0;
-  width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0; }
-
-/*	Page Styles
-	-----------
-	Used for elements like body and html
-	
-*/
-body {
-  background-color: #cbcbcb;
-  background-color: #fff;
-  font-family: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 90%;
-  line-height: 1.4;
-  color: #555;
-  font-weight: 400;
-  font-size: 100%;
-  line-height: 1.5; }
-
-/*	Page by page
-	----------
-	This is where all the elements of the website are brought together.
-	Each element contains its own mediaqueries and does not depend on anything else. */
-/* No files to import found in pages/* */
-/******************************************************************
-Site Name: Meat
-Author: AndrewEivin
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
-******************************************************************/
-/*************************************************
-	We include the grid for when you're 
-	using the lowest file, you might still
-	want to use this in the base, the 481 etc
-*************************************************/
-/********************************************
-			   G R I D  M A T H
-
-	Math. A bunch of it. This is the math
-	that makes the grid. Math can change
-	in here to completely change the whole
-	layout of your site. 
-			  
-********************************************/
-/* Adding an extra mixin to make widths fallbackabler.*/
-/* Offset class. Experimental, but looks nice */
-.offset-1 {
-  margin-left: 5.7969383057%;
-  margin-left: calc((99.95% - 11rem) / 12);
-  width: 91.3906307551%;
-  width: calc((99.95% - 0.0909090909rem) / 1.0909090909); }
-
-.offset-2 {
-  margin-left: 14.3563075506%;
-  margin-left: calc((99.95% - 5rem) / 6);
-  width: 82.8312615101%;
-  width: calc((99.95% - 0.2rem) / 1.2); }
-
-.offset-3 {
-  margin-left: 22.9156767956%;
-  margin-left: calc((99.95% - 3rem) / 4);
-  width: 74.2718922652%;
-  width: calc((99.95% - 0.3333333333rem) / 1.3333333333); }
-
-.offset-4 {
-  margin-left: 31.4750460405%;
-  margin-left: calc((99.95% - 2rem) / 3);
-  width: 65.7125230203%;
-  width: calc((99.95% - 0.5rem) / 1.5); }
-
-.offset-5 {
-  margin-left: 40.0344152855%;
-  margin-left: calc((99.95% - 1.4rem) / 2.4);
-  width: 57.1531537753%;
-  width: calc((99.95% - 0.7142857143rem) / 1.7142857143); }
-
-.offset-6 {
-  margin-left: 48.5937845304%;
-  margin-left: calc((99.95% - 1rem) / 2);
-  width: 48.5937845304%;
-  width: calc((99.95% - 1rem) / 2); }
-
-.offset-7 {
-  margin-left: 57.1531537753%;
-  margin-left: calc((99.95% - 0.7142857143rem) / 1.7142857143);
-  width: 40.0344152855%;
-  width: calc((99.95% - 1.4rem) / 2.4); }
-
-.offset-8 {
-  margin-left: 65.7125230203%;
-  margin-left: calc((99.95% - 0.5rem) / 1.5);
-  width: 31.4750460405%;
-  width: calc((99.95% - 2rem) / 3); }
-
-.offset-9 {
-  margin-left: 74.2718922652%;
-  margin-left: calc((99.95% - 0.3333333333rem) / 1.3333333333);
-  width: 22.9156767956%;
-  width: calc((99.95% - 3rem) / 4); }
-
-.offset-10 {
-  margin-left: 82.8312615101%;
-  margin-left: calc((99.95% - 0.2rem) / 1.2);
-  width: 14.3563075506%;
-  width: calc((99.95% - 5rem) / 6); }
-
-.offset-11 {
-  margin-left: 91.3906307551%;
-  margin-left: calc((99.95% - 0.0909090909rem) / 1.0909090909);
-  width: 5.7969383057%;
-  width: calc((99.95% - 11rem) / 12); }
-
-.offset-12 {
-  margin-left: 99.95%;
-  margin-left: calc((99.95% - 0rem) / 1);
-  width: NaN%;
-  width: calc((99.95% - Infinityrem) / Infinity); }
-
-.wrap {
-  width: 96%;
-  margin: 0 auto; }
-
-/******************************************************************
-Site Name: Meat
-Author: AndrewEivin
-
-Stylesheet: 481px and Up Stylesheet
-
-This stylesheet is loaded for larger devices. It's set to 
-481px because at 480px it would load on a landscaped iPhone.
-This isn't ideal because then you would be loading all those
-extra styles on that same mobile connection. 
-
-A word of warning. This size COULD be a larger mobile device,
-so you still want to keep it pretty light and simply expand
-upon your base.scss styles.
-
-******************************************************************/
-.wrap {
-  max-width: 481.008px; }
-
-/******************************************************************
-Site Name: Meat
-Author: AndrewEivin
-
-Stylesheet: Phablet Stylsheet
-
-This is the Phablet size. It's larger than phone, smaller than a tablet...
-
-******************************************************************/
-.wrap {
-  max-width: 592px; }
-
-/******************************************************************
-Site Name: Meat
-Author: AndrewEivin
-
-Stylesheet: Tablet & Small Desktop Stylesheet
-
-Here's where you can start getting into the good stuff.
-This size will work on iPads, other tablets, and desktops.
-So you can start working with more styles, background images,
-and other resources. You'll also notice the grid starts to
-come into play. Have fun!
-
-******************************************************************/
-.wrap {
-  max-width: 768px; }
-
-/******************************************************************
-Site Name: Meat
-Author: AndrewEivin
-
-Stylesheet: Desklet Stylsheet
-
-This is the desklet size. It's larger than tablet, smaller than a large screen...
-
-******************************************************************/
-.wrap {
-  max-width: 888px; }
-
-/******************************************************************
-Site Name: Meat
-Author: AndrewEivin
-
-Stylesheet: Desktop Stylsheet
-
-This is the desktop size. It's larger than an iPad so it will only
-be seen on the Desktop. 
-
-******************************************************************/
-.wrap {
-  max-width: 1000px; }
-
-/******************************************************************
-Site Name: Meat
-Author: AndrewEivin
-
-Stylesheet: Super Large Monitor Stylesheet
-
-You can add some advanced styles here if you like. This kicks in
-on larger screens.
-
-******************************************************************/
-.wrap {
-  max-width: 1200px; }
-
-/* you can call the larger styles if you want, but there's really no need */
+  .textshadow select:-moz-focusring {
+    text-shadow: 0 0 0 #474a56;
+    color: transparent; }
