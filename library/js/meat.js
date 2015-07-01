@@ -70,6 +70,7 @@ Meat Script begins.
       }
       return this.pushStack(arr, "chunk", size);
     };
+    // $(this).chunk(3).wrap('<div class="column-3">')
 
     // Determine if an url is external:
     var is_external = function () {
