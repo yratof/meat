@@ -63,6 +63,14 @@ Meat Script begins.
         return this;
     };
 
+    $.fn.chunk = function(size) {
+      var arr = [];
+      for (var i = 0; i < this.length; i += size) {
+          arr.push(this.slice(i, i + size));
+      }
+      return this.pushStack(arr, "chunk", size);
+    };
+
     // Determine if an url is external:
     var is_external = function () {
         var url = this;
