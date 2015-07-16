@@ -1,0 +1,48 @@
+// Newsprint, black and white
+
+$black:		#000;
+$white:		#fff;
+
+
+// Map of colours
+$brand-colours-key: 'main' !default;
+$brand-colours: (
+  'brand': (
+    'main': #bd1c1c,
+    'light': #d62020,
+    'dark': #a31818
+  ),
+  'accent': (
+    'main': #474a56,
+    'light': #5d6170,
+    'dark': #33353d
+  ),
+  'grey': (
+    'main': #ebebeb,
+    'light': #f2f2f2,
+    'dark': #d1d1d1
+  )
+);
+
+// A function to get all these colour options out.
+// I'm sort of thinking it's overkill. But meh.
+@function colour($colour, $value: 'main') {
+    @return map-get(map-get($brand-colours, $colour), $value);
+}
+
+
+$brand-colour:		colour('brand', 'main');
+$brand-highlight:	colour('brand', 'light');
+$brand-accent:		colour('accent', 'main');
+$brand-grey:		colour('grey', 'main');
+
+$text-colour:		colour('accent', 'main');
+$disabled-grey:		#ccc;
+
+// Alerts
+$alert-yellow:		#eb7209;
+$alert-red:			#be3333;
+$alert-green:		#a8c923;
+$alert-blue:		#209dd6;
+
+$shadow: 	0 15px 5px -8px fade-out($black, 0.95), 0 9px 6px -7px fade-out($black, 0.55);

@@ -1,0 +1,24 @@
+/*
+	Global things
+	-------------
+	We're going to set a few things in here
+	that we can use throughout the site to make
+	it a little more uniform. Gutters are the
+	big thing. The vertical spacing between
+	elements is often thrown off
+*/
+
+	/* Gutters set from Photoshop Document - Without Pixel */
+	$base-size:		16;
+	$psd_gutter: 	25;
+	
+	$rem:			($psd_gutter / $base-size) * 1rem; // We need to multiply by 1rem to make it have the rem unit
+
+	/* Gutters set from Photoshop Document */
+	$gutter_rem: 	u($rem); // 1.5625rem Gutter
+
+	
+// (This gives you unitless sizes in px & rem)
+
+$black:		#000;
+$white:		#fff;

@@ -1,0 +1,48 @@
+// Sizing
+html {
+	font-size: 16px;
+}
+
+//Body
+body {
+	font-family: $sans-serif;
+	color: $text-colour;
+	font-size: 100%;
+	line-height: 1.4;
+	font-weight: 200;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+	color: $brand-colour;
+}
+
+// Body text
+p {
+	font-size: u(0.9rem);
+}
+
+// Links and other kinds of things
+a{
+	color: colour('brand', 'dark');
+	text-decoration: underline;
+
+	&:hover{
+		color: colour('brand', 'light');
+	}
+	
+	&:active{
+		color: colour('brand', 'dark');
+	}
+
+	&:focus{
+		outline: 0;
+	}
+}
+
+// Images
+img{
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}

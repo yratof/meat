@@ -3,18 +3,9 @@ Site Name: #{$site-name}
 Author: #{$author}
 
 Stylesheet: Mixins & Constants Stylesheet
-
-This is where you can take advantage of Sass' great features:
-Mixins & Constants. I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
-
 ******************************************************************/
 
+<<<<<<< HEAD
 /*********************
 CLEARFIXIN'
 *********************/
@@ -623,3 +614,26 @@ Background colour based on brightness
 		}
 	}
 }
+=======
+* { box-sizing: border-box; }
+
+/* This mixins file was starting to get way too big. So I've cut it down into fragments. */
+
+@import 'partials/mixins/clearfix';
+@import 'partials/mixins/blend-mode';
+@import 'partials/mixins/gradient';
+@import 'partials/mixins/placeholder';
+@import 'partials/mixins/screen-readers';
+@import 'partials/mixins/vertical-align';
+@import 'partials/mixins/flush-columns';
+@import 'partials/mixins/padding';
+@import 'partials/mixins/button';
+@import 'partials/mixins/element-counting';
+@import 'partials/mixins/grids';
+@import 'partials/mixins/inline-block';
+@import 'partials/mixins/content-order';
+@import 'partials/mixins/modular';
+@import 'partials/mixins/mediaqueries';
+@import 'partials/mixins/font-smoothing';
+@import 'partials/mixins/brightness';
+>>>>>>> blank

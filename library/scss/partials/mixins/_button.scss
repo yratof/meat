@@ -1,0 +1,53 @@
+/************************************
+		B U T T O N   C O L O U R S
+	This mixin gives you a button in any
+	colour that you want. It then decides
+	if the background is dark or light and
+	gives you white or dark grey text colour.
+*************************************/
+
+@mixin btn($colour, $style: false){
+
+	@if ($style) {
+		// Standard styles
+		border: 2px solid $colour;
+		text-indent:0;
+		display: inline-block;
+		font-weight: 700;
+		font-style: normal;
+		text-decoration: none;
+		text-align: center;
+		cursor: pointer;
+		outline: none; 
+		-webkit-font-smoothing: antialiased;
+		
+		padding: u(0.575rem 0.75rem);
+		@include wider-than(phablet){padding: u(0.575rem 0.75rem);}
+		@include wider-than(tablet){padding: u(0.875rem 1rem);}
+	}
+	
+	/**********************************
+	 This determines the background colour
+	 in a greyscale manner, if it's lighter
+	 than 40% lightness, the text colour
+	 becomes dark to compensate.
+	**********************************/
+
+	color: $colour;
+	background: transparent;
+
+  &:hover, &:focus, &:active  { color: shaded($colour); }
+	
+	/**********************************
+	 This is the style for the hovers,
+	 the actives and the visited.
+	**********************************/
+
+	&:hover{}
+	&:active{ 
+		@if ($style) {
+			position: relative;
+	    top: 4px;
+		}
+	}
+}
