@@ -173,9 +173,10 @@ jQuery(document)
 
 // Inline block sorted out with javascript. Plain vanilla javascript.
 // Technially, this removes unwanted nodes from inside a DOM node
+// Inline block sorted out with javascript. Plain vanilla javascript.
+// Technially, this removes unwanted nodes from inside a DOM node
 
 var utils = {};
-
 utils.clean = function(node) {
 	var child, i, len = node.childNodes.length;
 	if (len === 0) { return; }
@@ -192,6 +193,19 @@ utils.clean = function(node) {
 		}
 	}
 };
+document.documentElement.className='js';  
 
-document.documentElement.className='js';
-utils.clean(document.querySelector('.ib'));
+function inlineBlock(){
+  var col = document.querySelectorAll('.columns');
+  var i; // <-- Counter
+  // Apply this to all elements
+  for (i = 0; i < col.length; i++){
+    utils.clean(col[i]);
+  }
+}
+
+inlineBlock();
+jQuery(document).ready(function(){inlineBlock();});
+/* Run this as a callback if using ajax
+  if(typeof inlineBlock === 'function') { inlineBlock(); } // Remove all inline block bollocks
+*/
