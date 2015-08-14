@@ -29,7 +29,7 @@ of the styles inside media queries.
 
 ********************************************/
 
-@import 'bourbon/bourbon';
+@import 'bourbon';
 
 // THIS CONVERTS ALL REMS TO PX
 $px-only: true;
@@ -44,7 +44,7 @@ $ie: false;
 @import 'partials/gridmath'; /* Grid Math */
 
 /* All Elements */ 
-@import "components/*";
+@import "components"
 
 // Extra fancy shit.
 @import "partials/animations";	// Animations

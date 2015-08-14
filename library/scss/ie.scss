@@ -42,7 +42,7 @@ $ie: true;
 @import "partials/ie_grid"; // import grid
 
 /* All Elements */ 
-@import "components/*";
+@import "components"
 
 @import "partials/animations";	// Animations
 @import "partials/alerts"; // Alerts
