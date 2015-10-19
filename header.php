@@ -6,56 +6,15 @@
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js gt-ie8"><!--<![endif]-->
 
   <head>
-    <meta charset="utf-8">
-    
-																						    <!-- BLOCK THE SITE FROM GOOGGLE!-->
-																							<meta name="robots" content="noindex, nofollow">
-																						    <!-- BLOCK THE SITE FROM GOOGGLE!-->
-																						    
-    <!-- Google Chrome Frame for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+    <meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><?php wp_title(''); ?></title>
-
-    <!-- mobile meta (hooray!) -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) -->
-    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
-    <!--[if IE]>
-      <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-    <![endif]-->
-    <!-- or, set /favicon.ico for IE10 win -->
-    <meta name="msapplication-TileColor" content="#f01d4f">
-    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-
+    <meta name="robots" content="noindex, nofollow">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
-    <!-- wordpress head functions -->
     <?php wp_head(); ?>
-    <!-- end of wordpress head -->
-
-	<!--[if lt IE 9]>
-	   <script>
-	      document.createElement('header');
-	      document.createElement('nav');
-	      document.createElement('section');
-	      document.createElement('article');
-	      document.createElement('aside');
-	      document.createElement('footer');
-	   </script>
-	
-		<style>header, nav, section, article, aside, footer {
-	   display:block;}</style>
-	<![endif]-->
-
-	<!-- <picture> element: http://scottjehl.github.io/picturefill -->
-	<script>document.createElement( "picture" ); // Picture element HTML5 shiv</script>
-	<script src="<?php bloginfo('template_url'); ?>/library/js/libs/picturefill.js" async></script>
-
+    <!--[if lt IE 9]><script>document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');</script><style>header, nav, section, article, aside, footer { display:block;}</style><![endif]-->
   </head>
 
   <body <?php body_class(current_user_can('edit_others_posts') ? 'user-is-admin' : ''); ?>>
@@ -74,15 +33,16 @@
 
           <nav role="navigation">
 
-			<a class="clickable animated mobile-only">
-				<div class="menu-icon">
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-			</a>
+      			<a class="clickable animated mobile-only">
+      				<div class="menu-icon">
+      					<div></div>
+      					<div></div>
+      					<div></div>
+      				</div>
+      			</a>
 
             <?php bones_main_nav(); ?>
+
           </nav>
 
         </div> <!-- end #inner-header -->

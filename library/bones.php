@@ -122,50 +122,6 @@ function bones_gallery_style($css) {
 
 
 
-
-/*********************
-CUSTOM BARLEY FUNCTION!!
-You need the Barley plugin to get this working.
-
-Usage:
-
-<?php barley_field('custom_field'); ?>
-<?php advanced_barley_field('custom_field'); ?>
-
-If you're using Advanced Custom Fields,
-then just use the_field() as Barley can see those already.
-
-*********************/
-
-function barley_field( $field_name ){
-	$key_values = get_post_custom_values( $field_name );
-	if($key_values){
-		foreach ( $key_values as $key => $value ) {
-			if ( function_exists( 'barley_wrapper' )) {
-			    echo barley_wrapper('wp_custom_field', $value , $field_name);									        
-			} else {
-			    echo $value;
-			}
-		}
-	}
-}
-
-// This is for the advance field, basically gives you the WYSIWYG editor when using barley.
-
-function advanced_barley_field( $field_name ){
-	$key_values = get_post_custom_values( $field_name );
-	if($key_values){
-		foreach ( $key_values as $key => $value ) {
-			if ( function_exists( 'barley_wrapper' )) {
-			    echo barley_wrapper('acf_wysiwyg', $value , $field_name);									        
-			} else {
-			    echo $value;
-			}
-		}
-	}
-}
-
-
 /* Pagination for Blog page, using numbers instead of text */
 
 function meat_pagination_number() {
@@ -279,10 +235,10 @@ function bones_scripts_and_styles() {
     wp_enqueue_style( 'bones-stylesheet' );
     wp_enqueue_style( 'bones-ie-only' );
 
-	// Call Android in last if it's needed.
-	if (stripos($ua,'applewebkit') !== false && stripos($ua,'mozilla') !== false) {
-	    wp_enqueue_style( 'android-styles' );
-	};
+		// Call Android in last if it's needed.
+		if (stripos($ua,'applewebkit') !== false && stripos($ua,'mozilla') !== false) {
+		    wp_enqueue_style( 'android-styles' );
+		};
 
 
     $wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
